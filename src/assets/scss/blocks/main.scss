@@ -1,0 +1,270 @@
+.musicalSchool {
+    margin-top: 6.8rem;
+
+    h1 {
+        font-family: 'Unbounded';
+        font-weight: 700;
+        font-size: 8.6rem;
+        line-height: 9rem;
+        text-transform: uppercase;
+        color: #15112B;
+    }
+
+    .musicalSchool-text {
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+        gap: 6.1rem;
+
+        p {
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 3rem;
+            text-transform: uppercase;
+            color: #262433;
+        }
+    }
+
+    .musicalSchool-services {
+        position: relative;
+        margin-top: 4.8rem;
+
+        img {
+            border-radius: 4rem;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .musicalSchool-services__content {
+            display: flex;
+            gap: 1.6rem;
+            justify-content: end;
+            padding-top: 4rem;
+            padding-right: 4rem;
+            height: 61.1rem;
+
+            .musicalSchool-services__contentItem {
+                width: 12.4rem;
+                height: 11.5rem;
+                position: relative;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                p {
+                    font-family: 'Unbounded';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 1.6rem;
+                    line-height: 2.2rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    position: absolute;
+                    top: 40%;
+                    left: 20%;
+                }
+            }
+
+            .musicalSchool-services__contentItem:last-child {
+                width: 17.9rem;
+                height: 11.5rem;
+
+                p {
+                    top: 29%;
+                    left: 0%;
+                }
+            }
+        }
+    }
+}
+
+.mission {
+    margin-top: 15.5rem;
+    padding-right: 4rem;
+
+    .mission-content {
+        display: flex;
+        gap: 1.2rem;
+
+        .mission-content__imgContainer {
+            display: flex;
+            flex-direction: column;
+            width: 45.9rem;
+            position: relative;
+
+            .mission-content__img {
+                width: 90%;
+                position: absolute;
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .mission-content__img:first-child {
+                rotate: 7deg;
+                top: -3.6%;
+                z-index: 0;
+            }
+
+            .mission-content__img:nth-child(2) {
+                top: 24%;
+                rotate: -14deg;
+                right: 5%;
+                z-index: 1;
+            }
+
+            .mission-content__img:last-child {           
+                top: 57%;
+                rotate: 7deg;
+                right: 5%;
+                z-index: 0;
+            }
+        }
+
+        .mission-content__textContainer {
+            // width: 88.9rem;
+            // margin-right: 11.8rem;
+            width: 77.1rem;
+
+            h2 {
+                font-family: 'Unbounded';
+                font-weight: 700;
+                font-size: 6.4rem;
+                line-height: 7rem;
+                text-transform: uppercase;
+                color: #15112B;
+                padding-left: 2.4rem;
+            }
+
+            .mission-content__text {
+                margin-top: 7.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 2.4rem;
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    color: #262433;
+                    padding-left: 2.4rem;
+                }
+
+                .mission-content__text_pink {
+                    background: #DACDFF;
+                    border-radius: 4rem;
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    text-transform: uppercase;
+                    color: #262433;
+                    padding: 2rem 3.4rem 2rem 2.4rem;
+                }
+
+                button {
+                    width: fit-content;
+                    margin-top: 2.4rem;
+                    margin-left: 2.4rem;
+                }
+
+            }
+        }
+    }
+}
+
+.ourSchool {
+    margin-top: 13.8rem;
+
+    .ourSchool-content {
+        display: flex;
+        gap: 9.3rem;
+
+        .ourSchool-content__textBlock {
+            width: 65.1rem;
+
+            h2 {
+                font-family: 'Unbounded';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 6.4rem;
+                line-height: 7rem;
+                text-transform: uppercase;
+                color: #15112B;
+            }
+
+            .ourSchool-content__text {
+                margin-top: 7.2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                p {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    color: #262433;
+                }
+
+                .ourSchool-content__text_uppercase {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .ourSchool-content__imgBlock {
+            width: 53.5rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .ourSchool-videoBlock {
+        display: flex;
+        margin-top: 6.5rem;
+        gap: 3rem;
+
+        .ourSchool-videoBlock__video {
+            border-radius: 4rem;
+            overflow: hidden;
+            width: 57.2%;
+        }
+
+        .ourSchool-videoBlock__img {
+            width: 40.5%;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.whiteBtn {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #15112B;
+    padding: 1.5rem 2rem;
+    border: 0.1rem solid #15112B;
+    border-radius: 5rem;
+    background: none;
+}

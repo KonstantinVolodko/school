@@ -1,3 +1,16 @@
+.whiteBtn {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #15112B;
+    padding: 1.5rem 2rem;
+    border: 0.1rem solid #15112B;
+    border-radius: 5rem;
+    background: none;
+}
+
 .musicalSchool {
     margin-top: 6.8rem;
 
@@ -242,6 +255,10 @@
             border-radius: 4rem;
             overflow: hidden;
             width: 57.2%;
+
+            video {
+                width: 100%;
+            }
         }
 
         .ourSchool-videoBlock__img {
@@ -256,15 +273,222 @@
     }
 }
 
-.whiteBtn {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #15112B;
-    padding: 1.5rem 2rem;
-    border: 0.1rem solid #15112B;
-    border-radius: 5rem;
-    background: none;
+.trialLesson {
+    margin-top: 14rem;
+
+    .trialLesson-content {
+        padding: 6.4rem;
+        background: #DACDFF;
+        border-radius: 4rem;
+        position: relative;
+
+        h2 {
+            font-family: 'Unbounded';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 4.6rem;
+            text-transform: uppercase;
+            color: #15112B;
+        }
+    
+        button {
+            background: #E9F795;
+            border: none;
+            margin-top: 6.4rem;
+        }
+
+        .musicalSchool-services__contentItem {
+            width: 12.4rem;
+            height: 11.5rem;
+            position: absolute;
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
+
+            p {
+                font-family: 'Unbounded';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+                text-align: center;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                position: absolute;
+                top: 40%;
+                left: 20%;
+            }
+        }
+
+        .first {
+            top: 15%;
+            right: 3%;
+        }
+
+        .second {
+            top: 55%;
+            right: 17%;
+        }
+
+        .third {
+            bottom: 0;
+            right: 40%;
+            width: 17.4rem;
+
+            p {
+                left: 5%;
+            }
+        }
+    }
+}
+
+.ourTeachers {
+    margin-top: 14rem;
+
+    .ourTeachers-content {
+
+        .ourTeachers-titleArrows {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-family: 'Unbounded';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 6.4rem;
+                line-height: 7rem;
+                text-transform: uppercase;
+                color: #15112B;
+            }
+
+            .ourTeachers-content__arrows {
+                display: flex;
+                gap: 1.2rem;
+
+                button {
+                    background: none;
+                    border: 0.1rem solid #15112B;
+                    border-radius: 50%;
+                    width: 5.7rem;
+                    height: 5.7rem;
+
+                    svg {
+                        fill: transparent;
+                        width: 0.85rem;
+                        height: 1.7rem;
+                    }
+                }
+
+                button:first-child {
+                    svg {
+                        rotate: 180deg;
+                    }
+                }
+
+                .swiper-button-disabled {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .ourTeachersSwiper {
+            margin-top: 7.2rem;
+
+            .ourTeachers-content__swiperContainer {
+
+                .ourTeachers-content__swiperImg {
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .ourTeachers-content__swiperTitle {
+                    margin-top: 4.3rem;
+                    font-family: 'Unbounded';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    line-height: 2.6rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #15112B;
+                }
+
+                .ourTeachers-content__swiperSubtitle {
+                    margin-top: 1.2rem;
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    text-align: center;
+                    color: #262433;
+                }
+            }
+        }
+    }
+}
+
+.reviews {
+    margin-top: 14rem;
+
+    .reviews-content {
+        .reviews-content__titleArrows {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+                font-family: 'Unbounded';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 6.4rem;
+                line-height: 7rem;
+                text-transform: uppercase;
+                color: #15112B;
+            }
+        }
+
+        
+    }
+
+    .reviewsSwiper {
+        margin-top: 7.2rem;
+        
+        .reviews-content__swiperContainer {
+            background: #F8F8F8;
+            border-radius: 4rem;
+            padding: 3.2rem;
+
+            .reviews-content__swiperTitle {
+                font-weight: 400;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+                color: #15112B;
+            }
+
+            .reviews-content__swiperSubtitle {
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 2rem;
+                color: #262433;
+                margin-top: 1.6rem;
+            }
+        }
+
+        .reviewsSwiper-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3.2rem;
+
+            .swiper-pagination-bullet-active {
+                background: #15112B;
+            }
+        }
+    }
 }

@@ -523,6 +523,23 @@ svg {
   padding-right: 4rem;
 }
 
+.header-content__phoneContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+.header-content__phoneContainer svg {
+  width: 2rem;
+  height: 2rem;
+}
+.header-content__phoneContainer p {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #15112B;
+}
+
 .header-content {
   display: flex;
   gap: 3.7rem;
@@ -552,22 +569,6 @@ svg {
   line-height: 2.4rem;
   color: #15112B;
   text-decoration: none;
-}
-.header-content .header-content__menuContainer .header-content__phoneContainer {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  text-decoration: none;
-}
-.header-content .header-content__menuContainer .header-content__phoneContainer svg {
-  width: 2rem;
-  height: 2rem;
-}
-.header-content .header-content__menuContainer .header-content__phoneContainer p {
-  font-weight: 500;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
-  color: #15112B;
 }
 
 /**
@@ -1334,6 +1335,80 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
+.footer-content {
+  background: #DACDFF;
+  border-radius: 4rem;
+  padding: 4.8rem 4.8rem 3.2rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.2rem;
+}
+.footer-content .footer-content__links {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content .footer-content__logo {
+  width: 18.9rem;
+  height: 11.1rem;
+  display: block;
+}
+.footer-content .footer-content__logo svg {
+  width: 100%;
+  height: 100%;
+  stroke: black;
+}
+.footer-content .footer-content__list {
+  display: flex;
+  gap: 11.4rem;
+}
+.footer-content .footer-content__list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.footer-content .footer-content__list ul a {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  color: #262433;
+  text-decoration: none;
+}
+.footer-content .footer-content__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.footer-content .footer-content__contacts .footer-content__socialMedia {
+  display: flex;
+  gap: 1rem;
+}
+.footer-content .footer-content__contacts .footer-content__socialMedia a {
+  width: 3.6rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1rem solid #15112B;
+  border-radius: 5rem;
+}
+.footer-content .footer-content__contacts .footer-content__socialMedia a svg {
+  width: 2rem;
+  height: 2rem;
+}
+.footer-content .footer-content__confidence {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content .footer-content__confidence a, .footer-content .footer-content__confidence p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: right;
+  color: #15112B;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
 .whiteBtn {
   font-weight: 400;
   font-size: 1.4rem;
@@ -1631,15 +1706,12 @@ button.swiper-pagination-bullet {
   left: 5%;
 }
 
-.ourTeachers {
-  margin-top: 14rem;
-}
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows {
+.ourTeachers-titleArrows {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows h2 {
+.ourTeachers-titleArrows h2 {
   font-family: "Unbounded";
   font-style: normal;
   font-weight: 700;
@@ -1648,27 +1720,31 @@ button.swiper-pagination-bullet {
   text-transform: uppercase;
   color: #15112B;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows {
+.ourTeachers-titleArrows .ourTeachers-content__arrows {
   display: flex;
   gap: 1.2rem;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button {
+.ourTeachers-titleArrows .ourTeachers-content__arrows button {
   background: none;
   border: 0.1rem solid #15112B;
   border-radius: 50%;
   width: 5.7rem;
   height: 5.7rem;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button svg {
+.ourTeachers-titleArrows .ourTeachers-content__arrows button svg {
   fill: transparent;
   width: 0.85rem;
   height: 1.7rem;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button:first-child svg {
+.ourTeachers-titleArrows .ourTeachers-content__arrows button:first-child svg {
   rotate: 180deg;
 }
-.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows .swiper-button-disabled {
+.ourTeachers-titleArrows .ourTeachers-content__arrows .swiper-button-disabled {
   opacity: 0.6;
+}
+
+.ourTeachers {
+  margin-top: 14rem;
 }
 .ourTeachers .ourTeachers-content .ourTeachersSwiper {
   margin-top: 7.2rem;
@@ -1743,4 +1819,148 @@ button.swiper-pagination-bullet {
 }
 .reviews .reviewsSwiper .reviewsSwiper-pagination .swiper-pagination-bullet-active {
   background: #15112B;
+}
+
+.price {
+  margin-top: 14rem;
+}
+.price .price-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.price .price-content .price-content__item {
+  display: flex;
+  gap: 5.8rem;
+  padding: 4rem;
+  background: #F8F8F8;
+  border-radius: 4rem;
+  width: 48.8%;
+}
+.price .price-content .price-content__item h2 {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7rem;
+  text-transform: uppercase;
+  color: #15112B;
+}
+.price .price-content .price-content__item .price-content__itemText {
+  display: flex;
+  flex-direction: column;
+}
+.price .price-content .price-content__item .price-content__itemText .price-content__itemTitle {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+  color: #7BC1F4;
+}
+.price .price-content .price-content__item .price-content__itemText .price-content__itemSubtitle {
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #262433;
+  margin-top: 2.4rem;
+}
+.price .price-content .price-content__item .price-content__itemText button {
+  margin-top: 3rem;
+  width: fit-content;
+}
+.price .price-content .price-content__item .price-content__itemText .pink {
+  color: #ED70AE;
+}
+.price .price-content .price-content__item .price-content__itemText .purple {
+  color: #B89FFF;
+}
+.price .price-content .price-content__item .price-content__itemImg {
+  width: 32%;
+}
+.price .price-content .price-content__item .price-content__itemImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.price .price-content .price-content__item:first-child {
+  background: none;
+  border-radius: unset;
+  padding: 0rem;
+}
+.price .price-discount {
+  padding: 1.1rem 0rem;
+  background: #B89FFF;
+  border-radius: 4rem;
+  margin-top: 3.4rem;
+}
+.price .price-discount p {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.students {
+  margin-top: 14rem;
+}
+.students .ourTeachers-titleArrows h2 {
+  width: 56%;
+}
+.students .students-swiper {
+  margin-top: 7.2rem;
+}
+.students .students-swiper .students-swiper__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.students .students-swiper .studentsSwiper-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.2rem;
+}
+.students .students-swiper .studentsSwiper-pagination .swiper-pagination-bullet-active {
+  background: #15112B;
+}
+
+.blog h2 {
+  font-family: "Unbounded";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7rem;
+  text-transform: uppercase;
+  color: #15112B;
+}
+.blog .blog-content {
+  display: flex;
+  gap: 2.2rem;
+  margin-top: 7.2rem;
+}
+.blog .blog-content .blog-content__item {
+  padding: 2.8rem 3.8rem 4.2rem 3.9rem;
+  background: #F8F8F8;
+  border: 0.1rem solid #F8F8F8;
+  border-radius: 4rem;
+  width: 32.9%;
+}
+.blog .blog-content .blog-content__item .blog-content__itemImg {
+  width: 13.86%;
+}
+.blog .blog-content .blog-content__item .blog-content__itemImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog .blog-content .blog-content__item p {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  color: #15112B;
+  margin-top: 1.6rem;
 }

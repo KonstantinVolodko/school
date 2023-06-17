@@ -345,55 +345,57 @@
     }
 }
 
+.ourTeachers-titleArrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    h2 {
+        font-family: 'Unbounded';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 6.4rem;
+        line-height: 7rem;
+        text-transform: uppercase;
+        color: #15112B;
+    }
+
+    .ourTeachers-content__arrows {
+        display: flex;
+        gap: 1.2rem;
+
+        button {
+            background: none;
+            border: 0.1rem solid #15112B;
+            border-radius: 50%;
+            width: 5.7rem;
+            height: 5.7rem;
+
+            svg {
+                fill: transparent;
+                width: 0.85rem;
+                height: 1.7rem;
+            }
+        }
+
+        button:first-child {
+            svg {
+                rotate: 180deg;
+            }
+        }
+
+        .swiper-button-disabled {
+            opacity: 0.6;
+        }
+    }
+}
+
 .ourTeachers {
     margin-top: 14rem;
 
     .ourTeachers-content {
 
-        .ourTeachers-titleArrows {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            h2 {
-                font-family: 'Unbounded';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 6.4rem;
-                line-height: 7rem;
-                text-transform: uppercase;
-                color: #15112B;
-            }
-
-            .ourTeachers-content__arrows {
-                display: flex;
-                gap: 1.2rem;
-
-                button {
-                    background: none;
-                    border: 0.1rem solid #15112B;
-                    border-radius: 50%;
-                    width: 5.7rem;
-                    height: 5.7rem;
-
-                    svg {
-                        fill: transparent;
-                        width: 0.85rem;
-                        height: 1.7rem;
-                    }
-                }
-
-                button:first-child {
-                    svg {
-                        rotate: 180deg;
-                    }
-                }
-
-                .swiper-button-disabled {
-                    opacity: 0.6;
-                }
-            }
-        }
+        
 
         .ourTeachersSwiper {
             margin-top: 7.2rem;
@@ -488,6 +490,180 @@
 
             .swiper-pagination-bullet-active {
                 background: #15112B;
+            }
+        }
+    }
+}
+
+.price {
+    margin-top: 14rem;
+
+    .price-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        .price-content__item {
+            display: flex;
+            gap: 5.8rem;
+            padding: 4rem;
+            background: #F8F8F8;
+            border-radius: 4rem;
+            width: 48.8%;
+
+            h2 {
+                font-family: 'Unbounded';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 6.4rem;
+                line-height: 7rem;
+                text-transform: uppercase;
+                color: #15112B;
+            }
+
+            .price-content__itemText {
+                display: flex;
+                flex-direction: column;
+                
+                .price-content__itemTitle {
+                    font-family: 'Unbounded';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 2.4rem;
+                    line-height: 2.6rem;
+                    text-transform: uppercase;
+                    color: #7BC1F4;
+                }
+
+                .price-content__itemSubtitle {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.4rem;
+                    color: #262433;
+                    margin-top: 2.4rem;
+                }
+
+                button {
+                    margin-top: 3rem;
+                    width: fit-content;
+                }
+
+                .pink {
+                    color: #ED70AE;
+                }
+
+                .purple {
+                    color: #B89FFF;
+                }
+            }
+
+            .price-content__itemImg {
+                width: 32%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+        .price-content__item:first-child {
+            background: none;
+            border-radius: unset;
+            padding: 0rem;
+        }
+    }
+
+    .price-discount {
+        padding: 1.1rem 0rem;
+        background: #B89FFF;
+        border-radius: 4rem;
+        margin-top: 3.4rem;
+
+        p {
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 3rem;
+            text-transform: uppercase;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.students {
+    margin-top: 14rem;
+
+    .ourTeachers-titleArrows {
+        h2 {
+            width: 56%;
+        }
+    }
+
+    .students-swiper {
+        margin-top: 7.2rem;
+
+        .students-swiper__container {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .studentsSwiper-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 3.2rem;
+
+            .swiper-pagination-bullet-active {
+                background: #15112B;
+            }
+        }
+    }
+}
+
+.blog {
+    h2 {
+        font-family: 'Unbounded';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 6.4rem;
+        line-height: 7rem;
+        text-transform: uppercase;
+        color: #15112B;
+    }
+
+    .blog-content {
+        display: flex;
+        gap: 2.2rem;
+        margin-top: 7.2rem;
+
+        .blog-content__item {
+            padding: 2.8rem 3.8rem 4.2rem 3.9rem;
+            background: #F8F8F8;
+            border: 0.1rem solid #F8F8F8;
+            border-radius: 4rem;
+            width: 32.9%;
+
+            .blog-content__itemImg {
+                width: 13.86%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 2rem;
+                line-height: 3rem;
+                text-transform: uppercase;
+                color: #15112B;
+                margin-top: 1.6rem;
             }
         }
     }

@@ -1792,3 +1792,146 @@ button.swiper-pagination-bullet {
 .trialLesson .trialLesson-content .third p {
     left: 5%;
 }
+
+.ourTeachers {
+    margin-top: 14rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.4rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button {
+    background: none;
+    border: 0.1rem solid #15112B;
+    border-radius: 50%;
+    width: 5.7rem;
+    height: 5.7rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button svg {
+    fill: transparent;
+    width: 0.85rem;
+    height: 1.7rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows button:first-child svg {
+    rotate: 180deg;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-titleArrows .ourTeachers-content__arrows .swiper-button-disabled {
+    opacity: 0.6;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper {
+    margin-top: 7.2rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperImg img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperTitle {
+    margin-top: 4.3rem;
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperSubtitle {
+    margin-top: 1.2rem;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    text-align: center;
+    color: #262433;
+}
+
+.reviews {
+    margin-top: 14rem;
+}
+
+.reviews .reviews-content .reviews-content__titleArrows {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.reviews .reviews-content .reviews-content__titleArrows h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.4rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.reviews .reviewsSwiper {
+    margin-top: 7.2rem;
+}
+
+.reviews .reviewsSwiper .reviews-content__swiperContainer {
+    background: #F8F8F8;
+    border-radius: 4rem;
+    padding: 3.2rem;
+}
+
+.reviews .reviewsSwiper .reviews-content__swiperContainer .reviews-content__swiperTitle {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #15112B;
+}
+
+.reviews .reviewsSwiper .reviews-content__swiperContainer .reviews-content__swiperSubtitle {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #262433;
+    margin-top: 1.6rem;
+}
+
+.reviews .reviewsSwiper .reviewsSwiper-pagination {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 3.2rem;
+}
+
+.reviews .reviewsSwiper .reviewsSwiper-pagination .swiper-pagination-bullet-active {
+    background: #15112B;
+}

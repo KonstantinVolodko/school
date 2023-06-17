@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     let ourTeachersSwiper = new Swiper(".ourTeachersSwiper", {
+        grabCursor: true,
         slidesPerView: 4.3,
         spaceBetween: 30,
         navigation: {
@@ -13,13 +14,29 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
-    var reviewsSwiper = new Swiper(".reviewsSwiper", {
+    let reviewsSwiper = new Swiper(".reviewsSwiper", {
+        grabCursor: true,
         slidesPerView: 4,
         spaceBetween: 20,
         pagination: {
             el: ".reviewsSwiper-pagination",
+            clickable: true,
         },
     });
+
+    let studentsSwiper = new Swiper(".students-swiper", {
+        slidesPerView: 3,
+        spaceBetween: 23,
+        grabCursor: true,
+        navigation: {
+            nextEl: ".students__rightArrow",
+            prevEl: ".students__leftArrow",
+        },
+        pagination: {
+          el: ".studentsSwiper-pagination",
+          clickable: true,
+        },
+      });
 })
 
 

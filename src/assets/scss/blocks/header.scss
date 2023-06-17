@@ -1,3 +1,22 @@
+.header-content__phoneContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        color: #15112B;
+    }
+}
+
 .header-content {
     display: flex;
     gap: 3.7rem;
@@ -32,23 +51,6 @@
             }
         }
     
-        .header-content__phoneContainer {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            text-decoration: none;
-    
-            svg {
-                width: 2rem;
-                height: 2rem;
-            }
-    
-            p {
-                font-weight: 500;
-                font-size: 1.8rem;
-                line-height: 2.4rem;
-                color: #15112B;
-            }
-        }
+        
     }
 }

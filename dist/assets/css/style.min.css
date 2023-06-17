@@ -561,7 +561,7 @@ svg {
 }
 .header-content .header-content__menuContainer ul {
   display: flex;
-  gap: 2.45rem;
+  gap: 2.2rem;
 }
 .header-content .header-content__menuContainer ul a {
   font-weight: 400;

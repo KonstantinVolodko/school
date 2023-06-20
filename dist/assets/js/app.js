@@ -10665,21 +10665,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let ourTeachersSwiper = new Swiper(".ourTeachersSwiper", {
         grabCursor: true,
-        slidesPerView: 4.3,
+        slidesPerView: 3,
         spaceBetween: 30,
         navigation: {
             nextEl: ".ourTeachers-content__rightArrow",
             prevEl: ".ourTeachers-content__leftArrow",
         },
+
+        breakpoints: {
+            1024: {
+                slidesPerView: 4.3,
+            },
+        },
     });
 
     let reviewsSwiper = new Swiper(".reviewsSwiper", {
         grabCursor: true,
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 20,
         pagination: {
             el: ".reviewsSwiper-pagination",
             clickable: true,
+        },
+        breakpoints: {
+            // 640: {
+            //     slidesPerView: 4,
+            // },
+            // 768: {
+            //     slidesPerView: 4,
+            // },
+            1024: {
+                slidesPerView: 4,
+            },
         },
     });
 
@@ -10753,4 +10770,59 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+
+
+
+    class Modal {
+        constructor(modalId, openButtonId) {
+            this.modal = document.getElementById(modalId);
+            this.openButton = document.getElementById(openButtonId);
+
+            this.openButton.addEventListener('click', () => {
+                this.open();
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === this.modal) {
+                    this.close();
+                }
+            });
+
+            const closeButton = this.modal.querySelector('.close');
+            closeButton.addEventListener('click', () => {
+                this.close();
+            });
+        }
+
+        open() {
+            this.modal.style.display = 'block';
+            setTimeout(() => {
+                this.modal.classList.add('open');
+            }, 10);
+        }
+
+        close() {
+            this.modal.classList.remove('open');
+            setTimeout(() => {
+                this.modal.style.display = 'none';
+            }, 300);
+        }
+    }
+
+    const myModal = new Modal('burgerModal', 'burgerBtn');
+
+    let menuContainer = document.querySelector('.header-content__menuContainer ul')
+    let modalMenuContent = document.querySelector('.header-modal__content ul')
+
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+        modalMenuContent.innerHTML = menuContainer.innerHTML
+    }
+
+    // let form = document.querySelector('.trialForm-content form')
+
+    // form.addEventListener("submit", function(event) {
+    //     event.preventDefault(); 
+    // });
+
 })

@@ -1430,6 +1430,11 @@ button.swiper-pagination-bullet {
     overflow: hidden;
 }
 
+.footer {
+    padding-bottom: 3.5rem;
+    padding-top: 3.2rem;
+}
+
 .footer-content {
     background: #DACDFF;
     border-radius: 4rem;
@@ -2173,6 +2178,10 @@ button.swiper-pagination-bullet {
     background: #15112B;
 }
 
+.blog {
+    margin-top: 14rem;
+}
+
 .blog h2 {
     font-family: "Unbounded";
     font-style: normal;
@@ -2216,4 +2225,374 @@ button.swiper-pagination-bullet {
     text-transform: uppercase;
     color: #15112B;
     margin-top: 1.6rem;
+}
+
+.trialForm {
+    margin-top: 14rem;
+}
+
+.trialForm .trialForm-content {
+    border-radius: 4rem;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+}
+
+.trialForm .trialForm-content form {
+    padding: 6.4rem 8.7rem 6rem 6.4rem;
+    background: #E9F795;
+}
+
+.trialForm .trialForm-content form h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.6rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.trialForm .trialForm-content form .trialForm-content__inputContainer {
+    margin-top: 3.8rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 93.812%;
+}
+
+.trialForm .trialForm-content form .trialForm-content__inputContainer input,
+.trialForm .trialForm-content form .trialForm-content__inputContainer .trialForm-content__customSelect {
+    background: #F4FBCA;
+    border-radius: 3rem;
+    padding: 1.7rem 2.8rem;
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #262433;
+}
+
+.trialForm .trialForm-content form button {
+    margin-top: 4rem;
+    width: 93.812%;
+}
+
+.trialForm .trialForm-content form .trialForm-content__confidence {
+    margin-top: 2rem;
+    width: 93.812%;
+}
+
+.trialForm .trialForm-content form .trialForm-content__confidence p,
+.trialForm .trialForm-content form .trialForm-content__confidence a {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: #15112B;
+}
+
+.trialForm .trialForm-content .trialForm-content__imgContainer {
+    width: 93.295%;
+}
+
+.trialForm .trialForm-content .trialForm-content__imgContainer img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.trialForm-content__customSelect {
+    position: relative;
+}
+
+.trialForm-content__customSelect select {
+    display: none;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectTriggerContainer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectTriggerContainer .trialForm-content__selectTrigger {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectTriggerContainer .arrow {
+    border: solid #15112B;
+    border-width: 0 0.2rem 0.2rem 0;
+    display: inline-block;
+    padding: 0.6rem;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.trialForm-content__customSelect .trialForm-content__selectTriggerContainer .activeArrow {
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+
+.trialForm-content__customSelect .trialForm-content__selectOptions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    list-style: none;
+    display: none;
+    padding: 1.6rem 0rem 1.6rem 0rem;
+    transition: all 0.2s linear;
+    background: #F4FBCA;
+    border-radius: 3rem;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectOptions li {
+    padding: 1rem 2.8rem;
+    cursor: pointer;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectOptions li:first-child {
+    padding-top: 0rem;
+}
+
+.trialForm-content__customSelect .trialForm-content__selectOptions li:last-child {
+    padding-bottom: 0rem;
+}
+
+.schedule {
+    margin-top: 19.6rem;
+}
+
+.schedule .schedule-content {
+    background: #F8F8F8;
+    border-radius: 4rem;
+    padding: 5.6rem;
+}
+
+.schedule .schedule-content h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.6rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.schedule .schedule-content table {
+    margin-top: 2rem;
+    display: block;
+}
+
+.schedule .schedule-content table tr:first-child {
+    background: #DACDFF;
+    border-radius: 3rem;
+}
+
+.schedule .schedule-content table tr:first-child th {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    color: #15112B;
+    padding: 0.9rem 0rem 0.8rem 0rem;
+    text-align: inherit;
+}
+
+.schedule .schedule-content table tr:first-child th:first-child,
+.schedule .schedule-content table tr:first-child td:first-child {
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    padding-left: 3.2rem;
+}
+
+.schedule .schedule-content table tr:first-child th:last-child,
+.schedule .schedule-content table tr:first-child td:last-child {
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    padding-right: 3.2rem;
+}
+
+.schedule .schedule-content table tr:first-child td {
+    padding-top: 2rem;
+}
+
+.schedule .schedule-content table tr td {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #262433;
+    padding-right: 3rem;
+}
+
+.schedule .schedule-content table tr th {
+    padding-right: 3rem;
+}
+
+.schedule .schedule-content table td:first-child {
+    padding-left: 3.2rem;
+}
+
+.schedule .schedule-content table td {
+    max-width: 30rem;
+}
+
+.schedule .schedule-content table td span {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #B89FFF;
+}
+
+.answers {
+    margin-top: 14rem;
+}
+
+.answers h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6.4rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.answers .answers-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-column-gap: 3rem;
+    -moz-column-gap: 3rem;
+    column-gap: 3rem;
+    row-gap: 1.6rem;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 7.2rem;
+}
+
+.answers .answers-content .answers-content__item {
+    background: #F8F8F8;
+    border-radius: 3rem;
+    overflow: hidden;
+    width: 48.8%;
+}
+
+.answers .answers-content .answers-content__item .answers-content__accordion {
+    cursor: pointer;
+    padding: 1.9rem 3.2rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    color: #15112B;
+    background: #F8F8F8;
+}
+
+.answers .answers-content .answers-content__item .answers-content__panel {
+    padding-left: 3.2rem;
+    padding-right: 3.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+    background: #F8F8F8;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #262433;
+}
+
+.contacts {
+    margin-top: 14rem;
+}
+
+.contacts .contacts-content {
+    display: -ms-flexbox;
+    display: flex;
+    gap: 3rem;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.contacts .contacts-content .contacts-content__text {
+    padding: 4.8rem;
+    background: #F8F8F8;
+    border-radius: 4rem;
+    width: 48.864%;
+}
+
+.contacts .contacts-content .contacts-content__text h2 {
+    font-family: "Unbounded";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 4.6rem;
+    text-transform: uppercase;
+    color: #15112B;
+}
+
+.contacts .contacts-content .contacts-content__text p {
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    color: #15112B;
+    margin-top: 2.6rem;
+}
+
+.contacts .contacts-content .contacts-content__text .contacts-content__links {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.3rem;
+    margin-top: 2.4rem;
+}
+
+.contacts .contacts-content .contacts-content__text .contacts-content__links a {
+    text-decoration: none;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.8rem;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.contacts .contacts-content .contacts-content__text .contacts-content__links a span {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #262433;
+}
+
+.contacts .contacts-content .contacts-content__text .contacts-content__links a svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.contacts .contacts-content .contacts-content__map {
+    border-radius: 4rem;
+    overflow: hidden;
+    width: 48.9%;
+}
+
+.contacts .contacts-content .contacts-content__map iframe {
+    width: 100%;
+    height: 100%;
 }

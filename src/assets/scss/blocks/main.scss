@@ -9,6 +9,11 @@
     border: 0.1rem solid #15112B;
     border-radius: 5rem;
     background: none;
+
+    @include breakpoint($xl-bp) {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+    }
 }
 
 .musicalSchool {
@@ -201,8 +206,19 @@
         display: flex;
         gap: 9.3rem;
 
+        @include breakpoint($xl-bp) {
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+
         .ourSchool-content__textBlock {
-            width: 65.1rem;
+            width: 55%;
+
+            @include breakpoint($xl-bp) {
+                width: 100%;
+            }
+    
 
             h2 {
                 font-family: 'Unbounded';
@@ -220,11 +236,20 @@
                 flex-direction: column;
                 gap: 1.6rem;
 
+                @include breakpoint($xl-bp) {
+                    margin-top: 3rem;
+                }
+
                 p {
                     font-weight: 400;
                     font-size: 1.8rem;
                     line-height: 2.4rem;
                     color: #262433;
+
+                    @include breakpoint($xl-bp) {
+                        font-size: 2.2rem;
+                        line-height: 2.8rem;
+                    }
                 }
 
                 .ourSchool-content__text_uppercase {
@@ -236,7 +261,11 @@
         }
 
         .ourSchool-content__imgBlock {
-            width: 53.5rem;
+            width: 41%;
+
+            @include breakpoint($xl-bp) {
+                width: 50%;
+            }
 
             img {
                 width: 100%;
@@ -323,17 +352,21 @@
             }
         }
 
-        .first {
+        .musicalSchool-services__contentItem:first-of-type {
             top: 15%;
             right: 3%;
+
+            @include breakpoint($xl-bp) {
+                top: 30%;
+            }
         }
 
-        .second {
+        .musicalSchool-services__contentItem:nth-of-type(2) {
             top: 55%;
             right: 17%;
         }
 
-        .third {
+        .musicalSchool-services__contentItem:last-of-type {
             bottom: 0;
             right: 40%;
             width: 17.4rem;

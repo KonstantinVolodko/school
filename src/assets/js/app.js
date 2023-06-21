@@ -75,6 +75,54 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
+    let blogSwiper = new Swiper(".blogSwiper", {
+        slidesPerView: 1.2,
+        spaceBetween: 22,
+        grabCursor: true,
+        pagination: {
+          el: ".blogSwiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+            // 640: {
+            //     slidesPerView: 4,
+            // },
+            // 768: {
+            //     slidesPerView: 4,
+            // },
+            500: {
+                slidesPerView: 2,
+            },
+            850: {
+                slidesPerView: 3,
+            },
+        },
+    });
+
+    let personalPartfolioSwiper = new Swiper(".personalPartfolioSwiper", {
+        slidesPerView: 1.6,
+        spaceBetween: 16,
+        grabCursor: true,
+        breakpoints: {
+            // 640: {
+            //     slidesPerView: 4,
+            // },
+            // 768: {
+            //     slidesPerView: 4,
+            // },
+            500: {
+                slidesPerView: 2,
+            },
+            850: {
+                slidesPerView: 3,
+            },
+        },
+
+        navigation: {
+            nextEl: ".personalPartfolioSwiper__rightArrow",
+            prevEl: ".personalPartfolioSwiper__leftArrow",
+        },
+    });
 
 
     const select = document.getElementById('my-select');
@@ -123,11 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (panel.style.maxHeight) {
                 // panel.style.paddingBottom = "0px"
                 panel.style.maxHeight = null;
+                this.querySelector('.arrow').classList.remove('activeArrow')
 
             } else {
                 // panel.style.paddingBottom = "19px"
                 panel.style.maxHeight = panel.scrollHeight + "px";
-
+                this.querySelector('.arrow').classList.add('activeArrow')
             }
         });
     }
@@ -171,7 +220,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const myModal = new Modal('burgerModal', 'burgerBtn');
+    const burgerModal = new Modal('burgerModal', 'burgerBtn');
+    const personalModal = new Modal('stanislavModal', 'stanislavBtn');
 
     let menuContainer = document.querySelector('.header-content__menuContainer ul')
     let modalMenuContent = document.querySelector('.header-modal__content ul')

@@ -2,7 +2,9 @@
     padding-bottom: 3.5rem;
     padding-top: 3.2rem;
 
-    overflow: hidden;
+    @include breakpoint($sm-bp) {
+        padding-bottom: 1.6rem;
+    }
 }
 
 .footer-content {
@@ -13,15 +15,46 @@
     flex-direction: column;
     gap: 4.2rem;
 
+    @include breakpoint($sm-bp) {
+        padding: 3.8rem 2.3rem;
+    }
+
     .footer-content__links {
         display: flex;
         justify-content: space-between;
+
+        @include breakpoint($sm-bp) {
+            flex-direction: column;
+        }
+
+        .footer-content__helper {
+            display: flex;
+            gap: 11rem;
+
+            @include breakpoint($jb-bp) {
+                gap: 4rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                flex-direction: column-reverse;
+                gap: 3.2rem;
+            }
+        }
     }
 
     .footer-content__logo {
         width: 18.9rem;
         height: 11.1rem;
         display: block;
+
+        @include breakpoint($jb-bp) {
+            width: 13.9rem;
+            height: 8.1rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            margin: 0 auto;
+        }
 
         svg {
             width: 100%;
@@ -30,14 +63,26 @@
         }
     }
 
+    .footer-content__helper {
+        margin-top: 2.6rem;
+    }
+
     .footer-content__list {
         display: flex;
         gap: 11.4rem;
+
+        @include breakpoint($sm-bp) {
+            gap: 4rem;
+        }
 
         ul {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
+
+            @include breakpoint($sm-bp) {
+                gap: 1rem;
+            }
 
             a {
                 font-weight: 400;
@@ -53,6 +98,22 @@
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
+
+        @include breakpoint($sm-bp) {
+            gap: 1.6rem;
+        }
+
+        .header-content__phoneContainer {
+            @include breakpoint($xl-bp) {
+                display: flex;
+            }
+
+            p {
+                @include breakpoint($sm-bp) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
 
         .footer-content__socialMedia {
             display: flex;
@@ -79,6 +140,11 @@
         display: flex;
         justify-content: space-between;
 
+        @include breakpoint($sm-bp) {
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
         a, p {
             font-weight: 400;
             font-size: 1.4rem;
@@ -87,6 +153,202 @@
             color: #15112B;
             opacity: 0.5;
             text-decoration: none;
+
+            @include breakpoint($sm-bp) {
+                text-align: start;
+                font-size: 1.2rem;
+                line-height: 1.6rem;
+            }
         }
     }
+}
+
+.personalModal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .personalModal-content {
+        border-radius: 4rem;
+        overflow: hidden;
+        background: #FFF;
+        margin: 15% auto;
+        padding: 4rem 4rem 5.6rem 5.6rem;
+        width: 80%;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        @include breakpoint($sm-bp) {
+            width: 100%;
+            padding: 1.5rem 1.5rem 4rem 1.5rem;
+            border-radius: 3rem;
+        }
+
+        .personalModal-content__information {
+            display: flex;
+            gap: 4rem;
+
+            @include breakpoint($jb-bp) {
+                flex-direction: column;
+            }
+
+            @include breakpoint($sm-bp) {
+                width: 100%;
+            }
+
+            .personalModal-content__img {
+                width: 40%;
+
+                @include breakpoint($jb-bp) {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+
+                @include breakpoint($sm-bp) {
+                    width: 100%;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .personalModal-content__textContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 3.2rem;
+                width: 63%;
+
+                @include breakpoint($jb-bp) {
+                    width: 100%;
+                }
+
+                .personalModal-content__titleContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.2rem;
+
+                    .personalModal-content__title {
+                        color: #15112B;
+                        font-size: 2.4rem;
+                        font-family: Unbounded;
+                        font-weight: 700;
+                        line-height: 2.6rem;
+                        text-transform: uppercase;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.8rem;
+                            line-height: 2rem;
+                        }
+                    }
+
+                    .personalModal-content__subTitle {
+                        color:#262433;
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
+                    }
+                }
+
+                .personalModal-content__text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+
+                    p {
+                        color:#262433;
+                        font-size: 1.8rem;
+                        line-height: 2.4rem;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .personalPartfolioSwiper {
+            margin-top: 4.8rem;
+
+            @include breakpoint($sm-bp) {
+                margin-top: 2.8rem;
+            }
+
+            .personalModal-content__portfolioItem {
+                display: block;
+                text-decoration: none;
+
+                .personalModal-content__img {
+                    border-radius: 3rem;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                p {
+                    color:#262433;
+                    text-align: center;
+                    font-size: 1.4rem;
+                    font-family: Rubik;
+                    line-height: 2rem;
+                    margin-top: 1.2rem;
+                }
+            }
+        }
+
+        .ourTeachers-content__arrows {
+            display: none;
+
+            @include breakpoint($sm-bp) {
+                display: flex;
+                justify-content: center;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+}
+
+.personalModal.open {
+    opacity: 1;
+
+    .personalModal-content {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #B89FFF;
+    float: right;
+    font-size: 3.8rem;
+    line-height: 2rem;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

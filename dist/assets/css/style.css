@@ -501,6 +501,12 @@ html {
     font-size: 0.7142857143vw;
 }
 
+@media (max-width: 1024px) {
+    html {
+        font-size: 0.8333333333vw;
+    }
+}
+
 *,
 *:before,
 *:after {
@@ -536,6 +542,12 @@ svg {
     text-decoration: none;
 }
 
+@media (max-width: 1024px) {
+    .header-content__phoneContainer {
+        display: none;
+    }
+}
+
 .header-content__phoneContainer svg {
     width: 2rem;
     height: 2rem;
@@ -555,6 +567,13 @@ svg {
     -ms-flex-align: center;
     align-items: center;
     padding-top: 3.1rem;
+}
+
+@media (max-width: 1024px) {
+    .header-content {
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
 }
 
 .header-content .header-content__logo {
@@ -580,12 +599,147 @@ svg {
     gap: 2.2rem;
 }
 
+@media (max-width: 1024px) {
+    .header-content .header-content__menuContainer ul {
+        display: none;
+    }
+}
+
 .header-content .header-content__menuContainer ul a {
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: #15112B;
     text-decoration: none;
+}
+
+.header-content .header-content__burgerBtn {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0.6rem;
+    width: 4.8rem;
+    background: none;
+    border: none;
+}
+
+@media (min-width: 1024px) {
+    .header-content .header-content__burgerBtn {
+        display: none;
+    }
+}
+
+.header-content .header-content__burgerBtn div {
+    width: 100%;
+    height: 0.5rem;
+    background: #210616;
+}
+
+.header-modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.header-modal .header-modal__logo {
+    display: block;
+    width: 21rem;
+    height: 12rem;
+}
+
+.header-modal .header-modal__logo svg {
+    width: 100%;
+    height: 100%;
+    stroke: black;
+}
+
+.header-modal .header-modal__content {
+    width: 100%;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    background: #FFFFFF;
+    border-radius: 0px 0px 3rem 3rem;
+    padding: 3.1rem 4rem;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.header-modal .header-modal__content ul {
+    margin-top: 3rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header-modal .header-modal__content ul li a {
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    color: #15112B;
+    text-decoration: none;
+}
+
+.header-modal .header-modal__content .header-modal__phoneContainer {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    color: #15112B;
+    text-decoration: none;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.header-modal .header-modal__content .header-modal__phoneContainer svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.header-modal .header-modal__content button {
+    margin-top: 2rem;
+}
+
+.header-modal .header-modal__content .close {
+    color: #B89FFF;
+    float: right;
+    font-size: 6rem;
+    cursor: pointer;
+    line-height: 4rem;
+}
+
+.header-modal .header-modal__content .close:hover, .header-modal .header-modal__content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.header-modal.open {
+    opacity: 1;
+}
+
+.header-modal.open .header-modal__content {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /**
@@ -1549,6 +1703,13 @@ button.swiper-pagination-bullet {
     background: none;
 }
 
+@media (max-width: 1024px) {
+    .whiteBtn {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+    }
+}
+
 .musicalSchool {
     margin-top: 6.8rem;
 }
@@ -1752,8 +1913,24 @@ button.swiper-pagination-bullet {
     gap: 9.3rem;
 }
 
+@media (max-width: 1024px) {
+    .ourSchool .ourSchool-content {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 3rem;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
 .ourSchool .ourSchool-content .ourSchool-content__textBlock {
-    width: 65.1rem;
+    width: 55%;
+}
+
+@media (max-width: 1024px) {
+    .ourSchool .ourSchool-content .ourSchool-content__textBlock {
+        width: 100%;
+    }
 }
 
 .ourSchool .ourSchool-content .ourSchool-content__textBlock h2 {
@@ -1775,11 +1952,24 @@ button.swiper-pagination-bullet {
     gap: 1.6rem;
 }
 
+@media (max-width: 1024px) {
+    .ourSchool .ourSchool-content .ourSchool-content__textBlock .ourSchool-content__text {
+        margin-top: 3rem;
+    }
+}
+
 .ourSchool .ourSchool-content .ourSchool-content__textBlock .ourSchool-content__text p {
     font-weight: 400;
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: #262433;
+}
+
+@media (max-width: 1024px) {
+    .ourSchool .ourSchool-content .ourSchool-content__textBlock .ourSchool-content__text p {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+    }
 }
 
 .ourSchool .ourSchool-content .ourSchool-content__textBlock .ourSchool-content__text .ourSchool-content__text_uppercase {
@@ -1789,7 +1979,13 @@ button.swiper-pagination-bullet {
 }
 
 .ourSchool .ourSchool-content .ourSchool-content__imgBlock {
-    width: 53.5rem;
+    width: 41%;
+}
+
+@media (max-width: 1024px) {
+    .ourSchool .ourSchool-content .ourSchool-content__imgBlock {
+        width: 50%;
+    }
 }
 
 .ourSchool .ourSchool-content .ourSchool-content__imgBlock img {
@@ -1879,23 +2075,29 @@ button.swiper-pagination-bullet {
     left: 20%;
 }
 
-.trialLesson .trialLesson-content .first {
+.trialLesson .trialLesson-content .musicalSchool-services__contentItem:first-of-type {
     top: 15%;
     right: 3%;
 }
 
-.trialLesson .trialLesson-content .second {
+@media (max-width: 1024px) {
+    .trialLesson .trialLesson-content .musicalSchool-services__contentItem:first-of-type {
+        top: 30%;
+    }
+}
+
+.trialLesson .trialLesson-content .musicalSchool-services__contentItem:nth-of-type(2) {
     top: 55%;
     right: 17%;
 }
 
-.trialLesson .trialLesson-content .third {
+.trialLesson .trialLesson-content .musicalSchool-services__contentItem:last-of-type {
     bottom: 0;
     right: 40%;
     width: 17.4rem;
 }
 
-.trialLesson .trialLesson-content .third p {
+.trialLesson .trialLesson-content .musicalSchool-services__contentItem:last-of-type p {
     left: 5%;
 }
 

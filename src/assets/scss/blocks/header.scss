@@ -31,10 +31,19 @@
         justify-content: space-between;
     }
 
+    @include breakpoint($sm-bp) {
+        padding-top: 1rem;
+    }
+
     .header-content__logo {
         stroke: black;
         width: 21.7rem;
         height: 7.9rem;
+
+        @include breakpoint($jb-bp) {
+            width: 11.7rem;
+            height: 5.9rem;
+        }
 
         svg {
             width: 100%;
@@ -76,10 +85,18 @@
             display: none;
         }
 
+        @include breakpoint($sm-bp) {
+            width: 2.8rem;
+        }
+
         div {
             width: 100%;
             height: 0.5rem;
             background: #210616;
+
+            @include breakpoint($sm-bp) {
+                height: 0.2rem;
+            }
         }
     }
 }
@@ -101,6 +118,11 @@
         display: block;
         width: 21rem;
         height: 12rem;
+
+        @include breakpoint($jb-bp) {
+            width: 12rem;
+            height: 7rem;
+        }
     
         svg {
             width: 100%;
@@ -114,16 +136,22 @@
         height: min-content;
         background: #FFFFFF;
         border-radius: 0px 0px 3rem 3rem;
-        padding: 3.1rem 4rem;
+        padding-top: 3.1rem;
+        padding-bottom: 3.1rem;
         transform: translateY(-50px);
         opacity: 0;
         transition: transform 0.3s ease, opacity 0.3s ease;
+       
 
         ul {
             margin-top: 3rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+
+            @include breakpoint($jb-bp) {
+                margin-top: 2rem;
+            }
 
             li {
                 a {
@@ -132,6 +160,12 @@
                     line-height: 2.4rem;
                     color: #15112B;
                     text-decoration: none;
+
+                    @include breakpoint($jb-bp) {
+                        font-size: 2.2rem;
+                        line-height: 2rem;
+                    }
+
                 }
             }
         }

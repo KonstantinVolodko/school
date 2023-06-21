@@ -10665,7 +10665,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let ourTeachersSwiper = new Swiper(".ourTeachersSwiper", {
         grabCursor: true,
-        slidesPerView: 3,
+        slidesPerView: 1.7,
         spaceBetween: 30,
         navigation: {
             nextEl: ".ourTeachers-content__rightArrow",
@@ -10673,6 +10673,9 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         breakpoints: {
+            500: {
+                slidesPerView: 3,
+            },
             1024: {
                 slidesPerView: 4.3,
             },
@@ -10681,7 +10684,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let reviewsSwiper = new Swiper(".reviewsSwiper", {
         grabCursor: true,
-        slidesPerView: 3,
+        slidesPerView: 1.15,
         spaceBetween: 20,
         pagination: {
             el: ".reviewsSwiper-pagination",
@@ -10694,14 +10697,17 @@ document.addEventListener("DOMContentLoaded", () => {
             // 768: {
             //     slidesPerView: 4,
             // },
-            1024: {
+            500: {
+                slidesPerView: 2,
+            },
+            850: {
                 slidesPerView: 4,
             },
         },
     });
 
     let studentsSwiper = new Swiper(".students-swiper", {
-        slidesPerView: 3,
+        slidesPerView: 1.2,
         spaceBetween: 23,
         grabCursor: true,
         navigation: {
@@ -10711,6 +10717,20 @@ document.addEventListener("DOMContentLoaded", () => {
         pagination: {
             el: ".studentsSwiper-pagination",
             clickable: true,
+        },
+        breakpoints: {
+            // 640: {
+            //     slidesPerView: 4,
+            // },
+            // 768: {
+            //     slidesPerView: 4,
+            // },
+            500: {
+                slidesPerView: 2,
+            },
+            850: {
+                slidesPerView: 3,
+            },
         },
     });
 
@@ -10824,5 +10844,32 @@ document.addEventListener("DOMContentLoaded", () => {
     // form.addEventListener("submit", function(event) {
     //     event.preventDefault(); 
     // });
+
+
+    var scrollableContainer = document.querySelector('.schedule-content table');
+    var isDragging = false;
+    var startPosition = 0;
+    var scrollLeft = 0;
+
+    scrollableContainer.addEventListener('mousedown', function (event) {
+        isDragging = true;
+        startPosition = event.clientX;
+        scrollLeft = scrollableContainer.scrollLeft;
+    });
+
+    scrollableContainer.addEventListener('mousemove', function (event) {
+        if (isDragging) {
+            var distance = event.clientX - startPosition;
+            scrollableContainer.scrollLeft = scrollLeft - distance;
+        }
+    });
+
+    scrollableContainer.addEventListener('mouseup', function () {
+        isDragging = false;
+    });
+
+    scrollableContainer.addEventListener('mouseleave', function () {
+        isDragging = false;
+    });
 
 })

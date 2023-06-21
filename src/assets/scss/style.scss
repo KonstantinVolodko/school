@@ -19,17 +19,17 @@ html {
     font-size: calc(100vw / 1200 * 10);
   }
 
-  // @include breakpoint($jb-bp) {
-  //   font-size: calc(100vw / 850 * 10);
-  // }
+  @include breakpoint($jb-bp) {
+    font-size: calc(100vw / 850 * 10);
+  }
 
   // @include breakpoint($lb-bp) {
   //   font-size: calc(100vw / 650 * 10);
   // }
 
-  // @include breakpoint($sm-bp) {
-  //   font-size: calc(100vw / 375 * 10);
-  // }
+  @include breakpoint($sm-bp) {
+    font-size: calc(100vw / 320 * 10);
+  }
 
 }
 
@@ -61,8 +61,47 @@ svg {
 .pagePadding {
   padding-left: 4rem;
   padding-right: 4rem;
+
+  @include breakpoint($jb-bp) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
+h2 {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7rem;
+  text-transform: uppercase;
+  color: #15112B;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.5rem;
+    line-height: 3.1rem;
+  }
+}
+
+h3 {
+  font-family: 'Unbounded';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 4.6rem;
+  text-transform: uppercase;
+  color: #15112B;
+
+  @include breakpoint($sm-bp) {
+      font-size: 2rem;
+      line-height: 2.8rem;
+  }
+}
 
 
 

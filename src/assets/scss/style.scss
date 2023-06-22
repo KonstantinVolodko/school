@@ -40,11 +40,13 @@ html {
 *:after {
   box-sizing: inherit;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Rubik';
   font-style: normal;
+
 }
 
 
@@ -109,3 +111,4 @@ h3 {
 @import './blocks/swiper.scss';
 @import './blocks/footer.scss';
 @import './blocks/main.scss';
+@import './blocks/article.scss';

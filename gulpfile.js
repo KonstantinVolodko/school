@@ -1,6 +1,6 @@
 "use strict";
 
-const { src, dest } = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp");
 const gulp = require("gulp");
 const autoprefixer = require("gulp-autoprefixer");
 const cssbeautify = require("gulp-cssbeautify");
@@ -25,28 +25,34 @@ const distPath = "dist/";
 const path = {
   build: {
     html: distPath,
+    php: distPath, // Добавлено
     js: distPath + "assets/js/",
     css: distPath + "assets/css/",
     images: distPath + "assets/images/",
     fonts: distPath + "assets/fonts/",
+    videos: distPath + "assets/videos/",
   },
   src: {
     html: srcPath + "*.html",
+    php: srcPath + "*.php", // Добавлено
     js: srcPath + "assets/js/*.js",
     css: srcPath + "assets/scss/*.scss",
     images:
       srcPath +
       "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
     fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
+    videos: srcPath + "assets/videos/**/*.{mp4,webm}",
   },
   watch: {
     html: srcPath + "**/*.html",
+    php: srcPath + "**/*.php", // Добавлено
     js: srcPath + "assets/js/**/*.js",
     css: srcPath + "assets/scss/**/*.scss",
     images:
       srcPath +
       "assets/images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
     fonts: srcPath + "assets/fonts/**/*.{eot,woff,woff2,ttf,svg}",
+    videos: srcPath + "assets/videos/**/*.{mp4,webm}",
   },
   clean: "./" + distPath,
 };
@@ -76,8 +82,12 @@ function html(cb) {
     )
     .pipe(dest(path.build.html))
     .pipe(browserSync.reload({ stream: true }));
+}
 
-  cb();
+function php(cb) {
+  return src(path.src.php, { base: srcPath }) // Используем исходный путь для PHP файлов
+    .pipe(dest(path.build.php)) // Копируем файлы в папку dist
+    .pipe(browserSync.reload({ stream: true }));
 }
 
 function css(cb) {
@@ -111,27 +121,6 @@ function css(cb) {
     )
     .pipe(dest(path.build.css))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
-}
-
-function cssWatch(cb) {
-  return src(path.src.css, { base: srcPath + "assets/scss/" })
-    .pipe(
-      sass({
-        includePaths: "./node_modules/",
-      })
-    )
-    .pipe(
-      rename({
-        suffix: ".min",
-        extname: ".css",
-      })
-    )
-    .pipe(dest(path.build.css))
-    .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function js(cb) {
@@ -139,17 +128,6 @@ function js(cb) {
     .pipe(rigger())
     .pipe(dest(path.build.js))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
-}
-
-function jsWatch(cb) {
-  return src(path.src.js, { base: srcPath + "assets/js/" })
-    .pipe(rigger())
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function images(cb) {
@@ -166,51 +144,49 @@ function images(cb) {
     )
     .pipe(dest(path.build.images))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
-function imagesWatch(cb) {
-  return src(path.src.images)
-    .pipe(dest(path.build.images))
+function videos(cb) {
+  return src(path.src.videos)
+    .pipe(dest(path.build.videos))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function fonts(cb) {
   return src(path.src.fonts)
     .pipe(dest(path.build.fonts))
     .pipe(browserSync.reload({ stream: true }));
-
-  cb();
 }
 
 function clean(cb) {
   return del(path.clean);
-
-  cb();
 }
 
 function watchFiles() {
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], cssWatch);
-  gulp.watch([path.watch.js], jsWatch);
-  gulp.watch([path.watch.images], imagesWatch);
-  // gulp.watch([path.watch.images], images);
-  gulp.watch([path.watch.fonts], fonts);
+  watch([path.watch.html], html);
+  watch([path.watch.php], php); // Добавлено
+  watch([path.watch.css], css);
+  watch([path.watch.js], js);
+  watch([path.watch.images], images);
+  watch([path.watch.videos], videos);
+  watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, fonts));
-const watch = gulp.parallel(build, watchFiles, serve);
+const build = series(
+  clean,
+  parallel(html, php, css, js, images, videos, fonts) // Добавлено php
+);
+const dev = parallel(build, watchFiles, serve);
 
 /* Exports Tasks */
 exports.html = html;
+exports.php = php; // Добавлено
 exports.css = css;
 exports.js = js;
 exports.images = images;
+exports.videos = videos;
 exports.fonts = fonts;
 exports.clean = clean;
 exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+exports.dev = dev;
+exports.default = dev;

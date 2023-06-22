@@ -10701,6 +10701,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 slidesPerView: 2,
             },
             850: {
+                slidesPerView: 3,
+            },
+            1024: {
                 slidesPerView: 4,
             },
         },
@@ -10739,8 +10742,8 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 22,
         grabCursor: true,
         pagination: {
-          el: ".blogSwiper-pagination",
-          clickable: true,
+            el: ".blogSwiper-pagination",
+            clickable: true,
         },
         breakpoints: {
             // 640: {
@@ -10882,6 +10885,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const burgerModal = new Modal('burgerModal', 'burgerBtn');
     const personalModal = new Modal('stanislavModal', 'stanislavBtn');
 
+    let burgerModalBtn = document.querySelector('.header-modal__content .whiteBtn')
+    let burgerModalClose = document.querySelector('.header-modal__content .close')
+
+    burgerModalBtn.addEventListener('click', () => {
+        burgerModalClose.click()
+    })
+
     let menuContainer = document.querySelector('.header-content__menuContainer ul')
     let modalMenuContent = document.querySelector('.header-modal__content ul')
 
@@ -10889,11 +10899,51 @@ document.addEventListener("DOMContentLoaded", () => {
         modalMenuContent.innerHTML = menuContainer.innerHTML
     }
 
-    // let form = document.querySelector('.trialForm-content form')
+    const phoneNumberRegex = /^(\+\d{1,3}\s?)?(\(\d{1,3}\)\s?)?(\d{1,4}[\s.-])?(\d{1,4}[\s.-])?(\d{1,9})$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // form.addEventListener("submit", function(event) {
-    //     event.preventDefault(); 
-    // });
+    const form = document.querySelector('.trialForm-content form');
+    const phoneNumberInput = document.getElementById('phone');
+    const emailInput = document.getElementById('email');
+
+
+    form.addEventListener('submit', function (event) {
+        const phoneNumber = phoneNumberInput.value;
+        const email = emailInput.value;
+
+        let isValid = true;
+
+        if (!phoneNumberRegex.test(phoneNumber)) {
+            phoneNumberInput.style.border = "0.1rem solid #ED7070"
+            phoneNumberInput.nextElementSibling.style.display = "block"
+            isValid = false;
+        }
+
+        if (!emailRegex.test(email)) {
+            emailInput.style.border = "0.1rem solid #ED7070"
+            emailInput.nextElementSibling.style.display = "block"
+            isValid = false;
+        }
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+    });
+
+    const playBtn = document.querySelector('.ourSchool-videoBlock__video svg');
+    const videoElement = document.querySelector('.ourSchool-videoBlock__video video');
+
+    playBtn.addEventListener('click', function () {
+        playBtn.style.display = 'none';
+        videoElement.controls = true;
+        videoElement.play();
+    });
+
+    videoElement.addEventListener('click', function () {
+        playBtn.style.display = 'none';
+        videoElement.controls = true;
+        videoElement.play();
+    });
 
 
     var scrollableContainer = document.querySelector('.schedule-content table');
@@ -10921,5 +10971,55 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollableContainer.addEventListener('mouseleave', function () {
         isDragging = false;
     });
+
+    function doAPIcall(type, data = '', url, callback) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
+                var data = xmlhttp.responseText;
+                if (callback) callback(data);
+            }
+        };
+        xmlhttp.open(type, url, true);
+        if (data) {
+            xmlhttp.send(data);
+            return
+        }
+        xmlhttp.send(data)
+    }
+
+
+    for (const form of document.forms) {
+        form.addEventListener('submit', function () {
+            if (this.dataset.id) {
+                if (this.dataset.id === 'search') {
+                    return
+                }
+            }
+
+            event.preventDefault();
+            const formData = new FormData(this);
+            doAPIcall('POST', formData, '/send.php', function (data) {
+                console.log(data)
+            })
+            const parent = this.closest('.regModal');
+            const feedback = document.querySelector('#feedback');
+
+            for (const key of formData.entries()) {
+                console.log(key);
+            }
+
+            this.reset();
+
+            if (parent) {
+                modalHandler.apply(parent);
+            } else {
+            }
+
+            if (feedback) {
+                modalHandler.apply(feedback);
+            }
+        });
+    }
 
 })

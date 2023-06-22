@@ -61,6 +61,12 @@
             height: 100%;
             stroke: black;
         }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
     .footer-content__helper {

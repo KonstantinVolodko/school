@@ -3,7 +3,7 @@
 
     <div class="musicalSchool-text">
         <p>«Развиваем таланты, формируем лидеров, создаем будущее вместе!»</p>
-        <button class="whiteBtn">Записаться на пробное занятие</button>
+        <a href="#trialForm" class="whiteBtn">Записаться на пробное занятие</a>
     </div>
 
     <div class="musicalSchool-services">
@@ -31,7 +31,7 @@
     </div>
 </section>
 
-<section class="mission">
+<section class="mission" id="aboutSchool">
     <div class="mission-content">
         <div class="mission-content__imgContainer">
             <div class="mission-content__img">
@@ -63,7 +63,7 @@
                 <p>Занятия проходят в небольших группах до 10-13 человек, что позволяет нашим педагогам уделить
                     достаточно внимания каждому ребенку. Уроки проводятся два раза в неделю по 2 часа.</p>
 
-                <button class="whiteBtn">Узнать стоимость</button>
+                <a href="#price" class="whiteBtn">Узнать стоимость</a>
             </div>
         </div>
     </div>
@@ -95,12 +95,15 @@
 
     <div class="ourSchool-videoBlock">
         <div class="ourSchool-videoBlock__video">
-            <video src="путь_к_вашему_видеофайлу.mp4" poster="./assets/images/videoPreview.jpg" controls></video>
+            <video src="./assets/videos/desctopVideo.mp4"></video>
+            <svg>
+                <use href="#playIco"></use>
+            </svg>
         </div>
 
-        <div class="ourSchool-videoBlock__img">
+        <a href="#ourTeachers" class="ourSchool-videoBlock__img">
             <img src="./assets/images/groupPhoto.jpg" alt="#">
-        </div>
+        </a>
     </div>
 </section>
 
@@ -108,7 +111,7 @@
     <div class="trialLesson-content">
         <h3>узнайте больше о нашей школе, записавшись на пробное занятие</h3>
 
-        <button class="whiteBtn">Записаться на занятие</button>
+        <a href="#" class="whiteBtn">Записаться на занятие</a>
 
         <div class="musicalSchool-services__contentItem">
             <svg>
@@ -131,7 +134,7 @@
     </div>
 </section>
 
-<section class="ourTeachers pagePadding">
+<section class="ourTeachers pagePadding" id="ourTeachers">
     <div class="ourTeachers-content">
         <div class="ourTeachers-titleArrows">
             <h2>наши педагоги</h2>
@@ -216,14 +219,23 @@
     </div>
 </section>
 
-<section class="reviews pagePadding">
+<section class="reviews pagePadding" id="reviews">
     <div class="reviews-content">
         <div class="reviews-content__titleArrows">
             <h2>
                 отзывы
             </h2>
 
-            <button class="whiteBtn">Оставить отзыв</button>
+            <div class="reviews-content__helper">
+                <div class="reviews-content__people">
+                    <div class="reviews-content__img">
+                        <img src="./assets/images/peopleImg.png" alt="#">
+                    </div>
+                    <p>Орфография и пунктуация авторов сохранены</p>
+                </div>
+    
+                <a href="#" class="whiteBtn">Оставить отзыв</a>
+            </div>
         </div>
     </div>
 
@@ -311,7 +323,7 @@
     </div>
 </section>
 
-<section class="price pagePadding">
+<section class="price pagePadding" id="price">
     <div class="price-content">
         <div class="price-content__item">
             <h2>стоимость занятий</h2>
@@ -321,7 +333,7 @@
             <div class="price-content__itemText">
                 <p class="price-content__itemTitle">Группа 5-7 лет</p>
                 <p class="price-content__itemSubtitle">Занятия 2 раза в неделю по 1,5 часа. 5 600₽/месяц</p>
-                <button class="whiteBtn">Записаться в группу</button>
+                <a href="#trialForm" class="whiteBtn">Записаться в группу</a>
             </div>
 
             <div class="price-content__itemImg">
@@ -333,7 +345,7 @@
             <div class="price-content__itemText">
                 <p class="price-content__itemTitle">Группа 3,5-5 лет</p>
                 <p class="price-content__itemSubtitle">Занятия 1 раз в неделю по 45 минут. 2 600₽/месяц</p>
-                <button class="whiteBtn">Записаться в группу</button>
+                <a href="#trialForm" class="whiteBtn">Записаться в группу</a>
             </div>
 
             <div class="price-content__itemImg">
@@ -345,7 +357,7 @@
             <div class="price-content__itemText">
                 <p class="price-content__itemTitle">Группа 8-11 лет</p>
                 <p class="price-content__itemSubtitle">Занятия 2 раза в неделю по 2 часа 7 200₽/месяц</p>
-                <button class="whiteBtn">Записаться в группу</button>
+                <a href="#trialForm" class="whiteBtn">Записаться в группу</a>
             </div>
 
             <div class="price-content__itemImg">
@@ -359,7 +371,7 @@
     </div>
 </section>
 
-<section class="students pagePadding">
+<section class="students pagePadding" id="students">
     <div class="ourTeachers-titleArrows">
         <h2>Наши ученики и выступления</h2>
         <div class="ourTeachers-content__arrows">
@@ -404,7 +416,7 @@
     </div>
 </section>
 
-<section class="blog pagePadding">
+<section class="blog pagePadding" id="blog">
     <h2>Блог</h2>
     <!-- <div class="blog-content">
         <a href="#" class="blog-content__item">
@@ -435,7 +447,7 @@
     <div class="swiper blogSwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <a href="#" class="blogSwiper__item">
+                <a href="/article.html" class="blogSwiper__item">
                     <div class="blogSwiper__itemImg">
                         <img src="./assets/images/blogImg1.jpg" alt="#">
                     </div>
@@ -444,7 +456,7 @@
                 </a>
             </div>
             <div class="swiper-slide">
-                <a href="#" class="blogSwiper__item">
+                <a href="/article.html" class="blogSwiper__item">
                     <div class="blogSwiper__itemImg">
                         <img src="./assets/images/blogImg2.jpg" alt="#">
                     </div>
@@ -453,7 +465,7 @@
                 </a>
             </div>
             <div class="swiper-slide">
-                <a href="#" class="blogSwiper__item">
+                <a href="/article.html" class="blogSwiper__item">
                     <div class="blogSwiper__itemImg">
                         <img src="./assets/images/blogImg3.jpg" alt="#">
                     </div>
@@ -475,14 +487,16 @@
     </div>
 </section>
 
-<section class="trialForm pagePadding">
+<section class="trialForm pagePadding" id="trialForm">
     <div class="trialForm-content">
         <form action="#">
-            <h2>запишитесь на пробное занятие</h2>
+            <h3>запишитесь на пробное занятие</h3>
             <div class="trialForm-content__inputContainer">
                 <input type="text" placeholder="Ваше имя" name="name">
-                <input type="tel" placeholder="+7 (926) 373 19-20" name="phone">
-                <input type="email" placeholder="Электронная почта" name="mail">
+                <input type="tel" placeholder="+7 (926) 373 19-20" name="phone" id="phone">
+                <div class="phoneAlert">Введите номер телефона</div>
+                <input type="email" placeholder="Электронная почта" name="mail" id="email">
+                <div class="emailAlert">Введите почту</div>
                 <div class="trialForm-content__customSelect">
                     <select id="my-select">
                         <option value="option1">Группа 3,5-5 лет</option>
@@ -515,7 +529,7 @@
 
 <section class="schedule">
     <div class="schedule-content">
-        <h2>Расписание</h2>
+        <h3>Расписание</h3>
         <table>
             <tr>
                 <th>Группа</th>
@@ -623,7 +637,7 @@
     </div>
 </section>
 
-<section class="contacts pagePadding">
+<section class="contacts pagePadding" id="contacts">
     <div class="contacts-content">
         <div class="contacts-content__text">
             <h3>Наши контакты</h3>
@@ -654,10 +668,7 @@
         </div>
 
         <div class="contacts-content__map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.3457217462253!2d37.42205248301761!3d55.89198769723819!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b539deb4cc040b%3A0x39ba06be6e72eb1b!2z0KjQutC-0LvQsCDQnNGO0LfQuNC60LvQsCDQodGC0LDRgdCwINCn0YPQvdC40YXQuNC90LA!5e0!3m2!1sru!2sby!4v1687185313474!5m2!1sru!2sby"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://yandex.by/map-widget/v1/?ll=37.423464%2C55.892261&mode=search&oid=44674587030&ol=biz&z=18.35" frameborder="1" allowfullscreen="false" style="position:relative;"></iframe>
         </div>
     </div>
 </section>

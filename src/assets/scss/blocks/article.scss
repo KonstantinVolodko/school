@@ -1,0 +1,283 @@
+.breadCrumps {
+    margin-top: 4.8rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 1.6rem;
+    }
+
+    p,
+    li {
+        color: #15112B80;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    a {
+        color: #B89FFF;
+        text-decoration: none;
+    }
+}
+
+.article {
+    margin-top: 4.8rem;
+
+    @include breakpoint($sm-bp) {
+        margin-top: 2.6rem;
+    }
+
+    .article-content {
+        display: flex;
+        gap: 8.2rem;
+
+        
+        @include breakpoint($jb-bp) {
+            flex-direction: column;
+            gap: 4.2rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            gap: 6.4rem;
+        }
+
+        .article-content__information {
+            p {
+                color: #262433;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+            }
+
+            h1 {
+                color: #15112B;
+                font-size: 4rem;
+                font-family: Unbounded;
+                font-weight: 700;
+                line-height: 4.6rem;
+                text-transform: uppercase;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 2rem;
+                    line-height: 2.8rem;
+                }
+            }
+
+
+            .article-content__img {
+                width: 100%;
+                margin-top: 5.6rem;
+                border-radius: 4rem;
+                overflow: hidden;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2.4rem;
+                    border-radius: 3rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            p {
+                margin-top: 3.2rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2rem;
+                }
+            }
+
+            h3 {
+                margin-top: 2.4rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2rem;
+                }
+            }
+
+            .article-content__reasons {
+                margin-top: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                @include breakpoint($sm-bp) {
+                    margin-top: 2rem;
+                }
+
+                p {
+                    margin-top: 0rem;
+                }
+
+                .article-content__title {
+                    color: #262433;
+                    font-size: 1.6rem;
+                    font-family: Unbounded;
+                    font-weight: 600;
+                    line-height: 2.2rem;
+                    text-transform: uppercase;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.4rem;
+                        line-height: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .article-content__navigationContainer {
+
+        .article-content__navigationContent {
+            padding: 3.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            background:#F8F8F8;
+            border-radius: 4rem;
+            position: sticky;
+            top: 5%;
+
+            @include breakpoint($sm-bp) {
+                padding: 0rem;
+                background: none;
+                gap: 3.2rem;
+            }
+
+            .article-content__more {
+                padding: 4rem 3rem 0rem 3rem;
+                border-radius: 3rem;
+                background:#DACDFF;
+                overflow: hidden;
+
+                @include breakpoint($sm-bp) {
+                    padding: 4rem 1.7rem 0rem 1.7rem;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    line-height: 2.8rem;
+                    text-transform: uppercase;
+                }
+
+                .whiteBtn {
+                    margin-top: 4rem;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .article-content__imgContainer {
+                    margin-top: 4.8rem;
+                    align-items: flex-end;
+                    display: flex;
+                    gap: 1.6rem;
+                    
+                    @include breakpoint($jb-bp) {
+                        justify-content: center;
+                    }
+
+                    .musicalSchool-services__contentItem {
+                        position: relative;
+
+                        svg {
+                            width: 6.8rem;
+                            height: 6.4rem;
+                        }
+
+                        p {
+                            position: absolute;
+                            z-index: 2;
+                            top: 40%;
+                            left: 15%;
+                            font-size: 1rem;
+                            font-family: Unbounded;
+                            font-weight: 600;
+                            line-height: 1.2rem;
+                            text-transform: uppercase;
+                            color: #FFF;
+                            text-align: center;
+                        }
+                    }
+
+                    .musicalSchool-services__contentItem:first-of-type {
+                        svg {
+                            width: 10rem;
+                            height: 6.5rem;
+                        }
+
+                        p {
+                            top: 35%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+
+            .article-content__othersArticles {
+                display: flex;
+                flex-direction: column;
+                gap: 2.4rem;
+
+                .article-content__title {
+                    color: #15112B;
+                    font-size: 1.6rem;
+                    font-family: Unbounded;
+                    font-weight: 600;
+                    line-height: 2.2rem;
+                    text-transform: uppercase;
+
+                    @include breakpoint($sm-bp) {
+                        font-size: 1.4rem;
+                        line-height: 1.8rem;
+                    }
+                }
+
+                .article-content__otherItem {
+                    display: flex;
+                    gap: 1.6rem;
+                    align-items: center;
+                    text-decoration: none;
+
+                    .article-content__img {
+                        width: 22%;
+
+                        @include breakpoint($jb-bp) {
+                            width: 7%;
+                        }
+
+                        @include breakpoint($sm-bp) {
+                            width: 22%;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    p {
+                        color: #15112B;
+                        font-size: 1.6rem;
+                        line-height: 2.6rem;
+                        text-transform: uppercase;
+
+                        @include breakpoint($sm-bp) {
+                            font-size: 1.4rem;
+                            line-height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

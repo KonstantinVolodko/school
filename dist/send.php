@@ -2,28 +2,28 @@
 
 if ($_POST) {
     $name = ($_POST['name']);
-    $phone = ($_POST['tel']);
-    $email = ($_POST['email']);
-    $text = ($_POST['message']);
+    $phone = ($_POST['phone']);
+    $email = ($_POST['mail']);
+    $selectedOption = ($_POST['selectedOption']);
+    $formName = ($_POST['formName']);
 
     $HTTP_HOST = $_SERVER["HTTP_HOST"];
-    $messag = "Письмо об обратном звонке с сайта " . $HTTP_HOST . "\n";
-    $messag = $messag . "-------------------------------------- \n\n";
-    $messag = $messag . "Форма: " . substr(htmlspecialchars($_POST["whatisit"]), 0, 62) . "\n";
-    $messag = $messag . "Имя: " . substr(htmlspecialchars($name), 0, 62) . "\n";
-    $messag = $messag . "Телефон: " . substr(htmlspecialchars($phone), 0, 62) . "\n";
-    $messag = $messag . "Email: " . substr(htmlspecialchars($email), 0, 62) . "\n";
-    $messag = $messag . "Сообщение: " . substr(htmlspecialchars($text), 0, 62) . "\n";
-    $messag = $messag . "-------------------------------------- \n\n";
-    $messag = $messag . "Дата: " . date("d.m.Y h:i") . "\n";
-    $messag = $messag . "IP: " . htmlspecialchars($_SERVER['REMOTE_ADDR']);
-    $body = $messag;
+    $message = "Письмо об обратном звонке с сайта " . $HTTP_HOST . "\n";
+    $message .= "-------------------------------------- \n\n";
+    $message .= "Форма: " . substr(htmlspecialchars($formName), 0, 62) . "\n";
+    $message .= "Имя: " . substr(htmlspecialchars($name), 0, 62) . "\n";
+    $message .= "Телефон: " . substr(htmlspecialchars($phone), 0, 62) . "\n";
+    $message .= "Email: " . substr(htmlspecialchars($email), 0, 62) . "\n";
+    $message .= "Выбранная группа: " . substr(htmlspecialchars($selectedOption), 0, 62) . "\n";
+    $message .= "-------------------------------------- \n\n";
+    $message .= "Дата: " . date("d.m.Y h:i") . "\n";
+    $message .= "IP: " . htmlspecialchars($_SERVER['REMOTE_ADDR']);
+    $body = $message;
 
-    if (mail("tyfygas@mailto.plus", "Письмо об обратном звонке с сайта " . $HTTP_HOST , $body, "From: info@infa.ru\r\n")) {
-        echo "oшибок нет";
+    if (mail("qekca@mailto.plus", "Письмо об обратном звонке с сайта " . $HTTP_HOST, $body, "From: info@infa.ru\r\n")) {
+        echo "Сообщение успешно отправлено";
     } else {
-        echo "при отправке сообщения возникли ошибки";
+        echo "Ошибка при отправке сообщения";
     }
 }
-
 ?>

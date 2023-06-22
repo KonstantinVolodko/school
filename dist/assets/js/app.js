@@ -10884,6 +10884,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const burgerModal = new Modal('burgerModal', 'burgerBtn');
     const personalModal = new Modal('stanislavModal', 'stanislavBtn');
+    const compliteSendModal = new Modal('compliteSend', '');
 
     let burgerModalBtn = document.querySelector('.header-modal__content .whiteBtn')
     let burgerModalClose = document.querySelector('.header-modal__content .close')
@@ -10983,39 +10984,46 @@ document.addEventListener("DOMContentLoaded", () => {
         xmlhttp.open(type, url, true);
         if (data) {
             xmlhttp.send(data);
-            return
+            return;
         }
-        xmlhttp.send(data)
+        xmlhttp.send(data);
     }
-
-
+    
     for (const form of document.forms) {
-        form.addEventListener('submit', function () {
+        form.addEventListener('submit', function (event) {
             if (this.dataset.id) {
                 if (this.dataset.id === 'search') {
-                    return
+                    return;
                 }
             }
-
+    
             event.preventDefault();
             const formData = new FormData(this);
-            doAPIcall('POST', formData, '/send.php', function (data) {
-                console.log(data)
-            })
+    
+            const selectedOption = this.querySelector('.trialForm-content__selectTrigger').textContent.trim();
+            formData.append('selectedOption', selectedOption);
+
+            const formName = this.getAttribute('name');
+            formData.append('formName', formName);
+    
+            doAPIcall('POST', formData, './send.php', function (data) {
+                // compliteSendModal.open()
+            });
+    
             const parent = this.closest('.regModal');
             const feedback = document.querySelector('#feedback');
-
+    
             for (const key of formData.entries()) {
                 console.log(key);
             }
-
+    
             this.reset();
-
+    
             if (parent) {
                 modalHandler.apply(parent);
             } else {
             }
-
+    
             if (feedback) {
                 modalHandler.apply(feedback);
             }

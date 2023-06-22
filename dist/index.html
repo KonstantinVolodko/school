@@ -30,7 +30,6 @@
     />
     
     
-    
     <!-- CSS only -->
     
     
@@ -901,7 +900,7 @@
             
             <section class="trialForm pagePadding" id="trialForm">
                 <div class="trialForm-content">
-                    <form action="#">
+                    <form action="#" name="Запись на пробное занятие">
                         <h3>запишитесь на пробное занятие</h3>
                         <div class="trialForm-content__inputContainer">
                             <input type="text" placeholder="Ваше имя" name="name">
@@ -910,7 +909,7 @@
                             <input type="email" placeholder="Электронная почта" name="mail" id="email">
                             <div class="emailAlert">Введите почту</div>
                             <div class="trialForm-content__customSelect">
-                                <select id="my-select">
+                                <select id="my-select" name="selectedOption">
                                     <option value="option1">Группа 3,5-5 лет</option>
                                     <option value="option2">Группа 5-7 лет</option>
                                     <option value="option3">Группа 8-11 лет</option>
@@ -1240,6 +1239,14 @@
                             </svg>
                         </button>
                     </div>
+                </div>
+            </div>
+        
+            <div id="compliteSend" class="compliteSend">
+                <div class="compliteSend-content">
+                    <span class="close">&times;</span>
+                    <h2>Модальное окно</h2>
+                    <p>Это модальное окно. Нажмите вне окна, чтобы закрыть его.</p>
                 </div>
             </div>
         </footer>

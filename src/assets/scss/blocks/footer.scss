@@ -17,6 +17,7 @@
 
     @include breakpoint($sm-bp) {
         padding: 3.8rem 2.3rem;
+        border-radius: 3rem;
     }
 
     .footer-content__links {
@@ -186,7 +187,7 @@
         border-radius: 4rem;
         overflow: hidden;
         background: #FFF;
-        margin: 15% auto;
+        margin: 5% auto;
         padding: 4rem 4rem 5.6rem 5.6rem;
         width: 80%;
         transform: translateY(-50px);
@@ -363,7 +364,7 @@
 .compliteSend {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 11;
     left: 0;
     top: 0;
     width: 100%;
@@ -372,40 +373,93 @@
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: opacity 0.3s ease;
+
+    .compliteSend-content {
+        margin: 15% auto;
+        padding: 4.8rem 2rem;
+        border-radius: 4rem;
+        background: #DACDFF;
+        width: 46%;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+
+        @include breakpoint($jb-bp) {
+            width: 60%;
+        }
+
+        @include breakpoint($sm-bp) {
+            width: 90%;
+        }
+
+        .reviewModal-content__links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                display: block;
+                width: 10%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        h3 {
+            color: #15112B;
+            text-align: center;
+            font-size: 2.4rem;
+            font-family: Unbounded;
+            font-weight: 700;
+            line-height: 2.6rem;
+            text-transform: uppercase;
+
+            @include breakpoint($sm-bp) {
+                font-size: 1.8rem;
+                line-height: 2rem;
+            }
+        }
+
+        .whiteBtn {
+            margin: 0 auto;
+            margin-top: 4rem;
+
+            @include breakpoint($sm-bp) {
+                margin-top: 3.2rem;
+            }
+        }
+    }
+
+    .close {
+        color: #B89FFF;
+        float: right;
+        font-size: 2.8rem;
+        cursor: pointer;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 
 .compliteSend.open {
     opacity: 1;
+
+    .compliteSend-content {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.compliteSend-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    max-width: 500px;
-    transform: translateY(-50px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.compliteSend.open .compliteSend-content {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+#compliteSendBtn {
+    display: none;
 }

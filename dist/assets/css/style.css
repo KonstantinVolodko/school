@@ -532,6 +532,11 @@ body {
     font-style: normal;
 }
 
+body.modal-open {
+    overflow: hidden;
+    padding-right: calc(100vw - 100%);
+}
+
 img {
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
@@ -747,6 +752,13 @@ h3 {
         width: 12rem;
         height: 7rem;
     }
+}
+
+.header-modal .header-modal__logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .header-modal .header-modal__logo svg {
@@ -1748,6 +1760,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .footer-content {
         padding: 3.8rem 2.3rem;
+        border-radius: 3rem;
     }
 }
 
@@ -1957,7 +1970,7 @@ button.swiper-pagination-bullet {
     border-radius: 4rem;
     overflow: hidden;
     background: #FFF;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 4rem 4rem 5.6rem 5.6rem;
     width: 80%;
     -webkit-transform: translateY(-50px);
@@ -2170,7 +2183,7 @@ button.swiper-pagination-bullet {
 .compliteSend {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 11;
     left: 0;
     top: 0;
     width: 100%;
@@ -2181,17 +2194,12 @@ button.swiper-pagination-bullet {
     transition: opacity 0.3s ease;
 }
 
-.compliteSend.open {
-    opacity: 1;
-}
-
-.compliteSend-content {
-    background-color: #fefefe;
+.compliteSend .compliteSend-content {
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 60%;
-    max-width: 500px;
+    padding: 4.8rem 2rem;
+    border-radius: 4rem;
+    background: #DACDFF;
+    width: 46%;
     -webkit-transform: translateY(-50px);
     transform: translateY(-50px);
     opacity: 0;
@@ -2200,25 +2208,95 @@ button.swiper-pagination-bullet {
     transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+@media (max-width: 850px) {
+    .compliteSend .compliteSend-content {
+        width: 60%;
+    }
+}
+
+@media (max-width: 500px) {
+    .compliteSend .compliteSend-content {
+        width: 90%;
+    }
+}
+
+.compliteSend .compliteSend-content .reviewModal-content__links {
+    margin-top: 2rem;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.compliteSend .compliteSend-content .reviewModal-content__links a {
+    display: block;
+    width: 10%;
+}
+
+.compliteSend .compliteSend-content .reviewModal-content__links a img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.compliteSend .compliteSend-content h3 {
+    color: #15112B;
+    text-align: center;
+    font-size: 2.4rem;
+    font-family: Unbounded;
+    font-weight: 700;
+    line-height: 2.6rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+    .compliteSend .compliteSend-content h3 {
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+}
+
+.compliteSend .compliteSend-content .whiteBtn {
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+@media (max-width: 500px) {
+    .compliteSend .compliteSend-content .whiteBtn {
+        margin-top: 3.2rem;
+    }
+}
+
+.compliteSend .close {
+    color: #B89FFF;
+    float: right;
+    font-size: 2.8rem;
+    cursor: pointer;
+}
+
+.compliteSend .close:hover,
+.compliteSend .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.compliteSend.open {
+    opacity: 1;
+}
+
 .compliteSend.open .compliteSend-content {
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+#compliteSendBtn {
+    display: none;
 }
 
 .whiteBtn {
@@ -2375,6 +2453,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .musicalSchool .musicalSchool-services img {
         margin-top: 1.6rem;
+        border-radius: 3rem;
     }
 }
 
@@ -2868,7 +2947,7 @@ button.swiper-pagination-bullet {
     position: absolute;
     top: 50%;
     left: 50%;
-    z-index: 11;
+    z-index: 10;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 7.1rem;
@@ -3150,6 +3229,14 @@ button.swiper-pagination-bullet {
     }
 }
 
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachersSwiper-modalContent {
+    display: none;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer {
+    cursor: pointer;
+}
+
 .ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperImg img {
     width: 100%;
     height: 100%;
@@ -3264,6 +3351,8 @@ button.swiper-pagination-bullet {
     background: #F8F8F8;
     padding: 2.2rem;
     width: 71%;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 @media (max-width: 500px) {
@@ -3273,6 +3362,8 @@ button.swiper-pagination-bullet {
         flex-direction: column;
         width: 100%;
         gap: 1.2rem;
+        -ms-flex-align: baseline;
+        align-items: baseline;
     }
 }
 
@@ -3686,6 +3777,12 @@ button.swiper-pagination-bullet {
     border-radius: 4rem;
 }
 
+@media (max-width: 500px) {
+    .blog .blogSwiper .swiper-slide {
+        border-radius: 2.5rem;
+    }
+}
+
 .blog .blogSwiper .blogSwiper__item {
     display: block;
     text-decoration: none;
@@ -3770,6 +3867,12 @@ button.swiper-pagination-bullet {
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .trialForm .trialForm-content {
+        border-radius: 3rem;
+    }
 }
 
 .trialForm .trialForm-content form {
@@ -4045,6 +4148,7 @@ button.swiper-pagination-bullet {
     .schedule .schedule-content {
         margin-top: 6.4rem;
         padding: 4rem 0rem;
+        border-radius: 3rem;
     }
 }
 
@@ -4202,10 +4306,11 @@ button.swiper-pagination-bullet {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-align: start;
+    align-items: flex-start;
     -webkit-column-gap: 3rem;
     -moz-column-gap: 3rem;
     column-gap: 3rem;
-    row-gap: 1.6rem;
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin-top: 7.2rem;
@@ -4220,6 +4325,24 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .answers .answers-content {
         margin-top: 4rem;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+}
+
+.answers .answers-content .answers-content__helpContainer {
+    width: 48.1%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+@media (max-width: 500px) {
+    .answers .answers-content .answers-content__helpContainer {
+        width: 100%;
     }
 }
 
@@ -4227,7 +4350,7 @@ button.swiper-pagination-bullet {
     background: #F8F8F8;
     border-radius: 3rem;
     overflow: hidden;
-    width: 48.1%;
+    width: 100%;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -4367,6 +4490,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .contacts .contacts-content .contacts-content__text {
         padding: 4rem 2.8rem 5rem 2.8rem;
+        border-radius: 3rem;
     }
 }
 

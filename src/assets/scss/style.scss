@@ -49,6 +49,10 @@ body {
 
 }
 
+body.modal-open {
+  overflow: hidden;
+  padding-right: calc(100vw - 100%);
+}
 
 img {
   image-rendering: crisp-edges;

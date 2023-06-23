@@ -27,9 +27,14 @@
 
     &:hover {
         transition: all 0.2s linear;
-        background: #15112B;
+        background: #15112B !important;
         color: #FFF;
     }
+}
+
+.greenBtn {
+    background: #E9F795;
+    border: none;
 }
 
 .musicalSchool {
@@ -46,15 +51,48 @@
         line-height: 9rem;
         text-transform: uppercase;
         color: #15112B;
+        min-height: 18rem;
 
         @include breakpoint($jb-bp) {
             font-size: 5.6rem;
             line-height: 6rem;
+            min-height: 12rem;
         }
 
         @include breakpoint($sm-bp) {
             font-size: 3.8rem;
             line-height: 4.4rem;
+            min-height: 17rem;
+        }
+    }
+
+
+    .cursor {
+        display: inline-block;
+        width: 0.2rem;
+        height: 6.1rem;
+        background-color: black;
+        animation: blinking-cursor 1s infinite;
+        margin-left: 0.4rem;
+
+        @include breakpoint($jb-bp) {
+            height: 4rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            height: 3rem;
+        }
+    }
+
+    @keyframes blinking-cursor {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
         }
     }
 
@@ -63,6 +101,7 @@
         display: flex;
         align-items: center;
         gap: 6.1rem;
+
 
         @include breakpoint($jb-bp) {
             flex-direction: column;
@@ -74,12 +113,32 @@
             margin-top: 2.4rem;
         }
 
+        .whiteBtn {
+
+            @include breakpoint($xl-bp) {
+                width: 37%;
+            }
+
+            @include breakpoint($jb-bp) {
+                width: unset;
+            }
+        }
+
         p {
             font-weight: 400;
             font-size: 2rem;
             line-height: 3rem;
             text-transform: uppercase;
             color: #262433;
+            width: 69%;
+
+            @include breakpoint($xl-bp) {
+                width: 69%;
+            }
+
+            @include breakpoint($jb-bp) {
+                width: unset;
+            }
 
             @include breakpoint($sm-bp) {
                 font-size: 1.4rem;
@@ -134,6 +193,8 @@
                 height: unset;
                 justify-content: unset;
                 padding-top: 0rem;
+                padding-right: 0rem;
+                justify-content: center;
             }
 
             @include breakpoint($sm-bp) {
@@ -467,6 +528,7 @@
 
         .ourSchool-content__imgBlock {
             width: 41%;
+            position: relative;
 
             @include breakpoint($xl-bp) {
                 width: 50%;
@@ -480,6 +542,40 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                position: relative;
+                z-index: 1;
+            }
+
+            p {
+                color: #FFF;
+                text-align: center;
+                font-size: 2.4rem;
+                font-family: Unbounded;
+                font-weight: 700;
+                line-height: 2.6rem;
+                text-transform: uppercase;
+                position: absolute;
+                z-index: 10;
+                bottom: 11%;
+                left: 0%;
+                width: 100%;
+                text-shadow:
+                    -0.1rem -0.1rem 0 black,
+                    0.1rem -0.1rem 0 black,
+                    -0.1rem 0.1rem 0 black,
+                    0.1rem 0.1rem 0 black;
+                ;
+                letter-spacing: 0.14rem;
+
+                @include breakpoint($jb-bp) {
+                    font-size: 2rem;
+                }
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    letter-spacing: .18rem;
+                }
             }
         }
     }
@@ -528,19 +624,56 @@
         }
 
         .ourSchool-videoBlock__img {
-            width: 40.5%;
+            width: 47.5%;
             display: block;
             overflow: hidden;
             border-radius: 3rem;
+            position: relative;
+
 
             @include breakpoint($sm-bp) {
                 width: 100%;
+            }
+
+            &:hover {
+                img {
+                    scale: 1.03;
+                    transition: scale 0.2s linear;
+                }
             }
 
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                transition: scale 0.2s linear;
+            }
+
+            p {
+                position: absolute;
+                color: #FFF;
+                text-align: center;
+                font-size: 2.4rem;
+                font-family: Unbounded;
+                font-weight: 700;
+                line-height: 2.6rem;
+                text-transform: uppercase;
+                bottom: 8%;
+                left: 11%;
+                z-index: 10;
+                text-shadow:
+                    -0.1rem -0.1rem 0 black,
+                    0.1rem -0.1rem 0 black,
+                    -0.1rem 0.1rem 0 black,
+                    0.1rem 0.1rem 0 black;
+                ;
+                letter-spacing: 0.14rem;
+
+                @include breakpoint($sm-bp) {
+                    font-size: 1.7rem;
+                    line-height: 2rem;
+                    letter-spacing: .18rem;
+                }
             }
         }
 
@@ -564,6 +697,12 @@
         background: #DACDFF;
         border-radius: 4rem;
         position: relative;
+        overflow: hidden;
+
+        h3 {
+            position: relative;
+            z-index: 10;
+        }
 
         @include breakpoint($xl-bp) {
             padding: 2.5rem;
@@ -581,6 +720,8 @@
             // background: #E9F795;
             // border: none;
             margin-top: 6.4rem;
+            position: relative;
+            z-index: 10;
 
             @include breakpoint($sm-bp) {
                 margin-top: 4rem;
@@ -678,7 +819,7 @@
             }
 
             p {
-                left: 5%;
+                left: 9%;
 
                 @include breakpoint($sm-bp) {
                     left: 2%;
@@ -695,7 +836,7 @@
     align-items: end;
 
     .ourTeachers-content__arrows {
-        
+
         @include breakpoint($sm-bp) {
             display: none;
         }
@@ -749,7 +890,9 @@
 
     .ourTeachers-content {
 
-
+        .ourTeachers-content__arrows {
+            margin-top: 2rem;
+        }
 
         .ourTeachersSwiper {
             margin-top: 7.2rem;
@@ -764,13 +907,61 @@
 
             .ourTeachers-content__swiperContainer {
                 cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                display: inline-block;
+                border-radius: 3rem;
+
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    pointer-events: none;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                    pointer-events: none;
+                }
+
+                .ourTeachers-content__swiperImg img {
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover {
+                    .ourTeachers-content__swiperImg {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
 
                 .ourTeachers-content__swiperImg {
+                    height: 34rem;
+
+                    @include breakpoint($xl-bp) {
+                        height: 40rem;
+                    }
+
+                    @include breakpoint($jb-bp) {
+                        height: 28rem;
+                    }
+
+                    @include breakpoint($sm-bp) {
+                        height: 18rem;
+                    }
 
                     img {
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
+                        object-fit: contain;
                     }
                 }
 
@@ -806,6 +997,8 @@
                     }
                 }
             }
+
+
         }
     }
 }
@@ -859,7 +1052,7 @@
                 border-radius: 2rem;
                 background: #F8F8F8;
                 padding: 2.2rem;
-                width: 71%;
+                width: 70%;
                 align-items: center;
 
                 @include breakpoint($sm-bp) {
@@ -869,21 +1062,21 @@
                     gap: 1.2rem;
                     align-items: baseline;
                 }
-    
+
                 .reviews-content__img {
                     width: 35%;
 
                     @include breakpoint($sm-bp) {
                         width: 55%;
                     }
-    
+
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                     }
                 }
-    
+
                 p {
                     color: #262433;
                     font-size: 1.4rem;
@@ -1218,26 +1411,13 @@
         }
 
         .swiper-slide {
-            
+
             background: #F8F8F8;
             overflow: hidden;
             border-radius: 4rem;
 
             @include breakpoint($sm-bp) {
                 border-radius: 2.5rem;
-            }
-        }
-
-        .blogSwiper__item {
-            display: block;
-            text-decoration: none;
-            padding: 2.8rem 3.8rem 4.2rem 3.9rem;
-            @include breakpoint($xl-bp) {
-                padding: 2.5rem;
-            }
-
-            @include breakpoint($sm-bp) {
-                padding: 2.2rem 1.5rem 2.8rem 1.4rem;
             }
 
             .blogSwiper__itemImg {
@@ -1248,6 +1428,21 @@
                     height: 100%;
                     object-fit: cover;
                 }
+            }
+        }
+
+        .blogSwiper__item {
+            display: block;
+            text-decoration: none;
+            padding: 2.8rem 3.8rem 4.2rem 3.9rem;
+            
+
+            @include breakpoint($xl-bp) {
+                padding: 2.5rem;
+            }
+
+            @include breakpoint($sm-bp) {
+                padding: 2.2rem 1.5rem 2.8rem 1.4rem;
             }
 
             p {
@@ -1459,7 +1654,8 @@
 
 
 
-            .phoneAlert, .emailAlert {
+            .phoneAlert,
+            .emailAlert {
                 display: none;
                 color: #ED7070;
                 font-size: 1.4rem;
@@ -1518,7 +1714,7 @@
             display: flex;
         }
 
-        
+
     }
 
     .trialForm-content__selectOptions {
@@ -1594,7 +1790,7 @@
         }
 
         h3 {
-        
+
             @include breakpoint($sm-bp) {
                 text-align: center;
             }
@@ -1605,6 +1801,16 @@
             display: block;
             overflow-x: scroll;
             cursor: grab;
+
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: #888888 #F8F8F8;
+
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
 
             tr {
 
@@ -1670,9 +1876,10 @@
 
             tr:last-child {
                 td {
-                    @include breakpoint($sm-bp) {
-                        padding-bottom: 2rem;
-                    }
+                    padding-bottom: 2rem;
+                    // @include breakpoint($sm-bp) {
+                    //     padding-bottom: 2rem;
+                    // }
                 }
             }
 
@@ -1683,6 +1890,16 @@
                     @include breakpoint($sm-bp) {
                         padding-top: 2.2rem;
                     }
+                }
+            }
+
+            tr:not(:first-child) {
+                position: relative;
+
+                td:first-child {
+                    position: sticky;
+                    left: 0;
+                    background: #f8f8f8;
                 }
             }
 
@@ -1717,10 +1934,20 @@
 
             &::-webkit-scrollbar {
 
-                @media (min-width: 1024px) {
-                    display: none;
-                }
-            }   
+                // @media (min-width: 1024px) {
+                //     display: none;
+                // }
+            }
+        }
+
+        table::-webkit-scrollbar {
+            width: 1.7rem;
+            height: 0.4rem;
+        }
+
+        table::-webkit-scrollbar-thumb {
+            background-color: rgba(218, 205, 255, 0.50);
+            border-radius: 0.5rem;
         }
     }
 }
@@ -1755,7 +1982,7 @@
             gap: 1.6rem;
         }
 
-        
+
         .answers-content__helpContainer {
             width: 48.1%;
             display: flex;
@@ -1774,7 +2001,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            
+
 
             @include breakpoint($sm-bp) {
                 width: 100%;

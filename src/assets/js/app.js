@@ -2,10 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //= components/
 
+    Fancybox.bind(document.querySelector(".students-swiper"), "[data-fancybox]", {
+        // Your custom options
+    });
+
     let ourTeachersSwiper = new Swiper(".ourTeachersSwiper", {
         grabCursor: true,
         slidesPerView: 1.7,
         spaceBetween: 30,
+        loop: true,
+        touch: {
+            touchRatio: 1,
+            threshold: 30,
+            edgeSwipeDetection: true,
+            followFinger: true,
+        },
         navigation: {
             nextEl: ".ourTeachers-content__rightArrow",
             prevEl: ".ourTeachers-content__leftArrow",
@@ -25,6 +36,13 @@ document.addEventListener("DOMContentLoaded", () => {
         grabCursor: true,
         slidesPerView: 1.15,
         spaceBetween: 20,
+        loop: true,
+        touch: {
+            touchRatio: 1,
+            threshold: 30,
+            edgeSwipeDetection: true,
+            followFinger: true,
+        },
         pagination: {
             el: ".reviewsSwiper-pagination",
             clickable: true,
@@ -46,6 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 1.2,
         spaceBetween: 12,
         grabCursor: true,
+        loop: true,
+        touch: {
+            touchRatio: 1,
+            threshold: 30,
+            edgeSwipeDetection: true,
+            followFinger: true,
+        },
         navigation: {
             nextEl: ".students__rightArrow",
             prevEl: ".students__leftArrow",
@@ -69,6 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 1.2,
         spaceBetween: 12,
         grabCursor: true,
+        loop: true,
+        touch: {
+            touchRatio: 1,
+            threshold: 30,
+            edgeSwipeDetection: true,
+            followFinger: true,
+        },
         pagination: {
             el: ".blogSwiper-pagination",
             clickable: true,
@@ -199,13 +231,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const burgerModal = new Modal('burgerModal', ['burgerBtn']);
-    
-    const personalModal = new Modal('stanislavModal', ['stanislavBtn', 'marinaBtn', 'anastasiaBtn', 'veraBtn', 'nameBtn']);
 
-    const compliteSendModal = new Modal('compliteSend', ['compliteSendBtn']);
-    
-    const reviewModal = new Modal('reviewModal', ['reviewBtn']);
-    
+    let ourTeachersSwiperContainer = document.querySelector('.ourTeachersSwiper')
+
+    const personalModal = ourTeachersSwiperContainer ? new Modal('stanislavModal', ['stanislavBtn', 'marinaBtn', 'anastasiaBtn', 'veraBtn', 'nameBtn']) : null;
+
+    let trialForm = document.querySelector('.trialForm')
+
+    const compliteSendModal = trialForm ? new Modal('compliteSend', ['compliteSendBtn']) : null;
+
+    let reviews = document.querySelector('.reviews')
+
+    const reviewModal = reviews ? new Modal('reviewModal', ['reviewBtn']) : null;
+
 
     let burgerModalBtn = document.querySelector('.header-modal__content .whiteBtn')
     let burgerModalClose = document.querySelector('.header-modal__content .close')
@@ -256,55 +294,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const playBtn = document.querySelector('.ourSchool-videoBlock__video svg');
+    // const playBtn = document.querySelector('.ourSchool-videoBlock__video svg');
     const videoElement = document.querySelector('.ourSchool-videoBlock__video video');
 
-    if (playBtn) {
-        playBtn.addEventListener('click', function () {
-            playBtn.style.display = 'none';
-            videoElement.controls = true;
-            videoElement.play();
-        });
-    }
+    // if (playBtn) {
+    //     playBtn.addEventListener('click', function () {
+    //         playBtn.style.display = 'none';
+    //         videoElement.controls = true;
+    //         videoElement.play();
+    //     });
+    // }
 
-    if (videoElement) {
-        videoElement.addEventListener('click', function () {
-            playBtn.style.display = 'none';
-            videoElement.controls = true;
-            videoElement.play();
-        });
-    }
+    // if (videoElement) {
+    //     videoElement.addEventListener('click', function () {
+    //         playBtn.style.display = 'none';
+    //         videoElement.controls = true;
+    //         videoElement.play();
+    //     });
+    // }
 
 
     let scrollableContainer = document.querySelector('.schedule-content table');
     let isDragging = false;
     let startPosition = 0;
     let scrollLeft = 0;
-
+    
     if (scrollableContainer) {
         scrollableContainer.addEventListener('mousedown', function (event) {
             isDragging = true;
             startPosition = event.clientX;
             scrollLeft = scrollableContainer.scrollLeft;
         });
-    }
-
-    if (scrollableContainer) {
+    
         scrollableContainer.addEventListener('mousemove', function (event) {
             if (isDragging) {
                 var distance = event.clientX - startPosition;
                 scrollableContainer.scrollLeft = scrollLeft - distance;
             }
         });
-    }
-
-    if (scrollableContainer) {
+    
         scrollableContainer.addEventListener('mouseup', function () {
             isDragging = false;
         });
-    }
-
-    if (scrollableContainer) {
+    
         scrollableContainer.addEventListener('mouseleave', function () {
             isDragging = false;
         });
@@ -405,6 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 teachersModalContent.innerHTML = e.querySelector('.ourTeachersSwiper-modalContent').innerHTML
                 teachersModalContent.querySelector('.close').addEventListener('click', () => {
                     personalModal.close()
+
                     document.body.style.overflow = "inherit"
                     document.body.style.paddingRight = "0rem"
                 })
@@ -430,4 +463,143 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     }
+
+
+    // let videoSource = './assets/videos/desctopVideo.mp4';
+    // let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
+
+
+
+    // window.addEventListener('resize', function() {
+    //     if (window.innerWidth > 500) {
+    //         videoElement.src = videoSource;
+    //     } else {
+    //         videoElement.src = smallResolutionVideoSource;
+    //     }
+    // });
+
+
+    let videoSource = './assets/videos/desctopVideo.mp4';
+    let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
+
+    function checkResolution() {
+        if (window.innerWidth > 500) {
+            videoElement.src = videoSource;
+        } else {
+            videoElement.src = smallResolutionVideoSource;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+        checkResolution();
+    });
+
+    window.addEventListener('resize', function () {
+        checkResolution();
+    });
+
+
+
+    function getRandomDirection() {
+        var angle = Math.random() * 360;
+        return angle;
+    }
+
+    function getRandomVelocity() {
+        var minVelocity = 1;
+        var maxVelocity = 3;
+        var velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity;
+        return velocity;
+    }
+
+    function checkCollision(element, otherElements) {
+        var elementRect = element.getBoundingClientRect();
+
+        for (var i = 0; i < otherElements.length; i++) {
+            var otherRect = otherElements[i].getBoundingClientRect();
+
+            if (
+                element !== otherElements[i] &&
+                elementRect.right >= otherRect.left &&
+                elementRect.left <= otherRect.right &&
+                elementRect.bottom >= otherRect.top &&
+                elementRect.top <= otherRect.bottom
+            ) {
+                return true; // Обнаружено столкновение
+            }
+        }
+
+        return false; // Столкновение не обнаружено
+    }
+
+    function animateElement(element, otherElements) {
+        var container = document.querySelector('.trialLesson-content');
+        var elementRect = element.getBoundingClientRect();
+        var containerRect = container.getBoundingClientRect();
+
+        var containerWidth = containerRect.width - elementRect.width;
+        var containerHeight = containerRect.height - elementRect.height;
+
+        var posX = elementRect.left - containerRect.left;
+        var posY = elementRect.top - containerRect.top;
+
+        var direction = getRandomDirection();
+        var velocity = getRandomVelocity();
+
+        var isColliding = false;
+
+        var animationInterval = setInterval(function () {
+            var radians = direction * Math.PI / 180;
+            var deltaX = velocity * Math.cos(radians);
+            var deltaY = velocity * Math.sin(radians);
+
+            posX += deltaX;
+            posY += deltaY;
+
+            if (posX < 0 || posX > containerWidth) {
+                direction = (180 - direction) % 360;
+            }
+            if (posY < 0 || posY > containerHeight) {
+                direction = (360 - direction) % 360;
+            }
+
+            if (checkCollision(element, otherElements)) {
+                if (!isColliding) {
+                    direction = (direction + 180) % 360; // Изменить направление на противоположное при столкновении
+                }
+                isColliding = true;
+            } else {
+                isColliding = false;
+            }
+
+            element.style.left = posX + 'px';
+            element.style.top = posY + 'px';
+        }, 30);
+    }
+
+
+
+    var contentItems = document.querySelectorAll('.trialLesson-content .musicalSchool-services__contentItem');
+    contentItems.forEach(function (item) {
+        animateElement(item, contentItems);
+    });
+
+
+
+    var textElement = document.querySelector(".musicalSchool h1");
+    var textToType = "Школа Мюзикла стаса чунихина";
+    textElement.innerText = "";
+
+    function typeText(text, i) {
+        if (i < text.length) {
+            textElement.innerText += text.charAt(i);
+            textElement.innerHTML += '<span class="cursor"></span>';
+            setTimeout(function () {
+                typeText(text, i + 1);
+            }, 100);
+        }
+    }
+
+    typeText(textToType, 0);
+
 })

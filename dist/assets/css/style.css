@@ -669,7 +669,7 @@ h3 {
 .header-content .header-content__menuContainer {
     display: -ms-flexbox;
     display: flex;
-    gap: 3.7rem;
+    gap: 2.7rem;
 }
 
 .header-content .header-content__menuContainer ul {

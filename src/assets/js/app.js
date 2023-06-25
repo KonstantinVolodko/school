@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
             threshold: 30,
             edgeSwipeDetection: true,
             followFinger: true,
+            touchEventsTarget: 'container',
         },
+        direction: 'horizontal',
         navigation: {
             nextEl: ".ourTeachers-content__rightArrow",
             prevEl: ".ourTeachers-content__leftArrow",
@@ -42,7 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
             threshold: 30,
             edgeSwipeDetection: true,
             followFinger: true,
+            touchEventsTarget: 'container',
         },
+        direction: 'horizontal',
         pagination: {
             el: ".reviewsSwiper-pagination",
             clickable: true,
@@ -167,10 +171,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 let panel = this.nextElementSibling;
                 if (panel.style.maxHeight) {
                     panel.style.maxHeight = null;
+                    panel.style.paddingBottom = "0px"
                     this.querySelector('.arrow').classList.remove('activeArrow')
 
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + "px";
+                    panel.style.paddingBottom = "40px"
                     this.querySelector('.arrow').classList.add('activeArrow')
                 }
             });
@@ -178,51 +184,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     class Modal {
-        constructor(modalId, openButtonsIds) {
+        constructor(modalId, openButtons) {
             this.modal = document.getElementById(modalId);
-            this.openButtons = openButtonsIds.map(buttonId => document.getElementById(buttonId));
-
+            this.openButtons = [];
+    
+            if (typeof openButtons === 'string') {
+                // Если передана строка, считаем это классом
+                this.openButtons = Array.from(document.getElementsByClassName(openButtons));
+            } else if (Array.isArray(openButtons)) {
+                // Если передан массив, считаем это идентификаторами
+                this.openButtons = openButtons.map(buttonId => document.getElementById(buttonId));
+            }
+    
             this.openButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     this.open();
                     this.disableBodyScroll();
                 });
             });
-
+    
             window.addEventListener('click', (event) => {
                 if (event.target === this.modal) {
                     this.close();
                     this.enableBodyScroll();
                 }
             });
-
+    
             const closeButton = this.modal.querySelector('.close');
             closeButton.addEventListener('click', () => {
                 this.close();
                 this.enableBodyScroll();
             });
         }
-
+    
         open() {
             this.modal.style.display = 'block';
             setTimeout(() => {
                 this.modal.classList.add('open');
             }, 10);
         }
-
+    
         close() {
             this.modal.classList.remove('open');
             setTimeout(() => {
                 this.modal.style.display = 'none';
             }, 300);
         }
-
+    
         disableBodyScroll() {
             const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
             document.body.style.paddingRight = scrollBarWidth + 'px';
             document.body.style.overflow = 'hidden';
         }
-
+    
         enableBodyScroll() {
             document.body.style.paddingRight = '';
             document.body.style.overflow = '';
@@ -234,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let ourTeachersSwiperContainer = document.querySelector('.ourTeachersSwiper')
 
-    const personalModal = ourTeachersSwiperContainer ? new Modal('stanislavModal', ['stanislavBtn', 'marinaBtn', 'anastasiaBtn', 'veraBtn', 'nameBtn']) : null;
+    const personalModal = ourTeachersSwiperContainer ? new Modal('stanislavModal', 'ourTeachers-content__swiperContainer') : null;
 
     let trialForm = document.querySelector('.trialForm')
 
@@ -318,25 +332,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let isDragging = false;
     let startPosition = 0;
     let scrollLeft = 0;
-    
+
     if (scrollableContainer) {
         scrollableContainer.addEventListener('mousedown', function (event) {
             isDragging = true;
             startPosition = event.clientX;
             scrollLeft = scrollableContainer.scrollLeft;
         });
-    
+
         scrollableContainer.addEventListener('mousemove', function (event) {
             if (isDragging) {
                 var distance = event.clientX - startPosition;
                 scrollableContainer.scrollLeft = scrollLeft - distance;
             }
         });
-    
+
         scrollableContainer.addEventListener('mouseup', function () {
             isDragging = false;
         });
-    
+
         scrollableContainer.addEventListener('mouseleave', function () {
             isDragging = false;
         });
@@ -442,10 +456,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.body.style.paddingRight = "0rem"
                 })
 
+                Fancybox.bind(document.querySelector(".personalModal-content"), "[data-fancybox]", {
+                    // Your custom options
+                });
+
                 let personalPartfolioSwiper = new Swiper(".personalPartfolioSwiper", {
                     slidesPerView: 1.6,
                     spaceBetween: 16,
                     grabCursor: true,
+                    loop: true,
+                    touch: {
+                        touchRatio: 1,
+                        threshold: 30,
+                        edgeSwipeDetection: true,
+                        followFinger: true,
+                    },
                     breakpoints: {
                         500: {
                             slidesPerView: 2,

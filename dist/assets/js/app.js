@@ -10682,9 +10682,13 @@ document.addEventListener("DOMContentLoaded", () => {
             nextEl: ".ourTeachers-content__rightArrow",
             prevEl: ".ourTeachers-content__leftArrow",
         },
+        pagination: {
+            el: ".ourTeachers-pagination",
+            clickable: true,
+        },
 
         breakpoints: {
-            500: {
+            501: {
                 slidesPerView: 3,
             },
             1024: {
@@ -10694,24 +10698,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let reviewsSwiper = new Swiper(".reviewsSwiper", {
-        grabCursor: true,
         slidesPerView: 1.15,
         spaceBetween: 20,
         loop: true,
-        touch: {
-            touchRatio: 1,
-            threshold: 30,
-            edgeSwipeDetection: true,
-            followFinger: true,
-            touchEventsTarget: 'container',
-        },
+        threshold: 50,
+        watchSlidesProgress: true,
         direction: 'horizontal',
         pagination: {
             el: ".reviewsSwiper-pagination",
             clickable: true,
         },
         breakpoints: {
-            500: {
+            501: {
                 slidesPerView: 2,
             },
             850: {
@@ -10722,6 +10720,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         },
     });
+
+
 
     let studentsSwiper = new Swiper(".students-swiper", {
         slidesPerView: 1.2,
@@ -10743,7 +10743,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clickable: true,
         },
         breakpoints: {
-            500: {
+            501: {
                 slidesPerView: 2,
                 spaceBetween: 23,
             },
@@ -10769,7 +10769,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clickable: true,
         },
         breakpoints: {
-            500: {
+            501: {
                 slidesPerView: 2,
                 spaceBetween: 22,
             },
@@ -10846,7 +10846,7 @@ document.addEventListener("DOMContentLoaded", () => {
         constructor(modalId, openButtons) {
             this.modal = document.getElementById(modalId);
             this.openButtons = [];
-    
+
             if (typeof openButtons === 'string') {
                 // Если передана строка, считаем это классом
                 this.openButtons = Array.from(document.getElementsByClassName(openButtons));
@@ -10854,48 +10854,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Если передан массив, считаем это идентификаторами
                 this.openButtons = openButtons.map(buttonId => document.getElementById(buttonId));
             }
-    
+
             this.openButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     this.open();
                     this.disableBodyScroll();
                 });
             });
-    
+
             window.addEventListener('click', (event) => {
                 if (event.target === this.modal) {
                     this.close();
                     this.enableBodyScroll();
                 }
             });
-    
+
             const closeButton = this.modal.querySelector('.close');
             closeButton.addEventListener('click', () => {
                 this.close();
                 this.enableBodyScroll();
             });
         }
-    
+
         open() {
             this.modal.style.display = 'block';
             setTimeout(() => {
                 this.modal.classList.add('open');
             }, 10);
         }
-    
+
         close() {
             this.modal.classList.remove('open');
             setTimeout(() => {
                 this.modal.style.display = 'none';
             }, 300);
         }
-    
+
         disableBodyScroll() {
             const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-            document.body.style.paddingRight = scrollBarWidth + 'px';
+            if (window.matchMedia("(min-width: 1024px)").matches) {
+                document.body.style.paddingRight = scrollBarWidth + 'px';
+            }
             document.body.style.overflow = 'hidden';
         }
-    
+
         enableBodyScroll() {
             document.body.style.paddingRight = '';
             document.body.style.overflow = '';
@@ -10997,6 +10999,7 @@ document.addEventListener("DOMContentLoaded", () => {
             isDragging = true;
             startPosition = event.clientX;
             scrollLeft = scrollableContainer.scrollLeft;
+            scrollableContainer.style.scrollBehavior = 'auto';
         });
 
         scrollableContainer.addEventListener('mousemove', function (event) {
@@ -11008,10 +11011,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         scrollableContainer.addEventListener('mouseup', function () {
             isDragging = false;
+            scrollableContainer.style.scrollBehavior = 'smooth';
         });
 
         scrollableContainer.addEventListener('mouseleave', function () {
             isDragging = false;
+            scrollableContainer.style.scrollBehavior = 'smooth';
         });
     }
 
@@ -11131,7 +11136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         followFinger: true,
                     },
                     breakpoints: {
-                        500: {
+                        501: {
                             slidesPerView: 2,
                         },
                         850: {
@@ -11142,6 +11147,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     navigation: {
                         nextEl: ".personalPartfolioSwiper__rightArrow",
                         prevEl: ".personalPartfolioSwiper__leftArrow",
+                    },
+
+                    pagination: {
+                        el: ".personalPartfolioSwiper-pagination",
+                        clickable: true,
                     },
                 });
             })
@@ -11263,15 +11273,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    var contentItems = document.querySelectorAll('.trialLesson-content .musicalSchool-services__contentItem');
+    let contentItems = document.querySelectorAll('.trialLesson-content .musicalSchool-services__contentItem');
     contentItems.forEach(function (item) {
         animateElement(item, contentItems);
     });
 
-
-
-    var textElement = document.querySelector(".musicalSchool h1");
-    var textToType = "Школа Мюзикла стаса чунихина";
+    let textElement = document.querySelector(".musicalSchool h1");
+    let textToType = "Школа Мюзикла\nстаса чунихина";
     textElement.innerText = "";
 
     function typeText(text, i) {
@@ -11282,8 +11290,63 @@ document.addEventListener("DOMContentLoaded", () => {
                 typeText(text, i + 1);
             }, 100);
         }
+
+        if (window.innerWidth < 501) {
+            if (text.charAt(i) === ' ') {
+                textElement.innerHTML += '<br>';
+            }
+        }
     }
 
     typeText(textToType, 0);
 
+
+    const imgElements = document.querySelectorAll('.mission-content__img');
+
+    // Функция, которая обрабатывает прокрутку страницы
+    function handleScroll() {
+        // Рассчитываем прогресс прокрутки для каждого элемента
+        imgElements.forEach((imgElement) => {
+            const rect = imgElement.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight * 0.6 && rect.bottom >= 0;
+
+            if (isVisible) {
+                // Рассчитываем прогресс прокрутки
+                const scrollProgress = Math.max(0, Math.min((window.innerHeight * 0.6 - rect.top) / (window.innerHeight * 0.6 + rect.height), 1));
+
+                // Рассчитываем угол вращения для каждого элемента
+                const initialRotation = parseFloat(imgElement.dataset.initialRotation);
+                const targetRotation = parseFloat(imgElement.dataset.targetRotation);
+                const rotateValue = initialRotation + (targetRotation - initialRotation) * scrollProgress;
+
+                // Применяем угол вращения к элементу
+                imgElement.style.transform = `rotate(${rotateValue}deg)`;
+            }
+        });
+    }
+
+    // Функция, которая обновляет данные о начальном и конечном угле вращения
+    function updateRotationData() {
+        imgElements.forEach((imgElement) => {
+            const rect = imgElement.getBoundingClientRect();
+            const initialRotation = parseFloat(imgElement.dataset.initialRotation);
+            const targetRotation = parseFloat(imgElement.dataset.targetRotation);
+
+            // Обновляем данные о начальном и конечном угле вращения в зависимости от позиции блока
+            imgElement.dataset.initialRotation = initialRotation || 0;
+            imgElement.dataset.targetRotation = targetRotation || 0;
+        });
+    }
+
+    // Обрабатываем событие прокрутки страницы
+    window.addEventListener('scroll', handleScroll);
+
+    // Вызываем функцию handleScroll() при загрузке страницы, чтобы обработать начальное состояние элементов
+    window.addEventListener('load', () => {
+        handleScroll();
+        updateRotationData();
+    });
+
+    // Вызываем функцию updateRotationData() при изменении размеров окна, чтобы обновить данные о начальном и конечном угле вращения
+    window.addEventListener('resize', updateRotationData);
 })

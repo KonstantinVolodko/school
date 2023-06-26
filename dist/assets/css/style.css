@@ -2744,24 +2744,24 @@ button.swiper-pagination-bullet {
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-    rotate: 7deg;
     top: -3.6%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-        rotate: 0deg;
         top: 0%;
     }
 }
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-        rotate: 7deg;
         top: -3.6%;
         z-index: 0;
     }
@@ -2769,14 +2769,12 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
     top: 24%;
-    rotate: -14deg;
     right: 5%;
     z-index: 1;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
-        rotate: 0deg;
         top: 0%;
     }
 }
@@ -2784,7 +2782,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
         top: 24%;
-        rotate: -14deg;
         right: 5%;
         z-index: 1;
     }
@@ -2792,14 +2789,12 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
     top: 57%;
-    rotate: 7deg;
     right: 5%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
-        rotate: 0deg;
         top: 0%;
     }
 }
@@ -2807,7 +2802,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
         top: 54%;
-        rotate: 7deg;
         right: 5%;
         z-index: 0;
     }
@@ -3398,6 +3392,24 @@ button.swiper-pagination-bullet {
     }
 }
 
+.ourTeachers .ourTeachers-content .ourTeachers-pagination {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachers-pagination .swiper-pagination-bullet-active {
+    background: #15112b;
+}
+
+@media (max-width: 500px) {
+    .ourTeachers .ourTeachers-content .ourTeachers-pagination {
+        display: none;
+    }
+}
+
 .ourTeachers .ourTeachers-content .ourTeachers-content__arrows {
     margin-top: 2rem;
 }
@@ -3418,39 +3430,9 @@ button.swiper-pagination-bullet {
 
 .ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer {
     cursor: pointer;
-    position: relative;
     overflow: hidden;
     display: inline-block;
     border-radius: 3rem;
-}
-
-.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer:hover::before {
-    opacity: 1;
-    pointer-events: none;
-}
-
-.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperImg img {
-    transition: -webkit-transform 0.3s ease;
-    transition: transform 0.3s ease;
-    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-
-.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer:hover .ourTeachers-content__swiperImg img {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
 }
 
 .ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperImg {
@@ -3509,12 +3491,37 @@ button.swiper-pagination-bullet {
     line-height: 2.4rem;
     text-align: center;
     color: #262433;
+    text-decoration: underline;
+    transition: all 0.2s linear;
+}
+
+.ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperSubtitle:hover {
+    text-shadow: 0rem 0 #262433, 0.03rem 0 #262433, 0 0.03rem #262433, 0 0.03rem #262433;
+    transition: all 0.2s linear;
 }
 
 @media (max-width: 500px) {
     .ourTeachers .ourTeachers-content .ourTeachersSwiper .ourTeachers-content__swiperContainer .ourTeachers-content__swiperSubtitle {
         font-size: 1.4rem;
         line-height: 2rem;
+    }
+}
+
+.personalPartfolioSwiper-pagination {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.personalPartfolioSwiper-pagination .swiper-pagination-bullet-active {
+    background: #15112b;
+}
+
+@media (max-width: 500px) {
+    .personalPartfolioSwiper-pagination {
+        display: none;
     }
 }
 
@@ -3637,6 +3644,7 @@ button.swiper-pagination-bullet {
 
 .reviews .reviewsSwiper {
     margin-top: 7.2rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -3649,18 +3657,34 @@ button.swiper-pagination-bullet {
     background: #F8F8F8;
     border-radius: 4rem;
     padding: 3.2rem;
+    height: 36rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
     .reviews .reviewsSwiper .reviews-content__swiperContainer {
         padding: 2.5rem;
+        height: 43rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .reviews .reviewsSwiper .reviews-content__swiperContainer {
+        height: 38rem;
     }
 }
 
 @media (max-width: 500px) {
     .reviews .reviewsSwiper .reviews-content__swiperContainer {
         padding: 2.6rem 1.5rem 4.6rem 1.5rem;
+        height: 40rem;
     }
+}
+
+.reviews .reviewsSwiper .reviews-content__swiperContainer video {
+    margin-top: 1.6rem;
+    height: 100%;
+    width: 100%;
 }
 
 .reviews .reviewsSwiper .reviews-content__swiperContainer .reviews-content__swiperTitle {
@@ -4435,6 +4459,7 @@ button.swiper-pagination-bullet {
     .schedule .schedule-content table tr:first-child th {
         font-size: 1.4rem;
         line-height: 1.8rem;
+        min-width: 15rem;
     }
 }
 
@@ -4467,6 +4492,7 @@ button.swiper-pagination-bullet {
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: #262433;
+    padding-top: 1rem;
 }
 
 @media (max-width: 500px) {
@@ -4490,15 +4516,47 @@ button.swiper-pagination-bullet {
     }
 }
 
-.schedule .schedule-content table tr:not(:first-child) {
+.schedule .schedule-content table tr {
     position: relative;
 }
 
-.schedule .schedule-content table tr:not(:first-child) td:first-child {
+.schedule .schedule-content table tr td:first-child {
     position: -webkit-sticky;
     position: sticky;
     left: 0;
     background: #f8f8f8;
+}
+
+.schedule .schedule-content table tr th:first-child {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    background: #f8f8f8;
+    border-top-left-radius: 0rem !important;
+    border-bottom-left-radius: 0rem !important;
+    padding: 0rem !important;
+}
+
+.schedule .schedule-content table tr th:first-child div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #dacdff;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 3.2rem;
+}
+
+@media (max-width: 500px) {
+    .schedule .schedule-content table tr th:first-child div {
+        padding-left: 1.5rem;
+    }
 }
 
 .schedule .schedule-content table td:first-child {

@@ -322,8 +322,10 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    transition: transform 0.3s ease-in-out;
                 }
             }
+
 
             .mission-content__img:first-child {
                 rotate: 7deg;
@@ -379,6 +381,7 @@
                     z-index: 0;
                 }
             }
+
         }
 
         .mission-content__textContainer {
@@ -890,6 +893,20 @@
 
     .ourTeachers-content {
 
+        .ourTeachers-pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            
+            .swiper-pagination-bullet-active {
+                background: #15112b;
+            }
+
+            @include breakpoint($sm-bp) {
+                display: none;
+            }
+        }
+
         .ourTeachers-content__arrows {
             margin-top: 2rem;
         }
@@ -907,41 +924,41 @@
 
             .ourTeachers-content__swiperContainer {
                 cursor: pointer;
-                position: relative;
+                // position: relative;
                 overflow: hidden;
                 display: inline-block;
                 border-radius: 3rem;
 
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                    pointer-events: none;
-                }
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: 0;
+                //     left: 0;
+                //     width: 100%;
+                //     height: 100%;
+                //     background-color: rgba(0, 0, 0, 0.5);
+                //     opacity: 0;
+                //     transition: opacity 0.3s ease;
+                //     pointer-events: none;
+                // }
 
-                &:hover::before {
-                    opacity: 1;
-                    pointer-events: none;
-                }
+                // &:hover::before {
+                //     opacity: 1;
+                //     pointer-events: none;
+                // }
 
-                .ourTeachers-content__swiperImg img {
-                    transition: transform 0.3s ease;
-                }
+                // .ourTeachers-content__swiperImg img {
+                //     transition: transform 0.3s ease;
+                // }
 
-                &:hover {
-                    .ourTeachers-content__swiperImg {
-                        img {
-                            transform: scale(1.1);
-                        }
-                    }
-                }
+                // &:hover {
+                //     .ourTeachers-content__swiperImg {
+                //         img {
+                //             transform: scale(1.1);
+                //         }
+                //     }
+                // }
 
                 .ourTeachers-content__swiperImg {
                     height: 34rem;
@@ -990,16 +1007,39 @@
                     line-height: 2.4rem;
                     text-align: center;
                     color: #262433;
+                    text-decoration: underline;
+                    transition: all 0.2s linear;
+
+                    &:hover {
+                        text-shadow: 0rem 0 #262433, 0.03rem 0 #262433, 0 0.03rem #262433, 0 0.03rem #262433;
+                        transition: all 0.2s linear;
+                    }
 
                     @include breakpoint($sm-bp) {
                         font-size: 1.4rem;
                         line-height: 2rem;
                     }
                 }
+
+
             }
-
-
         }
+    }
+
+
+}
+
+.personalPartfolioSwiper-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .swiper-pagination-bullet-active {
+        background: #15112b;
+    }
+
+    @include breakpoint($sm-bp) {
+        display: none;
     }
 }
 
@@ -1094,22 +1134,38 @@
 
     .reviewsSwiper {
         margin-top: 7.2rem;
+        overflow: hidden;
 
         @include breakpoint($xl-bp) {
             margin-top: 3.2rem;
         }
 
+
         .reviews-content__swiperContainer {
             background: #F8F8F8;
             border-radius: 4rem;
             padding: 3.2rem;
+            height: 36rem;
+            overflow: hidden;
 
             @include breakpoint($xl-bp) {
                 padding: 2.5rem;
+                height: 43rem;
+            }
+
+            @include breakpoint($jb-bp) {
+                height: 38rem;
             }
 
             @include breakpoint($sm-bp) {
                 padding: 2.6rem 1.5rem 4.6rem 1.5rem;
+                height: 40rem;
+            }
+
+            video {
+                margin-top: 1.6rem;
+                height: 100%;
+                width: 100%;
             }
 
             .reviews-content__swiperTitle {
@@ -1812,6 +1868,7 @@
             -webkit-user-select: none;
             -ms-user-select: none;
 
+
             tr {
 
                 &:first-child {
@@ -1829,10 +1886,12 @@
                         padding: 0.9rem 0rem 0.8rem 0rem;
                         text-align: inherit;
                         min-width: 21rem;
+                        
 
                         @include breakpoint($sm-bp) {
                             font-size: 1.4rem;
                             line-height: 1.8rem;
+                            min-width: 15rem;
                         }
                     }
 
@@ -1865,10 +1924,12 @@
                     font-size: 1.8rem;
                     line-height: 2.4rem;
                     color: #262433;
+                    padding-top: 1rem;
 
                     @include breakpoint($sm-bp) {
                         font-size: 1.4rem;
                         line-height: 2rem;
+                        // padding-top: 0rem;
                     }
                 }
 
@@ -1893,13 +1954,41 @@
                 }
             }
 
-            tr:not(:first-child) {
+            tr {
                 position: relative;
 
                 td:first-child {
                     position: sticky;
                     left: 0;
                     background: #f8f8f8;
+                }
+
+                th:first-child {
+                    position: sticky;
+                    left: 0;
+                    background: #f8f8f8;
+                    border-top-left-radius: 0rem !important;
+                    border-bottom-left-radius: 0rem !important;
+                    padding: 0rem !important;
+                    
+
+                    div {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: #dacdff;
+                        border-top-left-radius: 3rem;
+                        border-bottom-left-radius: 3rem;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 3.2rem;
+
+                        @include breakpoint($sm-bp) {
+                            padding-left: 1.5rem;
+                        }
+                    }
                 }
             }
 

@@ -4,6 +4,21 @@
     gap: 0.8rem;
     text-decoration: none;
 
+    background-image: linear-gradient(to right,
+            #b89fff,
+            #b89fff 50%,
+            #000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-position: 0;
+    }
+
     @include breakpoint($xl-bp) {
         display: none;
     }

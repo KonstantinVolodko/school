@@ -39,6 +39,7 @@
 
 .musicalSchool {
     margin-top: 6.8rem;
+    overflow: hidden;
 
     @include breakpoint($xl-bp) {
         margin-top: 3.2rem;
@@ -298,6 +299,7 @@
 .mission {
     margin-top: 15.5rem;
     padding-right: 4rem;
+    overflow: hidden;
 
     @include breakpoint($xl-bp) {
         margin-top: 10rem;
@@ -329,6 +331,7 @@
             flex-direction: column;
             width: 45.9rem;
             position: relative;
+            overflow: hidden;
 
             @include breakpoint($jb-bp) {
                 width: 100%;
@@ -367,17 +370,15 @@
 
 
             .mission-content__img:first-child {
-                rotate: 7deg;
+                transform: rotate(-14deg);
                 top: -3.6%;
                 z-index: 0;
 
                 @include breakpoint($jb-bp) {
-                    rotate: 0deg;
                     top: 0%;
                 }
 
                 @include breakpoint($sm-bp) {
-                    rotate: 7deg;
                     top: -3.6%;
                     z-index: 0;
                 }
@@ -385,12 +386,11 @@
 
             .mission-content__img:nth-child(2) {
                 top: 24%;
-                rotate: -14deg;
+                transform: rotate(0deg);
                 right: 5%;
                 z-index: 1;
 
                 @include breakpoint($jb-bp) {
-                    rotate: 0deg;
                     top: 0%;
                     z-index: -1;
                     right: 28%;
@@ -398,7 +398,6 @@
 
                 @include breakpoint($sm-bp) {
                     top: 24%;
-                    rotate: -14deg;
                     right: 5%;
                     z-index: 1;
                 }
@@ -406,12 +405,11 @@
 
             .mission-content__img:last-child {
                 top: 57%;
-                rotate: 7deg;
+                transform: rotate(14deg);
                 right: 5%;
                 z-index: 0;
 
                 @include breakpoint($jb-bp) {
-                    rotate: 0deg;
                     top: 0%;
                     z-index: -2;
                     right: 0%;
@@ -419,7 +417,6 @@
 
                 @include breakpoint($sm-bp) {
                     top: 54%;
-                    rotate: 7deg;
                     right: 5%;
                     z-index: 0;
                 }
@@ -503,6 +500,7 @@
 
 .ourSchool {
     margin-top: 13.8rem;
+    overflow: hidden;
 
     @include breakpoint($xl-bp) {
         margin-top: 10rem;
@@ -771,6 +769,7 @@
 }
 
 .trialLesson {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -931,6 +930,22 @@
             display: none;
         }
 
+        button {
+            transition: all 0.2s linear;
+            svg {
+                stroke: #15112b;
+            }
+
+            &:hover {
+                transition: all 0.2s linear;
+                background: #15112B !important;
+                
+                svg {
+                    stroke: #FFFFFF;
+                }
+            }
+        }
+
     }
 }
 
@@ -952,6 +967,7 @@
 
         svg {
             fill: transparent;
+            stroke: #15112B;
             width: 0.85rem;
             height: 1.7rem;
         }
@@ -970,6 +986,7 @@
 
 .ourTeachers {
     margin-top: 14rem;
+    overflow: hidden;
 
     @include breakpoint($xl-bp) {
         margin-top: 10rem;
@@ -980,6 +997,7 @@
     }
 
     .ourTeachers-content {
+        overflow: hidden;
 
         .ourTeachers-pagination {
             display: flex;
@@ -1118,6 +1136,7 @@
 }
 
 .personalPartfolioSwiper {
+    overflow: hidden;
 
     .swiper-slide {
         height: 100%;
@@ -1155,6 +1174,7 @@
 }
 
 .reviews {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -1166,6 +1186,7 @@
     }
 
     .reviews-content {
+        overflow: hidden;
         .reviews-content__titleArrows {
             display: flex;
             justify-content: space-between;
@@ -1190,6 +1211,7 @@
             display: flex;
             gap: 3.2rem;
             align-items: center;
+            justify-content: flex-end;
 
 
             @include breakpoint($xl-bp) {
@@ -1210,7 +1232,7 @@
                 border-radius: 2rem;
                 background: #F8F8F8;
                 padding: 2.2rem;
-                width: 70%;
+                width: 42%;
                 align-items: center;
 
                 @include breakpoint($jb-bp) {
@@ -1339,6 +1361,7 @@
 }
 
 .price {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -1521,6 +1544,7 @@
 }
 
 .students {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -1583,6 +1607,7 @@
 }
 
 .blog {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -1716,6 +1741,7 @@
 }
 
 .trialForm {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -1945,6 +1971,7 @@
 }
 
 .schedule {
+    overflow: hidden;
     margin-top: 19.6rem;
 
     padding-left: 4rem;
@@ -1968,6 +1995,7 @@
         background: #F8F8F8;
         border-radius: 4rem;
         padding: 5.6rem;
+        overflow: hidden;
 
         @include breakpoint($xl-bp) {
             padding: 2.5rem;
@@ -2177,6 +2205,7 @@
 
 
 .answers {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {
@@ -2309,6 +2338,7 @@
 }
 
 .contacts {
+    overflow: hidden;
     margin-top: 14rem;
 
     @include breakpoint($xl-bp) {

@@ -2,6 +2,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //= components/
 
+    SmoothScroll({
+        // Время скролла 400 = 0.4 секунды
+        animationTime    : 800,
+        // Размер шага в пикселях 
+        stepSize         : 75,
+    
+        // Дополнительные настройки:
+        
+        // Ускорение 
+        accelerationDelta : 30,  
+        // Максимальное ускорение
+        accelerationMax   : 2,   
+    
+        // Поддержка клавиатуры
+        keyboardSupport   : true,  
+        // Шаг скролла стрелками на клавиатуре в пикселях
+        arrowScroll       : 50,
+    
+        // Pulse (less tweakable)
+        // ratio of "tail" to "acceleration"
+        pulseAlgorithm   : true,
+        pulseScale       : 4,
+        pulseNormalize   : 1,
+    
+        // Поддержка тачпада
+        touchpadSupport   : true,
+    })
+
     Fancybox.bind(document.querySelector(".students-swiper"), "[data-fancybox]", {
         // Your custom options
     });
@@ -77,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 12,
         grabCursor: true,
         loop: true,
-        autoHeight: true,
+        // autoHeight: true,
         watchSlidesProgress: true,
         touch: {
             touchRatio: 1,
@@ -94,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clickable: true,
         },
         breakpoints: {
-            501: {
+            502: {
                 slidesPerView: 2,
                 spaceBetween: 23,
             },
@@ -321,8 +349,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // const playBtn = document.querySelector('.ourSchool-videoBlock__video svg');
+    let videoContainer = document.querySelector('.ourSchool')
     const videoElement = document.querySelector('.ourSchool-videoBlock__video video');
-
+    // if (videoElement) {
+      
+    //     const observerOptions = {
+    //         root: null,
+    //         rootMargin: '0px',
+    //         threshold: 0.5 // Видео будет запускаться, когда хотя бы 50% видео будет видно на экране
+    //       };
+    
+    //       const intersectionObserver = new IntersectionObserver((entries, observer) => {
+    //         entries.forEach(entry => {
+    //           if (entry.isIntersecting) {
+    //             videoElement.play();
+    //           }
+    //         });
+    //       }, observerOptions);
+    
+    //       intersectionObserver.observe(videoElement);
+    // }
     // if (playBtn) {
     //     playBtn.addEventListener('click', function () {
     //         playBtn.style.display = 'none';
@@ -525,24 +571,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 
     if (videoElement) {
-        let videoSource = './assets/videos/desctopVideo.mp4';
-        let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
-    
-        function checkResolution() {
-            if (window.innerWidth > 500) {
-                videoElement.src = videoSource;
-            } else {
-                videoElement.src = smallResolutionVideoSource;
-            }
+
+        if (window.matchMedia('(min-width: 502px)').matches) {
+            videoElement.src = './assets/videos/desctopVideo.mp4';
+        } else {
+            videoElement.src = './assets/videos/mobileVideo.mp4';
         }
-    
-        window.addEventListener('DOMContentLoaded', function () {
-            checkResolution();
-        });
-    
-        window.addEventListener('resize', function () {
-            checkResolution();
-        });
     }
     
 
@@ -654,7 +688,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     
-        typeText(textToType, 0);
+        setTimeout(function() {
+            typeText(textToType, 0);
+        }, 3200)
     }
     
 

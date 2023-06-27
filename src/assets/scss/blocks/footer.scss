@@ -132,6 +132,21 @@
         }
 
         .header-content__phoneContainer {
+            background-image: linear-gradient(to right,
+                    #f8f8f8,
+                    #f8f8f8 50%,
+                    #000 50%);
+            background-size: 200% 100%;
+            background-position: -100%;
+            position: relative;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-position: 0;
+            }
+
             @include breakpoint($xl-bp) {
                 display: flex;
             }
@@ -155,10 +170,21 @@
                 justify-content: center;
                 border: 0.1rem solid #15112B;
                 border-radius: 5rem;
+                transition: all 0.2s linear;
+
+                &:hover {
+                    transition: all 0.2s linear;
+                    background: #15112B !important;
+
+                    svg {
+                        fill: #FFFFFF;
+                    }
+                }
 
                 svg {
                     width: 2rem;
                     height: 2rem;
+                    fill: #15112B;
                 }
             }
         }

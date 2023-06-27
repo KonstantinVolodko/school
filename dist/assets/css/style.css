@@ -632,17 +632,17 @@ h3 {
     -webkit-animation: spinner 1s infinite linear;
     animation: spinner 1s infinite linear;
     border-radius: 50%;
-    border: 3px solid rgba(0, 0, 0, 0.2);
+    border: 0.3rem solid rgba(0, 0, 0, 0.2);
     border-top-color: #000000;
   /* No se identa por orden alfabetico para que no lo sobre-escriba */
-    height: 9em;
-    margin: 0 auto 3.5em auto;
-    width: 9em;
+    height: 9rem;
+    margin: 0 auto 3.5rem auto;
+    width: 9rem;
 }
 
 /* Texto cargando */
 .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 5em "Montserrat", sans-serif;
+    font: bold 5rem "Montserrat", sans-serif;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -698,12 +698,17 @@ h3 {
     animation-delay: 1.2s;
 }
 
+.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+
 .ctn-preloader .loader-section {
     background-color: #ffffff;
     height: 100%;
     position: fixed;
     top: 0;
-    width: calc(50% + 1px);
+    width: calc(50% + 0.1rem);
 }
 
 .ctn-preloader .loader-section.section-left {
@@ -780,13 +785,13 @@ h3 {
   /* Preloader */
   /* Spinner cargando */
     .ctn-preloader .animation-preloader .spinner {
-        height: 8em;
-        width: 8em;
+        height: 8rem;
+        width: 8rem;
     }
 
   /* Texto cargando */
     .ctn-preloader .animation-preloader .txt-loading {
-        font: bold 3.5em "Montserrat", sans-serif;
+        font: bold 3.5rem "Montserrat", sans-serif;
     }
 }
 
@@ -794,13 +799,13 @@ h3 {
   /* Prelaoder */
   /* Spinner cargando */
     .ctn-preloader .animation-preloader .spinner {
-        height: 7em;
-        width: 7em;
+        height: 7rem;
+        width: 7rem;
     }
 
   /* Texto cargando */
     .ctn-preloader .animation-preloader .txt-loading {
-        font: bold 2em "Montserrat", sans-serif;
+        font: bold 2rem "Montserrat", sans-serif;
     }
 }
 
@@ -811,6 +816,17 @@ h3 {
     align-items: center;
     gap: 0.8rem;
     text-decoration: none;
+    background-image: linear-gradient(to right, #b89fff, #b89fff 50%, #000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-content__phoneContainer:hover {
+    background-position: 0;
 }
 
 @media (max-width: 1023px) {
@@ -2133,6 +2149,20 @@ button.swiper-pagination-bullet {
     }
 }
 
+.footer-content .footer-content__contacts .header-content__phoneContainer {
+    background-image: linear-gradient(to right, #f8f8f8, #f8f8f8 50%, #000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-content .footer-content__contacts .header-content__phoneContainer:hover {
+    background-position: 0;
+}
+
 @media (max-width: 1023px) {
     .footer-content .footer-content__contacts .header-content__phoneContainer {
         display: -ms-flexbox;
@@ -2163,11 +2193,22 @@ button.swiper-pagination-bullet {
     justify-content: center;
     border: 0.1rem solid #15112B;
     border-radius: 5rem;
+    transition: all 0.2s linear;
+}
+
+.footer-content .footer-content__contacts .footer-content__socialMedia a:hover {
+    transition: all 0.2s linear;
+    background: #15112B !important;
+}
+
+.footer-content .footer-content__contacts .footer-content__socialMedia a:hover svg {
+    fill: #FFFFFF;
 }
 
 .footer-content .footer-content__contacts .footer-content__socialMedia a svg {
     width: 2rem;
     height: 2rem;
+    fill: #15112B;
 }
 
 .footer-content .footer-content__confidence {
@@ -2599,6 +2640,7 @@ button.swiper-pagination-bullet {
 
 .musicalSchool {
     margin-top: 6.8rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -2927,6 +2969,7 @@ button.swiper-pagination-bullet {
 .mission {
     margin-top: 15.5rem;
     padding-right: 4rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -2972,6 +3015,7 @@ button.swiper-pagination-bullet {
     flex-direction: column;
     width: 45.9rem;
     position: relative;
+    overflow: hidden;
 }
 
 @media (max-width: 850px) {
@@ -3025,21 +3069,20 @@ button.swiper-pagination-bullet {
 }
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-    rotate: 7deg;
+    -webkit-transform: rotate(-14deg);
+    transform: rotate(-14deg);
     top: -3.6%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-        rotate: 0deg;
         top: 0%;
     }
 }
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-        rotate: 7deg;
         top: -3.6%;
         z-index: 0;
     }
@@ -3047,14 +3090,14 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
     top: 24%;
-    rotate: -14deg;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
     right: 5%;
     z-index: 1;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
-        rotate: 0deg;
         top: 0%;
         z-index: -1;
         right: 28%;
@@ -3064,7 +3107,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
         top: 24%;
-        rotate: -14deg;
         right: 5%;
         z-index: 1;
     }
@@ -3072,14 +3114,14 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
     top: 57%;
-    rotate: 7deg;
+    -webkit-transform: rotate(14deg);
+    transform: rotate(14deg);
     right: 5%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
-        rotate: 0deg;
         top: 0%;
         z-index: -2;
         right: 0%;
@@ -3089,7 +3131,6 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
         top: 54%;
-        rotate: 7deg;
         right: 5%;
         z-index: 0;
     }
@@ -3184,6 +3225,7 @@ button.swiper-pagination-bullet {
 
 .ourSchool {
     margin-top: 13.8rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -3494,6 +3536,7 @@ button.swiper-pagination-bullet {
 }
 
 .trialLesson {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -3692,6 +3735,23 @@ button.swiper-pagination-bullet {
     }
 }
 
+.ourTeachers-titleArrows .ourTeachers-content__arrows button {
+    transition: all 0.2s linear;
+}
+
+.ourTeachers-titleArrows .ourTeachers-content__arrows button svg {
+    stroke: #15112b;
+}
+
+.ourTeachers-titleArrows .ourTeachers-content__arrows button:hover {
+    transition: all 0.2s linear;
+    background: #15112B !important;
+}
+
+.ourTeachers-titleArrows .ourTeachers-content__arrows button:hover svg {
+    stroke: #FFFFFF;
+}
+
 .ourTeachers-content__arrows {
     display: none;
     gap: 1.2rem;
@@ -3716,6 +3776,7 @@ button.swiper-pagination-bullet {
 
 .ourTeachers-content__arrows button svg {
     fill: transparent;
+    stroke: #15112B;
     width: 0.85rem;
     height: 1.7rem;
 }
@@ -3730,6 +3791,7 @@ button.swiper-pagination-bullet {
 
 .ourTeachers {
     margin-top: 14rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -3742,6 +3804,10 @@ button.swiper-pagination-bullet {
     .ourTeachers {
         margin-top: 6.4rem;
     }
+}
+
+.ourTeachers .ourTeachers-content {
+    overflow: hidden;
 }
 
 .ourTeachers .ourTeachers-content .ourTeachers-pagination {
@@ -3859,6 +3925,10 @@ button.swiper-pagination-bullet {
     }
 }
 
+.personalPartfolioSwiper {
+    overflow: hidden;
+}
+
 .personalPartfolioSwiper .swiper-slide {
     height: 100%;
 }
@@ -3902,6 +3972,7 @@ button.swiper-pagination-bullet {
 }
 
 .reviews {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -3915,6 +3986,10 @@ button.swiper-pagination-bullet {
     .reviews {
         margin-top: 6.4rem;
     }
+}
+
+.reviews .reviews-content {
+    overflow: hidden;
 }
 
 .reviews .reviews-content .reviews-content__titleArrows {
@@ -3952,6 +4027,8 @@ button.swiper-pagination-bullet {
     gap: 3.2rem;
     -ms-flex-align: center;
     align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }
 
 @media (max-width: 1023px) {
@@ -3981,7 +4058,7 @@ button.swiper-pagination-bullet {
     border-radius: 2rem;
     background: #F8F8F8;
     padding: 2.2rem;
-    width: 70%;
+    width: 42%;
     -ms-flex-align: center;
     align-items: center;
 }
@@ -4135,6 +4212,7 @@ button.swiper-pagination-bullet {
 }
 
 .price {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -4341,6 +4419,7 @@ button.swiper-pagination-bullet {
 }
 
 .students {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -4416,6 +4495,7 @@ button.swiper-pagination-bullet {
 }
 
 .blog {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -4517,6 +4597,7 @@ button.swiper-pagination-bullet {
 }
 
 .trialForm {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -4778,6 +4859,7 @@ button.swiper-pagination-bullet {
 }
 
 .schedule {
+    overflow: hidden;
     margin-top: 19.6rem;
     padding-left: 4rem;
     padding-right: 4rem;
@@ -4807,6 +4889,7 @@ button.swiper-pagination-bullet {
     background: #F8F8F8;
     border-radius: 4rem;
     padding: 5.6rem;
+    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -5012,6 +5095,7 @@ button.swiper-pagination-bullet {
 }
 
 .answers {
+    overflow: hidden;
     margin-top: 14rem;
 }
 
@@ -5158,6 +5242,7 @@ button.swiper-pagination-bullet {
 }
 
 .contacts {
+    overflow: hidden;
     margin-top: 14rem;
 }
 

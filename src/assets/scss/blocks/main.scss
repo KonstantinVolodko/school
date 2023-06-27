@@ -1029,6 +1029,29 @@
 
 }
 
+.personalPartfolioSwiper {
+
+    .swiper-slide {
+        height: 100%;
+    }
+
+    .personalModal-content__portfolioItem {
+        height: 100%;
+    }
+
+    .personalModal-content__img {
+        height: 24rem !important;
+
+        @include breakpoint($xl-bp) {
+            height: 20rem !important;
+        }
+
+        @include breakpoint($sm-bp) {
+            height: 14rem !important;
+        }
+    }
+}
+
 .personalPartfolioSwiper-pagination {
     display: flex;
     justify-content: center;
@@ -1424,7 +1447,15 @@
             margin-top: 3.2rem;
         }
 
+        .swiper-slide {
+            height: 100%;
+        }
+
         .students-swiper__container {
+            height: 100%;
+            overflow: hidden;
+            border-radius: 4rem;
+
             img {
                 width: 100%;
                 height: 100%;

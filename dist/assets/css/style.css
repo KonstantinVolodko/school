@@ -2750,18 +2750,21 @@ button.swiper-pagination-bullet {
 }
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
+    rotate: 7deg;
     top: -3.6%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
+        rotate: 0deg;
         top: 0%;
     }
 }
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
+        rotate: 7deg;
         top: -3.6%;
         z-index: 0;
     }
@@ -2769,12 +2772,14 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
     top: 24%;
+    rotate: -14deg;
     right: 5%;
     z-index: 1;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
+        rotate: 0deg;
         top: 0%;
     }
 }
@@ -2782,6 +2787,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
         top: 24%;
+        rotate: -14deg;
         right: 5%;
         z-index: 1;
     }
@@ -2789,12 +2795,14 @@ button.swiper-pagination-bullet {
 
 .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
     top: 57%;
+    rotate: 7deg;
     right: 5%;
     z-index: 0;
 }
 
 @media (max-width: 850px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
+        rotate: 0deg;
         top: 0%;
     }
 }
@@ -2802,6 +2810,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
         top: 54%;
+        rotate: 7deg;
         right: 5%;
         z-index: 0;
     }
@@ -3507,6 +3516,30 @@ button.swiper-pagination-bullet {
     }
 }
 
+.personalPartfolioSwiper .swiper-slide {
+    height: 100%;
+}
+
+.personalPartfolioSwiper .personalModal-content__portfolioItem {
+    height: 100%;
+}
+
+.personalPartfolioSwiper .personalModal-content__img {
+    height: 24rem !important;
+}
+
+@media (max-width: 1023px) {
+    .personalPartfolioSwiper .personalModal-content__img {
+        height: 20rem !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .personalPartfolioSwiper .personalModal-content__img {
+        height: 14rem !important;
+    }
+}
+
 .personalPartfolioSwiper-pagination {
     display: -ms-flexbox;
     display: flex;
@@ -3980,6 +4013,16 @@ button.swiper-pagination-bullet {
     .students .students-swiper {
         margin-top: 3.2rem;
     }
+}
+
+.students .students-swiper .swiper-slide {
+    height: 100%;
+}
+
+.students .students-swiper .students-swiper__container {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4rem;
 }
 
 .students .students-swiper .students-swiper__container img {

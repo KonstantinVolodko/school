@@ -10689,7 +10689,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         breakpoints: {
             501: {
-                slidesPerView: 3,
+                slidesPerView: 3.4,
             },
             1024: {
                 slidesPerView: 4.3,
@@ -10728,6 +10728,8 @@ document.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 12,
         grabCursor: true,
         loop: true,
+        autoHeight: true,
+        watchSlidesProgress: true,
         touch: {
             touchRatio: 1,
             threshold: 30,
@@ -11129,6 +11131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     spaceBetween: 16,
                     grabCursor: true,
                     loop: true,
+                    watchSlidesProgress: true,
                     touch: {
                         touchRatio: 1,
                         threshold: 30,

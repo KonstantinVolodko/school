@@ -41,6 +41,11 @@
         height: 7.9rem;
 
         @include breakpoint($jb-bp) {
+            width: 16.7rem;
+            height: 6.9rem;
+        }
+
+        @include breakpoint($sm-bp) {
             width: 11.7rem;
             height: 5.9rem;
         }
@@ -137,6 +142,11 @@
         height: 12rem;
 
         @include breakpoint($jb-bp) {
+            width: 16.7rem;
+            height: 9.6rem;
+        }
+
+        @include breakpoint($sm-bp) {
             width: 12rem;
             height: 7rem;
         }

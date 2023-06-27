@@ -23,15 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
             nextEl: ".ourTeachers-content__rightArrow",
             prevEl: ".ourTeachers-content__leftArrow",
         },
-        pagination: {
-            el: ".ourTeachers-pagination",
-            clickable: true,
-        },
 
         breakpoints: {
             501: {
                 slidesPerView: 3.4,
+
+                pagination: {
+                    el: ".ourTeachers-pagination",
+                    clickable: true,
+                },
             },
+
+            850: {
+                pagination: false,
+                slidesPerView: 3.4,
+            },
+
             1024: {
                 slidesPerView: 4.3,
             },
@@ -41,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let reviewsSwiper = new Swiper(".reviewsSwiper", {
         slidesPerView: 1.15,
         spaceBetween: 20,
+        grabCursor: true,
         loop: true,
         threshold: 50,
         watchSlidesProgress: true,
@@ -51,13 +59,13 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         breakpoints: {
             501: {
-                slidesPerView: 2,
+                slidesPerView: 2.2,
             },
             850: {
-                slidesPerView: 3,
+                slidesPerView: 2.3,
             },
             1024: {
-                slidesPerView: 4,
+                slidesPerView: 3.4,
             },
         },
     });
@@ -516,25 +524,27 @@ document.addEventListener("DOMContentLoaded", () => {
     //     }
     // });
 
-
-    let videoSource = './assets/videos/desctopVideo.mp4';
-    let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
-
-    function checkResolution() {
-        if (window.innerWidth > 500) {
-            videoElement.src = videoSource;
-        } else {
-            videoElement.src = smallResolutionVideoSource;
+    if (videoElement) {
+        let videoSource = './assets/videos/desctopVideo.mp4';
+        let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
+    
+        function checkResolution() {
+            if (window.innerWidth > 500) {
+                videoElement.src = videoSource;
+            } else {
+                videoElement.src = smallResolutionVideoSource;
+            }
         }
+    
+        window.addEventListener('DOMContentLoaded', function () {
+            checkResolution();
+        });
+    
+        window.addEventListener('resize', function () {
+            checkResolution();
+        });
     }
-
-    window.addEventListener('DOMContentLoaded', function () {
-        checkResolution();
-    });
-
-    window.addEventListener('resize', function () {
-        checkResolution();
-    });
+    
 
 
 
@@ -623,26 +633,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     let textElement = document.querySelector(".musicalSchool h1");
-    let textToType = "Школа Мюзикла\nстаса чунихина";
-    textElement.innerText = "";
 
-    function typeText(text, i) {
-        if (i < text.length) {
-            textElement.innerText += text.charAt(i);
-            textElement.innerHTML += '<span class="cursor"></span>';
-            setTimeout(function () {
-                typeText(text, i + 1);
-            }, 100);
-        }
-
-        if (window.innerWidth < 501) {
-            if (text.charAt(i) === ' ') {
-                textElement.innerHTML += '<br>';
+    if (textElement) {
+        let textToType = "Школа Мюзикла\nстаса чунихина";
+        textElement.innerText = "";
+    
+        function typeText(text, i) {
+            if (i < text.length) {
+                textElement.innerText += text.charAt(i);
+                textElement.innerHTML += '<span class="cursor"></span>';
+                setTimeout(function () {
+                    typeText(text, i + 1);
+                }, 100);
+            }
+    
+            if (window.innerWidth < 501) {
+                if (text.charAt(i) === ' ') {
+                    textElement.innerHTML += '<br>';
+                }
             }
         }
+    
+        typeText(textToType, 0);
     }
-
-    typeText(textToType, 0);
+    
 
 
     const imgElements = document.querySelectorAll('.mission-content__img');

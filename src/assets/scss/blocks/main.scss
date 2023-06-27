@@ -121,6 +121,7 @@
 
             @include breakpoint($jb-bp) {
                 width: unset;
+                display: none;
             }
         }
 
@@ -194,11 +195,32 @@
                 justify-content: unset;
                 padding-top: 0rem;
                 padding-right: 0rem;
-                justify-content: center;
+                justify-content: space-between;
+                align-items: center;
+
             }
 
             @include breakpoint($sm-bp) {
                 padding-right: 0rem;
+                flex-direction: column;
+            }
+
+            .whiteBtn {
+                @media (min-width: 850px) {
+                    display: none;
+                }
+            }
+
+            .musicalSchool-services__content_tablet {
+                display: flex;
+                gap: 1.6rem;
+
+                @include breakpoint($jb-bp) {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                }
+
             }
 
             .musicalSchool-services__contentItem {
@@ -206,8 +228,14 @@
                 height: 11.5rem;
                 position: relative;
 
+                @include breakpoint($jb-bp) {
+                    width: 10.4rem;
+                    height: 10.5rem;
+                }
+
                 @include breakpoint($sm-bp) {
                     height: 7.5rem;
+                    width: 7.5rem;
                 }
 
                 svg {
@@ -228,6 +256,10 @@
                     top: 40%;
                     left: 20%;
 
+                    @include breakpoint($jb-bp) {
+                        font-size: 1.4rem;
+                    }
+
                     @include breakpoint($sm-bp) {
                         font-size: 1rem;
                         line-height: 1.2rem;
@@ -240,8 +272,14 @@
                 width: 17.9rem;
                 height: 11.5rem;
 
+                @include breakpoint($jb-bp) {
+                    width: 14.4rem;
+                    height: 10.5rem;
+                }
+
                 @include breakpoint($sm-bp) {
                     height: 7rem;
+                    width: 10rem;
                 }
 
                 p {
@@ -296,6 +334,7 @@
                 width: 100%;
                 flex-direction: unset;
                 flex-wrap: wrap;
+                height: 28rem;
             }
 
             @include breakpoint($sm-bp) {
@@ -309,8 +348,8 @@
                 position: absolute;
 
                 @include breakpoint($jb-bp) {
-                    width: 50%;
-                    position: unset;
+                    width: 41%;
+                    position: absolute;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -353,6 +392,8 @@
                 @include breakpoint($jb-bp) {
                     rotate: 0deg;
                     top: 0%;
+                    z-index: -1;
+                    right: 28%;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -372,6 +413,8 @@
                 @include breakpoint($jb-bp) {
                     rotate: 0deg;
                     top: 0%;
+                    z-index: -2;
+                    right: 0%;
                 }
 
                 @include breakpoint($sm-bp) {
@@ -496,6 +539,33 @@
                     margin-top: 3rem;
                 }
 
+                @include breakpoint($jb-bp) {
+                    display: block;
+                }
+
+                p {
+                    @include breakpoint($jb-bp) {
+                        margin-top: 1rem;
+                    }
+                }
+
+                .ourSchool-content__imgBlock {
+                    display: none;
+                    float: right;
+
+                    @include breakpoint($jb-bp) {
+                        display: block;
+                    }
+
+                    @include breakpoint($sm-bp) {
+                        display: none;
+                    }
+
+                    p {
+                        color: #FFFFFF;
+                        margin-top: 1rem;
+                    }
+                }
 
                 p {
                     font-weight: 400;
@@ -537,8 +607,14 @@
                 width: 50%;
             }
 
+            @include breakpoint($jb-bp) {
+                display: none;
+                width: 54%;
+            }
+
             @include breakpoint($sm-bp) {
                 width: 100%;
+                display: block;
             }
 
             img {
@@ -588,9 +664,12 @@
         margin-top: 6.5rem;
         gap: 3rem;
 
+        @include breakpoint($jb-bp) {
+            flex-direction: column;
+        }
+
         @include breakpoint($sm-bp) {
             margin-top: 4rem;
-            flex-direction: column;
             gap: 1.6rem;
         }
 
@@ -601,8 +680,11 @@
             position: relative;
             cursor: pointer;
 
-            @include breakpoint($sm-bp) {
+            @include breakpoint($jb-bp) {
                 width: 100%;
+            }
+
+            @include breakpoint($sm-bp) {
                 border-radius: 3rem;
             }
 
@@ -633,8 +715,7 @@
             border-radius: 3rem;
             position: relative;
 
-
-            @include breakpoint($sm-bp) {
+            @include breakpoint($jb-bp) {
                 width: 100%;
             }
 
@@ -672,10 +753,15 @@
                 ;
                 letter-spacing: 0.14rem;
 
+                @include breakpoint($jb-bp) {
+                    left: 23%;
+                }
+
                 @include breakpoint($sm-bp) {
                     font-size: 1.7rem;
                     line-height: 2rem;
                     letter-spacing: .18rem;
+                    left: 4%;
                 }
             }
         }
@@ -839,10 +925,12 @@
     align-items: end;
 
     .ourTeachers-content__arrows {
+        display: flex;
 
-        @include breakpoint($sm-bp) {
+        @include breakpoint($jb-bp) {
             display: none;
         }
+
     }
 }
 
@@ -1103,10 +1191,17 @@
             gap: 3.2rem;
             align-items: center;
 
+
             @include breakpoint($xl-bp) {
-                flex-direction: column;
+                flex-direction: unset;
+                justify-content: space-between;
                 align-items: baseline;
                 gap: 2rem;
+                width: 100%;
+            }
+
+            @include breakpoint($sm-bp) {
+                flex-direction: column;
             }
 
             .reviews-content__people {
@@ -1117,6 +1212,10 @@
                 padding: 2.2rem;
                 width: 70%;
                 align-items: center;
+
+                @include breakpoint($jb-bp) {
+                    width: 60%;
+                }
 
                 @include breakpoint($sm-bp) {
                     padding: 2rem 1.6rem;
@@ -1168,16 +1267,16 @@
             background: #F8F8F8;
             border-radius: 4rem;
             padding: 3.2rem;
-            height: 36rem;
+            height: 29rem;
             overflow: hidden;
 
             @include breakpoint($xl-bp) {
                 padding: 2.5rem;
-                height: 43rem;
+                height: 34rem;
             }
 
             @include breakpoint($jb-bp) {
-                height: 38rem;
+                height: 43rem;
             }
 
             @include breakpoint($sm-bp) {
@@ -1455,6 +1554,10 @@
             height: 100%;
             overflow: hidden;
             border-radius: 4rem;
+
+            @include breakpoint($sm-bp) {
+                border-radius: 3rem;
+            }
 
             img {
                 width: 100%;
@@ -2311,6 +2414,8 @@
 
             @include breakpoint($jb-bp) {
                 width: 100%;
+                height: 35rem;
+                border-radius: 3rem;
             }
 
             @include breakpoint($sm-bp) {

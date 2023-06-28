@@ -10782,11 +10782,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         breakpoints: {
             502: {
-                slidesPerView: 2,
+                slidesPerView: 2.3,
                 spaceBetween: 23,
             },
             850: {
-                slidesPerView: 3,
+                slidesPerView: 3.3,
             },
         },
     });
@@ -10980,13 +10980,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector('.trialForm-content form');
     const phoneNumberInput = document.getElementById('phone');
     const emailInput = document.getElementById('email');
-
+    let formData;
 
     if (form) {
         form.addEventListener('submit', function (event) {
             const phoneNumber = phoneNumberInput.value;
             const email = emailInput.value;
-
             let isValid = true;
 
             if (!phoneNumberRegex.test(phoneNumber) || phoneNumber === '') {
@@ -11003,6 +11002,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!isValid) {
                 event.preventDefault();
+            } else {
+                formData = new FormData(this); // Assign FormData to the formData variable
+                const selectedOption = this.querySelector('.trialForm-content__selectTrigger').textContent.trim();
+                formData.append('selectedOption', selectedOption);
+                const formName = this.getAttribute('name');
+                formData.append('formName', formName);
+
+                doAPIcall('POST', formData, './send.php', function (data) {
+                    compliteSendModal.open();
+                    phoneNumberInput.style.border = "none";
+                    phoneNumberInput.nextElementSibling.style.display = "none";
+                    emailInput.style.border = "none";
+                    emailInput.nextElementSibling.style.display = "none";
+                });
             }
         });
     }
@@ -11079,9 +11092,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function doAPIcall(type, data = '', url, callback) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == XMLHttpRequest.DONE && xmlhttp.status == 200) {
-                var data = xmlhttp.responseText;
-                if (callback) callback(data);
+            if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+                if (xmlhttp.status == 200) {
+                    var data = xmlhttp.responseText;
+                    if (callback) callback(data);
+                } else {
+                    console.log('Ошибка отправки формы');
+                }
             }
         };
         xmlhttp.open(type, url, true);
@@ -11101,27 +11118,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             event.preventDefault();
-            const formData = new FormData(this);
-
-            const selectedOption = this.querySelector('.trialForm-content__selectTrigger').textContent.trim();
-            formData.append('selectedOption', selectedOption);
-
-            const formName = this.getAttribute('name');
-            formData.append('formName', formName);
-
-            doAPIcall('POST', formData, './send.php', function (data) {
-                compliteSendModal.open()
-                phoneNumberInput.style.border = "none"
-                phoneNumberInput.nextElementSibling.style.display = "none"
-                emailInput.style.border = "none"
-                emailInput.nextElementSibling.style.display = "none"
-            });
+            
 
             const parent = this.closest('.regModal');
             const feedback = document.querySelector('#feedback');
 
-            for (const key of formData.entries()) {
-                console.log(key);
+            if (formData) {
+                for (const key of formData.entries()) {
+                    console.log(key);
+                }
             }
 
             this.reset();
@@ -11347,9 +11352,9 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     
-        setTimeout(function() {
+        // setTimeout(function() {
             typeText(textToType, 0);
-        }, 3200)
+        // }, 3200)
     }
     
 

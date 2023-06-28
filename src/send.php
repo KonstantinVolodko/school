@@ -7,6 +7,11 @@ if ($_POST) {
     $selectedOption = ($_POST['selectedOption']);
     $formName = ($_POST['formName']);
 
+    if (trim($name) === '' || trim($phone) === '' || trim($email) === '' || trim($selectedOption) === '' || trim($formName) === '') {
+        echo "Ошибка: Все поля формы должны быть заполнены";
+        exit;
+    }
+
     $HTTP_HOST = $_SERVER["HTTP_HOST"];
     $message = "Письмо об обратном звонке с сайта " . $HTTP_HOST . "\n";
     $message .= "-------------------------------------- \n\n";
@@ -20,7 +25,7 @@ if ($_POST) {
     $message .= "IP: " . htmlspecialchars($_SERVER['REMOTE_ADDR']);
     $body = $message;
 
-    if (mail("qekca@mailto.plus", "Письмо об обратном звонке с сайта " . $HTTP_HOST, $body, "From: info@infa.ru\r\n")) {
+    if (mail("oyhepo@mailto.plus", "Письмо об обратном звонке с сайта " . $HTTP_HOST, $body, "From: info@infa.ru\r\n")) {
         echo "Сообщение успешно отправлено";
     } else {
         echo "Ошибка при отправке сообщения";

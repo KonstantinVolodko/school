@@ -145,6 +145,10 @@
 
             &:hover {
                 background-position: 0;
+
+                svg {
+                    fill: #f8f8f8;
+                }
             }
 
             @include breakpoint($xl-bp) {
@@ -399,6 +403,7 @@
     font-size: 3.8rem;
     line-height: 2rem;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .close:hover,
@@ -406,6 +411,7 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 
@@ -489,6 +495,7 @@
         float: right;
         font-size: 2.8rem;
         cursor: pointer;
+        transition: all 0.2s linear;
     }
 
     .close:hover,
@@ -496,6 +503,7 @@
         color: black;
         text-decoration: none;
         cursor: pointer;
+        transition: all 0.2s linear;
     }
 }
 

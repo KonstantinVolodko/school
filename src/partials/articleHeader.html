@@ -1,0 +1,65 @@
+<header class="header">
+    <div class="header-content pagePadding">
+        <a class="header-content__logo articleHeader-content__logo" href="./">
+            <!-- <svg>
+                <use href="#logo"></use>
+            </svg> -->
+
+            <picture>
+                <source srcset="./assets/images/footerLogo.svg" media="(min-width: 1023px)" />
+                <source srcset="./assets/images/footerLogo.svg" media="(max-width: 500px)">
+                <img src="./assets/images/logoHorizontal.svg" alt="#" />
+            </picture>
+        </a>
+
+        <div class="header-content__menuContainer">
+            <ul>
+                <li><a href="./#aboutSchool">О школе</a></li>
+                <li><a href="./#ourTeachers">Преподаватели</a></li>
+                <li><a href="./#reviews">Отзывы</a></li>
+                <li><a href="./#price">Стоимость</a></li>
+                <li><a href="./#students">Выступления учеников</a></li>
+                <li><a href="./#blog">Блог</a></li>
+                <li><a href="./#contacts">Контакты</a></li>
+            </ul>
+
+            <a href="tel:+79265367508" class="header-content__phoneContainer">
+                <svg>
+                    <use href="#whatsAppIco"></use>
+                </svg>
+
+                <p>+7 (926) 536 75 08</p>
+            </a>
+        </div>
+
+        <button id="burgerBtn" class="header-content__burgerBtn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+    </div>
+
+    <div id="burgerModal" class="header-modal">
+        <div class="header-modal__content pagePadding">
+            <span class="close">&times;</span>
+            <a class="header-modal__logo" href="#">
+                <!-- <svg>
+                    <use href="#headerLogoText"></use>
+                </svg> -->
+
+                <img src="./assets/images/footerLogo.svg" alt="#">
+            </a>
+            <ul></ul>
+
+            <a href="tel:+79265367508" class="header-modal__phoneContainer">
+                <svg>
+                    <use href="#whatsAppIco"></use>
+                </svg>
+
+                <p>+7 (926) 536 75 08</p>
+            </a>
+
+            <a href="#trialForm" class="whiteBtn">Записаться на пробное занятие</a>
+        </div>
+    </div>
+</header>

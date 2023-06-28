@@ -10,14 +10,27 @@
     <meta name="description" content="">
     <title></title>
     
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-    />
+    
+    <!-- Favicon для iPhone/iPad -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favIcon.ico">
+    
+    <!-- Favicon для Android/Chromebook -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favIcon.ico">
+    
+    <!-- Favicon для Android/Chromebook (дополнительный размер) -->
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favIcon.ico">
+    
+    <!-- Favicon для Windows -->
+    <meta name="msapplication-TileImage" content="assets/images/favIcon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
     <!-- CSS only -->
     
     
@@ -26,13 +39,10 @@
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     
-    <!-- CSS only -->
-    
-    
-</head>
+    <!-- CSS only --></head>
 
 <body>
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div id="ctn-preloader" class="ctn-preloader">
             <div class="animation-preloader">
                 <div class="spinner"></div>
@@ -73,14 +83,13 @@
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-    </div>
+    </div> -->
     <svg style="display: none;">
     
         <symbol id="whatsAppIco" viewBox="0 0 20 20">
             <g clip-path="url(#clip0_1501_7062)">
                 <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M9.25289 0.0279429C7.74461 0.174935 6.60726 0.500872 5.37371 1.13951C3.49055 2.1145 1.96992 3.66599 1.02973 5.57173C0.668515 6.30392 0.498281 6.75271 0.309492 7.47075C0.0714841 8.37575 0.00218727 8.92595 3.88292e-05 9.9272C-0.00101586 10.4257 0.019531 10.9667 0.0475388 11.1772C0.260508 12.7777 0.762461 14.157 1.60195 15.4484L1.88176 15.8788L1.26019 17.7137C0.91832 18.7229 0.644023 19.554 0.650625 19.5606C0.657265 19.5672 1.5123 19.3009 2.55074 18.9687C3.58922 18.6365 4.45273 18.3647 4.46973 18.3647C4.48672 18.3647 4.64703 18.4557 4.82598 18.5669C5.00492 18.6782 5.37984 18.8785 5.65914 19.0122C8.18469 20.2209 11.0717 20.3243 13.6577 19.2988C16.5878 18.1368 18.8383 15.5949 19.6416 12.5399C19.8877 11.6042 19.9501 11.0913 19.9501 10.0053C19.9501 8.91938 19.8877 8.40646 19.6416 7.47075C18.6992 3.88689 15.8267 1.10111 12.2021 0.255794C11.5931 0.113763 10.9594 0.0418101 10.1904 0.027396C9.7607 0.0193101 9.33883 0.0195445 9.25289 0.0279429ZM6.87051 4.66322C6.93519 4.69677 7.02582 4.79189 7.07195 4.87454C7.1884 5.08329 8.13805 7.37052 8.1657 7.50888C8.20109 7.68587 8.02801 7.98677 7.63973 8.42333C7.23453 8.87884 7.14746 9.02509 7.18351 9.18935C7.24902 9.48743 8.15242 10.6855 8.70902 11.2124C9.57273 12.03 10.8782 12.8063 11.4599 12.8483C11.759 12.8699 11.8681 12.7852 12.3256 12.1763C12.5331 11.9 12.7545 11.6224 12.8175 11.5594C12.9682 11.4087 13.1918 11.3768 13.4427 11.4701C13.7644 11.5899 15.7313 12.5477 15.8695 12.652L16.0017 12.7517L15.9798 13.1656C15.9238 14.2282 15.5511 14.7799 14.5654 15.2597C13.6282 15.7158 12.8946 15.7033 11.4585 15.2069C9.53168 14.5409 8.50894 13.9048 7.12312 12.5102C6.42969 11.8125 5.93691 11.2225 5.37328 10.4155C4.44453 9.08552 4.08836 8.05857 4.19437 7.01626C4.27937 6.18056 4.57141 5.56364 5.16121 4.97388C5.44652 4.68853 5.81988 4.57107 6.3818 4.58982C6.62019 4.59775 6.79496 4.624 6.87051 4.66322Z"
-                    fill="#15112B" />
+                    d="M9.25289 0.0279429C7.74461 0.174935 6.60726 0.500872 5.37371 1.13951C3.49055 2.1145 1.96992 3.66599 1.02973 5.57173C0.668515 6.30392 0.498281 6.75271 0.309492 7.47075C0.0714841 8.37575 0.00218727 8.92595 3.88292e-05 9.9272C-0.00101586 10.4257 0.019531 10.9667 0.0475388 11.1772C0.260508 12.7777 0.762461 14.157 1.60195 15.4484L1.88176 15.8788L1.26019 17.7137C0.91832 18.7229 0.644023 19.554 0.650625 19.5606C0.657265 19.5672 1.5123 19.3009 2.55074 18.9687C3.58922 18.6365 4.45273 18.3647 4.46973 18.3647C4.48672 18.3647 4.64703 18.4557 4.82598 18.5669C5.00492 18.6782 5.37984 18.8785 5.65914 19.0122C8.18469 20.2209 11.0717 20.3243 13.6577 19.2988C16.5878 18.1368 18.8383 15.5949 19.6416 12.5399C19.8877 11.6042 19.9501 11.0913 19.9501 10.0053C19.9501 8.91938 19.8877 8.40646 19.6416 7.47075C18.6992 3.88689 15.8267 1.10111 12.2021 0.255794C11.5931 0.113763 10.9594 0.0418101 10.1904 0.027396C9.7607 0.0193101 9.33883 0.0195445 9.25289 0.0279429ZM6.87051 4.66322C6.93519 4.69677 7.02582 4.79189 7.07195 4.87454C7.1884 5.08329 8.13805 7.37052 8.1657 7.50888C8.20109 7.68587 8.02801 7.98677 7.63973 8.42333C7.23453 8.87884 7.14746 9.02509 7.18351 9.18935C7.24902 9.48743 8.15242 10.6855 8.70902 11.2124C9.57273 12.03 10.8782 12.8063 11.4599 12.8483C11.759 12.8699 11.8681 12.7852 12.3256 12.1763C12.5331 11.9 12.7545 11.6224 12.8175 11.5594C12.9682 11.4087 13.1918 11.3768 13.4427 11.4701C13.7644 11.5899 15.7313 12.5477 15.8695 12.652L16.0017 12.7517L15.9798 13.1656C15.9238 14.2282 15.5511 14.7799 14.5654 15.2597C13.6282 15.7158 12.8946 15.7033 11.4585 15.2069C9.53168 14.5409 8.50894 13.9048 7.12312 12.5102C6.42969 11.8125 5.93691 11.2225 5.37328 10.4155C4.44453 9.08552 4.08836 8.05857 4.19437 7.01626C4.27937 6.18056 4.57141 5.56364 5.16121 4.97388C5.44652 4.68853 5.81988 4.57107 6.3818 4.58982C6.62019 4.59775 6.79496 4.624 6.87051 4.66322Z"/>
             </g>
         </symbol>
     
@@ -1237,7 +1246,7 @@
                             </div>
                         </div>
             
-                        <button type="submit" id="openModal" class="whiteBtn">Записаться на занятие</button>
+                        <button type="submit" class="whiteBtn">Записаться на занятие</button>
             
                         <p class="trialForm-content__confidence">Нажимая на кнопку вы соглашаетесь с <a href="#">Политикой
                                 конфиденциальности и даете согласие на обработку персональных данных</a></p>
@@ -1555,23 +1564,23 @@
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var preloader = document.querySelector('#ctn-preloader');
-        var preloaderSection = document.querySelector('#preloader');
-        var loadedClass = 'loaded';
-        var noScrollClass = 'no-scroll-y';
+    // document.addEventListener('DOMContentLoaded', function () {
+    //     var preloader = document.querySelector('#ctn-preloader');
+    //     var preloaderSection = document.querySelector('#preloader');
+    //     var loadedClass = 'loaded';
+    //     var noScrollClass = 'no-scroll-y';
 
-        setTimeout(function () {
-            preloader.classList.add(loadedClass);
-            document.body.classList.remove(noScrollClass);
+    //     setTimeout(function () {
+    //         preloader.classList.add(loadedClass);
+    //         document.body.classList.remove(noScrollClass);
 
-            if (preloader.classList.contains(loadedClass)) {
-                setTimeout(function () {
-                    preloaderSection.parentNode.removeChild(preloaderSection);
-                }, 1000);
-            }
-        }, 3000);
-    });
+    //         if (preloader.classList.contains(loadedClass)) {
+    //             setTimeout(function () {
+    //                 preloaderSection.parentNode.removeChild(preloaderSection);
+    //             }, 1000);
+    //         }
+    //     }, 3000);
+    // });
 </script>
 
 </html>

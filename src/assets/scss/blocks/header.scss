@@ -15,17 +15,27 @@
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
-        background-position: 0;
-    }
+    
 
-    @include breakpoint($xl-bp) {
-        display: none;
+    @include breakpoint($sm-bp) {
+        svg {
+            display: none;
+        }
     }
 
     svg {
         width: 2rem;
         height: 2rem;
+        fill: #15112B;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-position: 0;
+
+        svg {
+            fill: #b89fff;
+        }
     }
 
     p {
@@ -33,6 +43,11 @@
         font-size: 1.8rem;
         line-height: 2.4rem;
         color: #15112B;
+
+        @include breakpoint($sm-bp) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
     }
 }
 
@@ -48,6 +63,7 @@
 
     @include breakpoint($sm-bp) {
         padding-top: 1rem;
+        gap: 1rem;
     }
 
     .header-content__logo {
@@ -68,6 +84,36 @@
         svg {
             width: 100%;
             height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include breakpoint($xl-bp) {
+                object-fit: contain;
+            }
+        }
+
+        picture {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .articleHeader-content__logo {
+        height: 10.3rem;
+        width: 17.7rem;
+
+        @include breakpoint($xl-bp) {
+            height: 7.9rem;
+            width: 40rem;
+        }
+
+        @include breakpoint($sm-bp) {
+            width: 11.7rem;
         }
     }
 

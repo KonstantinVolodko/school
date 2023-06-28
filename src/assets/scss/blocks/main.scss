@@ -39,10 +39,14 @@
 
 .musicalSchool {
     margin-top: 6.8rem;
-    overflow: hidden;
+   
 
     @include breakpoint($xl-bp) {
         margin-top: 3.2rem;
+    }
+
+    @include breakpoint($sm-bp) {
+        overflow: hidden;
     }
 
     h1 {
@@ -55,9 +59,9 @@
         min-height: 18rem;
 
         @include breakpoint($jb-bp) {
-            font-size: 5.6rem;
-            line-height: 6rem;
-            min-height: 12rem;
+            font-size: 6.4rem;
+            line-height: 7rem;
+            min-height: 14rem;
         }
 
         @include breakpoint($sm-bp) {
@@ -299,7 +303,7 @@
 .mission {
     margin-top: 15.5rem;
     padding-right: 4rem;
-    overflow: hidden;
+    
 
     @include breakpoint($xl-bp) {
         margin-top: 10rem;
@@ -311,6 +315,7 @@
         margin-top: 6.4rem;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
+        overflow: hidden;
     }
 
     .mission-content {
@@ -331,7 +336,11 @@
             flex-direction: column;
             width: 45.9rem;
             position: relative;
-            overflow: hidden;
+            
+
+            @include breakpoint($sm-bp) {
+                overflow: hidden;
+            }
 
             @include breakpoint($jb-bp) {
                 width: 100%;
@@ -379,7 +388,7 @@
                 }
 
                 @include breakpoint($sm-bp) {
-                    top: -3.6%;
+                    top: -1.6%;
                     z-index: 0;
                 }
             }
@@ -397,7 +406,7 @@
                 }
 
                 @include breakpoint($sm-bp) {
-                    top: 24%;
+                    top: 26%;
                     right: 5%;
                     z-index: 1;
                 }
@@ -416,7 +425,7 @@
                 }
 
                 @include breakpoint($sm-bp) {
-                    top: 54%;
+                    top: 56%;
                     right: 5%;
                     z-index: 0;
                 }
@@ -796,9 +805,6 @@
             padding: 2.5rem;
         }
 
-        @include breakpoint($jb-bp) {
-            padding-bottom: 16rem;
-        }
 
         @include breakpoint($sm-bp) {
             padding: 4rem 1.7rem 8rem 1.7rem;
@@ -814,6 +820,7 @@
             @include breakpoint($sm-bp) {
                 margin-top: 4rem;
                 width: 100%;
+                text-align: center;
             }
         }
 
@@ -863,13 +870,14 @@
 
             @include breakpoint($jb-bp) {
                 top: unset;
-                bottom: 0;
-                right: 0;
-                left: 3%;
+                bottom: 35%;
+                right: 4%;
             }
 
             @include breakpoint($sm-bp) {
                 left: 6%;
+                bottom: 0;
+                right: 0;
             }
         }
 
@@ -879,13 +887,14 @@
 
             @include breakpoint($jb-bp) {
                 top: unset;
-                bottom: 0;
-                right: 0;
-                left: 21%;
+                bottom: 14%;
+                right: 22%;
             }
 
             @include breakpoint($sm-bp) {
                 left: 69%;
+                bottom: 0;
+                right: 0;
             }
         }
 
@@ -2002,7 +2011,6 @@
         }
 
         @include breakpoint($sm-bp) {
-            margin-top: 6.4rem;
             padding: 4rem 0rem;
             border-radius: 3rem;
         }

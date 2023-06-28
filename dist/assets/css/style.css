@@ -825,12 +825,8 @@ h3 {
     transition: all 0.3s ease-in-out;
 }
 
-.header-content__phoneContainer:hover {
-    background-position: 0;
-}
-
-@media (max-width: 1023px) {
-    .header-content__phoneContainer {
+@media (max-width: 500px) {
+    .header-content__phoneContainer svg {
         display: none;
     }
 }
@@ -838,6 +834,16 @@ h3 {
 .header-content__phoneContainer svg {
     width: 2rem;
     height: 2rem;
+    fill: #15112B;
+    transition: all 0.3s ease-in-out;
+}
+
+.header-content__phoneContainer:hover {
+    background-position: 0;
+}
+
+.header-content__phoneContainer:hover svg {
+    fill: #b89fff;
 }
 
 .header-content__phoneContainer p {
@@ -845,6 +851,13 @@ h3 {
     font-size: 1.8rem;
     line-height: 2.4rem;
     color: #15112B;
+}
+
+@media (max-width: 500px) {
+    .header-content__phoneContainer p {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
 }
 
 .header-content {
@@ -866,6 +879,7 @@ h3 {
 @media (max-width: 500px) {
     .header-content {
         padding-top: 1rem;
+        gap: 1rem;
     }
 }
 
@@ -892,6 +906,44 @@ h3 {
 .header-content .header-content__logo svg {
     width: 100%;
     height: 100%;
+}
+
+.header-content .header-content__logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+    .header-content .header-content__logo img {
+        -o-object-fit: contain;
+        object-fit: contain;
+    }
+}
+
+.header-content .header-content__logo picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.header-content .articleHeader-content__logo {
+    height: 10.3rem;
+    width: 17.7rem;
+}
+
+@media (max-width: 1023px) {
+    .header-content .articleHeader-content__logo {
+        height: 7.9rem;
+        width: 40rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-content .articleHeader-content__logo {
+        width: 11.7rem;
+    }
 }
 
 .header-content .header-content__menuContainer {
@@ -2163,6 +2215,10 @@ button.swiper-pagination-bullet {
     background-position: 0;
 }
 
+.footer-content .footer-content__contacts .header-content__phoneContainer:hover svg {
+    fill: #f8f8f8;
+}
+
 @media (max-width: 1023px) {
     .footer-content .footer-content__contacts .header-content__phoneContainer {
         display: -ms-flexbox;
@@ -2465,6 +2521,7 @@ button.swiper-pagination-bullet {
     font-size: 3.8rem;
     line-height: 2rem;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .close:hover,
@@ -2472,6 +2529,7 @@ button.swiper-pagination-bullet {
     color: black;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .compliteSend {
@@ -2570,6 +2628,7 @@ button.swiper-pagination-bullet {
     float: right;
     font-size: 2.8rem;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .compliteSend .close:hover,
@@ -2577,6 +2636,7 @@ button.swiper-pagination-bullet {
     color: black;
     text-decoration: none;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
 
 .compliteSend.open {
@@ -2640,12 +2700,17 @@ button.swiper-pagination-bullet {
 
 .musicalSchool {
     margin-top: 6.8rem;
-    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
     .musicalSchool {
         margin-top: 3.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .musicalSchool {
+        overflow: hidden;
     }
 }
 
@@ -2661,9 +2726,9 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 850px) {
     .musicalSchool h1 {
-        font-size: 5.6rem;
-        line-height: 6rem;
-        min-height: 12rem;
+        font-size: 6.4rem;
+        line-height: 7rem;
+        min-height: 14rem;
     }
 }
 
@@ -2969,7 +3034,6 @@ button.swiper-pagination-bullet {
 .mission {
     margin-top: 15.5rem;
     padding-right: 4rem;
-    overflow: hidden;
 }
 
 @media (max-width: 1023px) {
@@ -2985,6 +3049,7 @@ button.swiper-pagination-bullet {
         margin-top: 6.4rem;
         padding-right: 1.5rem;
         padding-left: 1.5rem;
+        overflow: hidden;
     }
 }
 
@@ -3015,7 +3080,12 @@ button.swiper-pagination-bullet {
     flex-direction: column;
     width: 45.9rem;
     position: relative;
-    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .mission .mission-content .mission-content__imgContainer {
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 850px) {
@@ -3083,7 +3153,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:first-child {
-        top: -3.6%;
+        top: -1.6%;
         z-index: 0;
     }
 }
@@ -3106,7 +3176,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:nth-child(2) {
-        top: 24%;
+        top: 26%;
         right: 5%;
         z-index: 1;
     }
@@ -3130,7 +3200,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 500px) {
     .mission .mission-content .mission-content__imgContainer .mission-content__img:last-child {
-        top: 54%;
+        top: 56%;
         right: 5%;
         z-index: 0;
     }
@@ -3571,12 +3641,6 @@ button.swiper-pagination-bullet {
     }
 }
 
-@media (max-width: 850px) {
-    .trialLesson .trialLesson-content {
-        padding-bottom: 16rem;
-    }
-}
-
 @media (max-width: 500px) {
     .trialLesson .trialLesson-content {
         padding: 4rem 1.7rem 8rem 1.7rem;
@@ -3593,6 +3657,7 @@ button.swiper-pagination-bullet {
     .trialLesson .trialLesson-content .whiteBtn {
         margin-top: 4rem;
         width: 100%;
+        text-align: center;
     }
 }
 
@@ -3650,15 +3715,16 @@ button.swiper-pagination-bullet {
 @media (max-width: 850px) {
     .trialLesson .trialLesson-content .musicalSchool-services__contentItem:first-of-type {
         top: unset;
-        bottom: 0;
-        right: 0;
-        left: 3%;
+        bottom: 35%;
+        right: 4%;
     }
 }
 
 @media (max-width: 500px) {
     .trialLesson .trialLesson-content .musicalSchool-services__contentItem:first-of-type {
         left: 6%;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -3670,15 +3736,16 @@ button.swiper-pagination-bullet {
 @media (max-width: 850px) {
     .trialLesson .trialLesson-content .musicalSchool-services__contentItem:nth-of-type(2) {
         top: unset;
-        bottom: 0;
-        right: 0;
-        left: 21%;
+        bottom: 14%;
+        right: 22%;
     }
 }
 
 @media (max-width: 500px) {
     .trialLesson .trialLesson-content .musicalSchool-services__contentItem:nth-of-type(2) {
         left: 69%;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -4900,7 +4967,6 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 500px) {
     .schedule .schedule-content {
-        margin-top: 6.4rem;
         padding: 4rem 0rem;
         border-radius: 3rem;
     }

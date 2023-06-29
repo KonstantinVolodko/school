@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <!-- <div id="preloader">
+    <div id="preloader">
         <div id="ctn-preloader" class="ctn-preloader">
             <div class="animation-preloader">
                 <div class="spinner"></div>
@@ -47,7 +47,7 @@
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-    </div> -->
+    </div>
     {{> sprite }}
 
     <div class="page">
@@ -79,23 +79,23 @@
 </section>
 
 <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var preloader = document.querySelector('#ctn-preloader');
-    //     var preloaderSection = document.querySelector('#preloader');
-    //     var loadedClass = 'loaded';
-    //     var noScrollClass = 'no-scroll-y';
+    document.addEventListener('DOMContentLoaded', function () {
+        var preloader = document.querySelector('#ctn-preloader');
+        var preloaderSection = document.querySelector('#preloader');
+        var loadedClass = 'loaded';
+        var noScrollClass = 'no-scroll-y';
 
-    //     setTimeout(function () {
-    //         preloader.classList.add(loadedClass);
-    //         document.body.classList.remove(noScrollClass);
+        setTimeout(function () {
+            preloader.classList.add(loadedClass);
+            document.body.classList.remove(noScrollClass);
 
-    //         if (preloader.classList.contains(loadedClass)) {
-    //             setTimeout(function () {
-    //                 preloaderSection.parentNode.removeChild(preloaderSection);
-    //             }, 1000);
-    //         }
-    //     }, 3000);
-    // });
+            if (preloader.classList.contains(loadedClass)) {
+                setTimeout(function () {
+                    preloaderSection.parentNode.removeChild(preloaderSection);
+                }, 1000);
+            }
+        }, 3000);
+    });
 </script>
 
 </html>

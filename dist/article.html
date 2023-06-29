@@ -11,16 +11,9 @@
     <title></title>
     
     
-    <!-- Favicon для iPhone/iPad -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favIcon.ico">
-    
-    <!-- Favicon для Android/Chromebook -->
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favIcon.ico">
-    
-    <!-- Favicon для Android/Chromebook (дополнительный размер) -->
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favIcon.ico">
-    
-    <!-- Favicon для Windows -->
     <meta name="msapplication-TileImage" content="assets/images/favIcon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
     
@@ -42,7 +35,7 @@
     <!-- CSS only --></head>
 
 <body>
-    <!-- <div id="preloader">
+    <div id="preloader">
         <div id="ctn-preloader" class="ctn-preloader">
             <div class="animation-preloader">
                 <div class="spinner"></div>
@@ -83,7 +76,7 @@
             <div class="loader-section section-left"></div>
             <div class="loader-section section-right"></div>
         </div>
-    </div> -->
+    </div>
     <svg style="display: none;">
     
         <symbol id="whatsAppIco" viewBox="0 0 20 20">
@@ -211,9 +204,6 @@
         <header class="header">
             <div class="header-content pagePadding">
                 <a class="header-content__logo articleHeader-content__logo" href="./">
-                    <!-- <svg>
-                        <use href="#logo"></use>
-                    </svg> -->
         
                     <picture>
                         <source srcset="./assets/images/footerLogo.svg" media="(min-width: 1023px)" />
@@ -253,9 +243,6 @@
                 <div class="header-modal__content pagePadding">
                     <span class="close">&times;</span>
                     <a class="header-modal__logo" href="#">
-                        <!-- <svg>
-                            <use href="#headerLogoText"></use>
-                        </svg> -->
         
                         <img src="./assets/images/footerLogo.svg" alt="#">
                     </a>
@@ -426,10 +413,6 @@
             <div class="footer-content">
                 <div class="footer-content__links">
                     <a class="footer-content__logo" href="./">
-                        <!-- <svg>
-                            <use href="#footerLogo"></use>
-                        </svg> -->
-        
                         <img src="./assets/images/footerLogo.svg" alt="#">
                     </a>
         
@@ -482,7 +465,7 @@
         
                 <div class="footer-content__confidence">
                     <p>©ШКОЛА МЮЗИКЛА СТАСА ЧУНИХИНА . Все права защищены.</p>
-                    <a href="#">Политика конфиденциальности</a>
+                    <a href="./assets/documents/privatPolice.pdf" download>Политика конфиденциальности</a>
                 </div>
             </div>
         
@@ -515,7 +498,6 @@
             </div>
         </footer>
     </div>
-    <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
         integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
@@ -527,23 +509,23 @@
 </section>
 
 <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var preloader = document.querySelector('#ctn-preloader');
-    //     var preloaderSection = document.querySelector('#preloader');
-    //     var loadedClass = 'loaded';
-    //     var noScrollClass = 'no-scroll-y';
+    document.addEventListener('DOMContentLoaded', function () {
+        var preloader = document.querySelector('#ctn-preloader');
+        var preloaderSection = document.querySelector('#preloader');
+        var loadedClass = 'loaded';
+        var noScrollClass = 'no-scroll-y';
 
-    //     setTimeout(function () {
-    //         preloader.classList.add(loadedClass);
-    //         document.body.classList.remove(noScrollClass);
+        setTimeout(function () {
+            preloader.classList.add(loadedClass);
+            document.body.classList.remove(noScrollClass);
 
-    //         if (preloader.classList.contains(loadedClass)) {
-    //             setTimeout(function () {
-    //                 preloaderSection.parentNode.removeChild(preloaderSection);
-    //             }, 1000);
-    //         }
-    //     }, 3000);
-    // });
+            if (preloader.classList.contains(loadedClass)) {
+                setTimeout(function () {
+                    preloaderSection.parentNode.removeChild(preloaderSection);
+                }, 1000);
+            }
+        }, 3000);
+    });
 </script>
 
 </html>

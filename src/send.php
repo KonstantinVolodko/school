@@ -25,7 +25,7 @@ if ($_POST) {
     $message .= "IP: " . htmlspecialchars($_SERVER['REMOTE_ADDR']);
     $body = $message;
 
-    if (mail("oyhepo@mailto.plus", "Письмо об обратном звонке с сайта " . $HTTP_HOST, $body, "From: info@infa.ru\r\n")) {
+    if (mail("info@musical-school.ru", "Письмо об обратном звонке с сайта " . $HTTP_HOST, $body, "From: info@infa.ru\r\n")) {
         echo "Сообщение успешно отправлено";
     } else {
         echo "Ошибка при отправке сообщения";

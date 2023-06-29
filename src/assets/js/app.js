@@ -3,36 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
     //= components/
 
     SmoothScroll({
-        // Время скролла 400 = 0.4 секунды
         animationTime    : 800,
-        // Размер шага в пикселях 
         stepSize         : 75,
-    
-        // Дополнительные настройки:
-        
-        // Ускорение 
-        accelerationDelta : 30,  
-        // Максимальное ускорение
-        accelerationMax   : 2,   
-    
-        // Поддержка клавиатуры
+        accelerationDelta : 30,
+        accelerationMax   : 2,
         keyboardSupport   : true,  
-        // Шаг скролла стрелками на клавиатуре в пикселях
         arrowScroll       : 50,
-    
-        // Pulse (less tweakable)
-        // ratio of "tail" to "acceleration"
         pulseAlgorithm   : true,
         pulseScale       : 4,
         pulseNormalize   : 1,
-    
-        // Поддержка тачпада
         touchpadSupport   : true,
     })
 
-    Fancybox.bind(document.querySelector(".students-swiper"), "[data-fancybox]", {
-        // Your custom options
-    });
+    Fancybox.bind(document.querySelector(".students-swiper"), "[data-fancybox]", {});
 
     let ourTeachersSwiper = new Swiper(".ourTeachersSwiper", {
         grabCursor: true,
@@ -227,10 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
             this.openButtons = [];
 
             if (typeof openButtons === 'string') {
-                // Если передана строка, считаем это классом
                 this.openButtons = Array.from(document.getElementsByClassName(openButtons));
             } else if (Array.isArray(openButtons)) {
-                // Если передан массив, считаем это идентификаторами
                 this.openButtons = openButtons.map(buttonId => document.getElementById(buttonId));
             }
 
@@ -344,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!isValid) {
                 event.preventDefault();
             } else {
-                formData = new FormData(this); // Assign FormData to the formData variable
+                formData = new FormData(this);
                 const selectedOption = this.querySelector('.trialForm-content__selectTrigger').textContent.trim();
                 formData.append('selectedOption', selectedOption);
                 const formName = this.getAttribute('name');
@@ -361,43 +342,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // const playBtn = document.querySelector('.ourSchool-videoBlock__video svg');
     let videoContainer = document.querySelector('.ourSchool')
     const videoElement = document.querySelector('.ourSchool-videoBlock__video video');
-    // if (videoElement) {
-      
-    //     const observerOptions = {
-    //         root: null,
-    //         rootMargin: '0px',
-    //         threshold: 0.5 // Видео будет запускаться, когда хотя бы 50% видео будет видно на экране
-    //       };
-    
-    //       const intersectionObserver = new IntersectionObserver((entries, observer) => {
-    //         entries.forEach(entry => {
-    //           if (entry.isIntersecting) {
-    //             videoElement.play();
-    //           }
-    //         });
-    //       }, observerOptions);
-    
-    //       intersectionObserver.observe(videoElement);
-    // }
-    // if (playBtn) {
-    //     playBtn.addEventListener('click', function () {
-    //         playBtn.style.display = 'none';
-    //         videoElement.controls = true;
-    //         videoElement.play();
-    //     });
-    // }
-
-    // if (videoElement) {
-    //     videoElement.addEventListener('click', function () {
-    //         playBtn.style.display = 'none';
-    //         videoElement.controls = true;
-    //         videoElement.play();
-    //     });
-    // }
-
 
     let scrollableContainer = document.querySelector('.schedule-content table');
     let isDragging = false;
@@ -414,7 +360,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         scrollableContainer.addEventListener('mousemove', function (event) {
             if (isDragging) {
-                var distance = event.clientX - startPosition;
+                let distance = event.clientX - startPosition;
                 scrollableContainer.scrollLeft = scrollLeft - distance;
             }
         });
@@ -522,9 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.body.style.paddingRight = "0rem"
                 })
 
-                Fancybox.bind(document.querySelector(".personalModal-content"), "[data-fancybox]", {
-                    // Your custom options
-                });
+                Fancybox.bind(document.querySelector(".personalModal-content"), "[data-fancybox]", {});
 
                 let personalPartfolioSwiper = new Swiper(".personalPartfolioSwiper", {
                     slidesPerView: 1.6,
@@ -561,20 +505,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
-
-    // let videoSource = './assets/videos/desctopVideo.mp4';
-    // let smallResolutionVideoSource = './assets/videos/mobileVideo.mp4';
-
-
-
-    // window.addEventListener('resize', function() {
-    //     if (window.innerWidth > 500) {
-    //         videoElement.src = videoSource;
-    //     } else {
-    //         videoElement.src = smallResolutionVideoSource;
-    //     }
-    // });
-
     if (videoElement) {
 
         if (window.matchMedia('(min-width: 502px)').matches) {
@@ -583,27 +513,24 @@ document.addEventListener("DOMContentLoaded", () => {
             videoElement.src = './assets/videos/mobileVideo.mp4';
         }
     }
-    
-
-
 
     function getRandomDirection() {
-        var angle = Math.random() * 360;
+        let angle = Math.random() * 360;
         return angle;
     }
 
     function getRandomVelocity() {
-        var minVelocity = 1;
-        var maxVelocity = 3;
-        var velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity;
+        let minVelocity = 1;
+        let maxVelocity = 3;
+        let velocity = Math.random() * (maxVelocity - minVelocity) + minVelocity;
         return velocity;
     }
 
     function checkCollision(element, otherElements) {
-        var elementRect = element.getBoundingClientRect();
+        let elementRect = element.getBoundingClientRect();
 
-        for (var i = 0; i < otherElements.length; i++) {
-            var otherRect = otherElements[i].getBoundingClientRect();
+        for (let i = 0; i < otherElements.length; i++) {
+            let otherRect = otherElements[i].getBoundingClientRect();
 
             if (
                 element !== otherElements[i] &&
@@ -612,33 +539,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 elementRect.bottom >= otherRect.top &&
                 elementRect.top <= otherRect.bottom
             ) {
-                return true; // Обнаружено столкновение
+                return true;
             }
         }
 
-        return false; // Столкновение не обнаружено
+        return false;
     }
 
     function animateElement(element, otherElements) {
-        var container = document.querySelector('.trialLesson-content');
-        var elementRect = element.getBoundingClientRect();
-        var containerRect = container.getBoundingClientRect();
+        let container = document.querySelector('.trialLesson-content');
+        let elementRect = element.getBoundingClientRect();
+        let containerRect = container.getBoundingClientRect();
 
-        var containerWidth = containerRect.width - elementRect.width;
-        var containerHeight = containerRect.height - elementRect.height;
+        let containerWidth = containerRect.width - elementRect.width;
+        let containerHeight = containerRect.height - elementRect.height;
 
-        var posX = elementRect.left - containerRect.left;
-        var posY = elementRect.top - containerRect.top;
+        let posX = elementRect.left - containerRect.left;
+        let posY = elementRect.top - containerRect.top;
 
-        var direction = getRandomDirection();
-        var velocity = getRandomVelocity();
+        let direction = getRandomDirection();
+        let velocity = getRandomVelocity();
 
-        var isColliding = false;
+        let isColliding = false;
 
-        var animationInterval = setInterval(function () {
-            var radians = direction * Math.PI / 180;
-            var deltaX = velocity * Math.cos(radians);
-            var deltaY = velocity * Math.sin(radians);
+        let animationInterval = setInterval(function () {
+            let radians = direction * Math.PI / 180;
+            let deltaX = velocity * Math.cos(radians);
+            let deltaY = velocity * Math.sin(radians);
 
             posX += deltaX;
             posY += deltaY;
@@ -652,7 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (checkCollision(element, otherElements)) {
                 if (!isColliding) {
-                    direction = (direction + 180) % 360; // Изменить направление на противоположное при столкновении
+                    direction = (direction + 180) % 360;
                 }
                 isColliding = true;
             } else {
@@ -693,59 +620,46 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     
-        // setTimeout(function() {
+        setTimeout(function() {
             typeText(textToType, 0);
-        // }, 3200)
+        }, 3200)
     }
     
 
 
     const imgElements = document.querySelectorAll('.mission-content__img');
 
-    // Функция, которая обрабатывает прокрутку страницы
     function handleScroll() {
-        // Рассчитываем прогресс прокрутки для каждого элемента
         imgElements.forEach((imgElement) => {
             const rect = imgElement.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight * 0.6 && rect.bottom >= 0;
 
             if (isVisible) {
-                // Рассчитываем прогресс прокрутки
                 const scrollProgress = Math.max(0, Math.min((window.innerHeight * 0.6 - rect.top) / (window.innerHeight * 0.6 + rect.height), 1));
-
-                // Рассчитываем угол вращения для каждого элемента
                 const initialRotation = parseFloat(imgElement.dataset.initialRotation);
                 const targetRotation = parseFloat(imgElement.dataset.targetRotation);
                 const rotateValue = initialRotation + (targetRotation - initialRotation) * scrollProgress;
-
-                // Применяем угол вращения к элементу
                 imgElement.style.transform = `rotate(${rotateValue}deg)`;
             }
         });
     }
 
-    // Функция, которая обновляет данные о начальном и конечном угле вращения
     function updateRotationData() {
         imgElements.forEach((imgElement) => {
             const rect = imgElement.getBoundingClientRect();
             const initialRotation = parseFloat(imgElement.dataset.initialRotation);
             const targetRotation = parseFloat(imgElement.dataset.targetRotation);
-
-            // Обновляем данные о начальном и конечном угле вращения в зависимости от позиции блока
             imgElement.dataset.initialRotation = initialRotation || 0;
             imgElement.dataset.targetRotation = targetRotation || 0;
         });
     }
 
-    // Обрабатываем событие прокрутки страницы
     window.addEventListener('scroll', handleScroll);
 
-    // Вызываем функцию handleScroll() при загрузке страницы, чтобы обработать начальное состояние элементов
     window.addEventListener('load', () => {
         handleScroll();
         updateRotationData();
     });
 
-    // Вызываем функцию updateRotationData() при изменении размеров окна, чтобы обновить данные о начальном и конечном угле вращения
     window.addEventListener('resize', updateRotationData);
 })

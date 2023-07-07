@@ -1,10 +1,8 @@
-@charset "UTF-8";
-
 @font-face {
     font-family: "NeoSansCyrItalic";
-  src: url("../fonts/NeoSansCyr-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+    src: url("../fonts/NeoSansCyr-Italic.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
@@ -603,210 +601,6 @@ h3 {
 
 .no-scroll-y {
     overflow-y: hidden;
-}
-
-/* Preloader */
-.ctn-preloader {
-    -ms-flex-align: center;
-    align-items: center;
-    cursor: none;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-    -ms-flex-pack: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 900;
-}
-
-.ctn-preloader .animation-preloader {
-    position: absolute;
-    z-index: 100;
-}
-
-/* Spinner cargando */
-.ctn-preloader .animation-preloader .spinner {
-    -webkit-animation: spinner 1s infinite linear;
-    animation: spinner 1s infinite linear;
-    border-radius: 50%;
-    border: 0.3rem solid rgba(0, 0, 0, 0.2);
-    border-top-color: #000000;
-  /* No se identa por orden alfabetico para que no lo sobre-escriba */
-    height: 9rem;
-    margin: 0 auto 3.5rem auto;
-    width: 9rem;
-}
-
-/* Texto cargando */
-.ctn-preloader .animation-preloader .txt-loading {
-    font: bold 5rem "Montserrat", sans-serif;
-    text-align: center;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
-    -webkit-animation: letters-loading 4s infinite;
-    animation: letters-loading 4s infinite;
-    color: #000000;
-    content: attr(data-text-preloader);
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    -webkit-transform: rotateY(-90deg);
-    transform: rotateY(-90deg);
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading {
-    color: rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(2):before {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(3):before {
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(4):before {
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(5):before {
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(6):before {
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(7):before {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s;
-}
-
-.ctn-preloader .animation-preloader .txt-loading .letters-loading:nth-child(8):before {
-    -webkit-animation-delay: 1.4s;
-    animation-delay: 1.4s;
-}
-
-.ctn-preloader .loader-section {
-    background-color: #ffffff;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    width: calc(50% + 0.1rem);
-}
-
-.ctn-preloader .loader-section.section-left {
-    left: 0;
-}
-
-.ctn-preloader .loader-section.section-right {
-    right: 0;
-}
-
-/* Efecto de fade en la animación de cargando */
-.loaded .animation-preloader {
-    opacity: 0;
-    transition: 0.3s ease-out;
-}
-
-/* Efecto de cortina */
-.loaded .loader-section.section-left {
-    -webkit-transform: translateX(-101%);
-    transform: translateX(-101%);
-    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-
-.loaded .loader-section.section-right {
-    -webkit-transform: translateX(101%);
-    transform: translateX(101%);
-    transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
-}
-
-/* Animación del preloader */
-@-webkit-keyframes spinner {
-    to {
-        -webkit-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-    }
-}
-
-@keyframes spinner {
-    to {
-        -webkit-transform: rotateZ(360deg);
-        transform: rotateZ(360deg);
-    }
-}
-/* Animación de las letras cargando del preloader */
-@-webkit-keyframes letters-loading {
-    0%, 75%, 100% {
-        opacity: 0;
-        -webkit-transform: rotateY(-90deg);
-        transform: rotateY(-90deg);
-    }
-
-    25%, 50% {
-        opacity: 1;
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-    }
-}
-
-@keyframes letters-loading {
-    0%, 75%, 100% {
-        opacity: 0;
-        -webkit-transform: rotateY(-90deg);
-        transform: rotateY(-90deg);
-    }
-
-    25%, 50% {
-        opacity: 1;
-        -webkit-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-    }
-}
-/* Tamaño de portatil hacia atras (portatil, tablet, celular) */
-@media screen and (max-width: 767px) {
-  /* Preloader */
-  /* Spinner cargando */
-    .ctn-preloader .animation-preloader .spinner {
-        height: 8rem;
-        width: 8rem;
-    }
-
-  /* Texto cargando */
-    .ctn-preloader .animation-preloader .txt-loading {
-        font: bold 3.5rem "Montserrat", sans-serif;
-    }
-}
-
-@media screen and (max-width: 500px) {
-  /* Prelaoder */
-  /* Spinner cargando */
-    .ctn-preloader .animation-preloader .spinner {
-        height: 7rem;
-        width: 7rem;
-    }
-
-  /* Texto cargando */
-    .ctn-preloader .animation-preloader .txt-loading {
-        font: bold 2rem "Montserrat", sans-serif;
-    }
 }
 
 .header-content__phoneContainer {
@@ -2868,27 +2662,53 @@ button.swiper-pagination-bullet {
     }
 }
 
-.musicalSchool .musicalSchool-services img {
+.musicalSchool .musicalSchool-services .musicalSchool-services__tabContent {
     border-radius: 4rem;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
+    overflow: hidden;
+    height: 100%;
 }
 
 @media (max-width: 850px) {
-    .musicalSchool .musicalSchool-services img {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__tabContent {
         position: unset;
         z-index: 0;
         margin-top: 2rem;
+        height: 45rem;
     }
 }
 
 @media (max-width: 500px) {
-    .musicalSchool .musicalSchool-services img {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__tabContent {
         margin-top: 1.6rem;
+        border-radius: 3rem;
+        height: 20rem;
+    }
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__tabContent img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__tabContent video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+@media (max-width: 850px) {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__tabContent video {
+        height: unset;
+    }
+}
+
+@media (max-width: 500px) {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__tabContent video {
         border-radius: 3rem;
     }
 }
@@ -2901,7 +2721,7 @@ button.swiper-pagination-bullet {
     justify-content: end;
     padding-top: 4rem;
     padding-right: 4rem;
-    height: 61.1rem;
+    height: 74.1rem;
 }
 
 @media (max-width: 850px) {
@@ -2951,7 +2771,6 @@ button.swiper-pagination-bullet {
 .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem {
     width: 12.4rem;
     height: 11.5rem;
-    position: relative;
 }
 
 @media (max-width: 850px) {
@@ -2995,10 +2814,22 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 500px) {
     .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem p {
-        font-size: 1rem;
+        font-size: 0.8rem;
         line-height: 1.2rem;
-        top: 45%;
+        top: 43%;
     }
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem button {
+    background: none;
+    border: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem .musicalSchool-services__contentItem_helper {
+    display: none;
 }
 
 .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:last-child {
@@ -3029,6 +2860,37 @@ button.swiper-pagination-bullet {
     .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:last-child p {
         top: 41%;
     }
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:last-child svg {
+    fill: #B89FFF;
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:last-child .hoveredBtn {
+    stroke: #7152C9;
+    stroke-width: 0.1rem;
+}
+
+@media (max-width: 500px) {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:first-child p {
+        left: 25.4%;
+    }
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:first-child .hoveredBtn {
+    stroke: #D25493;
+    stroke-width: 0.1rem;
+}
+
+@media (max-width: 500px) {
+    .musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:nth-child(2) p {
+        left: 28%;
+    }
+}
+
+.musicalSchool .musicalSchool-services .musicalSchool-services__content .musicalSchool-services__contentItem:nth-child(2) .hoveredBtn {
+    stroke: #3C6D92;
+    stroke-width: 0.1rem;
 }
 
 .mission {

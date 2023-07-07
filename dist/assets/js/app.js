@@ -10662,16 +10662,16 @@ document.addEventListener("DOMContentLoaded", () => {
     //# sourceMappingURL=swiper-bundle.js.map
 
     SmoothScroll({
-        animationTime    : 800,
-        stepSize         : 75,
-        accelerationDelta : 30,
-        accelerationMax   : 2,
-        keyboardSupport   : true,  
-        arrowScroll       : 50,
-        pulseAlgorithm   : true,
-        pulseScale       : 4,
-        pulseNormalize   : 1,
-        touchpadSupport   : true,
+        animationTime: 800,
+        stepSize: 75,
+        accelerationDelta: 30,
+        accelerationMax: 2,
+        keyboardSupport: true,
+        arrowScroll: 50,
+        pulseAlgorithm: true,
+        pulseScale: 4,
+        pulseNormalize: 1,
+        touchpadSupport: true,
     })
 
     Fancybox.bind(document.querySelector(".students-swiper"), "[data-fancybox]", {});
@@ -11064,7 +11064,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             event.preventDefault();
-            
+
 
             const parent = this.closest('.regModal');
             const feedback = document.querySelector('#feedback');
@@ -11262,7 +11262,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (textElement) {
         let textToType = "Школа Мюзикла\nстаса чунихина";
         textElement.innerText = "";
-    
+
         function typeText(text, i) {
             if (i < text.length) {
                 textElement.innerText += text.charAt(i);
@@ -11271,19 +11271,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     typeText(text, i + 1);
                 }, 100);
             }
-    
+
             if (window.innerWidth < 501) {
                 if (text.charAt(i) === ' ') {
                     textElement.innerHTML += '<br>';
                 }
             }
         }
-    
-        setTimeout(function() {
-            typeText(textToType, 0);
-        }, 3200)
+
+        typeText(textToType, 0);
     }
-    
+
 
 
     const imgElements = document.querySelectorAll('.mission-content__img');
@@ -11321,4 +11319,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener('resize', updateRotationData);
+
+    let musicalSchoolTabs = document.querySelector('.musicalSchool-services__tabContent')
+    // let musicalSchoolBtns = document.querySelectorAll('.musicalSchool-services__contentItem button')
+
+    // musicalSchoolBtns.forEach(e => {
+    //     e.addEventListener('mouseover', () => {
+    //         // musicalSchoolTabs.innerHTML = e.nextElementSibling.innerHTML
+    //         console.log('click')
+    //     })
+    // })
+
+
+    let musicalSchoolBtns = document.querySelectorAll('.musicalSchool-services__contentItem button');
+    let currentIndex = 0;
+    let videoEnded = true;
+    let currentButton = null;
+    
+    function switchButtons() {
+      musicalSchoolBtns[currentIndex].click();
+      currentIndex = (currentIndex + 1) % musicalSchoolBtns.length;
+    }
+    
+    function executeFunction(index) {
+      return function() {
+        if (currentButton !== null) {
+          currentButton.classList.remove('hoveredBtn');
+        }
+        currentButton = musicalSchoolBtns[index];
+        currentButton.classList.add('hoveredBtn');
+        musicalSchoolTabs.innerHTML = musicalSchoolBtns[index].nextElementSibling.innerHTML;
+        if (musicalSchoolTabs.querySelector('video')) {
+          let video = musicalSchoolTabs.querySelector('video');
+          video.setAttribute('autoplay', 'autoplay');
+          video.play();
+          videoEnded = false;
+          video.addEventListener('ended', function() {
+            videoEnded = true;
+          });
+        }
+      };
+    }
+    
+    musicalSchoolBtns.forEach((button, index) => {
+      button.addEventListener('mouseenter', executeFunction(index));
+      button.addEventListener('click', executeFunction(index));
+    });
+    
+    // Переключение первой кнопки через 3 секунды
+    setTimeout(function() {
+      switchButtons();
+    }, 3000);
+    
+    // Автоматическое переключение кнопок
+    setInterval(function() {
+      if (videoEnded) {
+        switchButtons();
+      }
+    }, 3000);
 })

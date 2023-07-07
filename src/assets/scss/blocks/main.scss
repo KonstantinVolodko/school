@@ -167,25 +167,48 @@
             margin-top: 4rem;
         }
 
-        img {
+        .musicalSchool-services__tabContent {
             border-radius: 4rem;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
             position: absolute;
-            z-index: -1;
+            z-index: 0;
+            overflow: hidden;
+            height: 100%;
 
             @include breakpoint($jb-bp) {
                 position: unset;
                 z-index: 0;
                 margin-top: 2rem;
+                height: 45rem;
             }
 
             @include breakpoint($sm-bp) {
                 margin-top: 1.6rem;
                 border-radius: 3rem;
+                height: 20rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // height: 61.1rem;
+
+                @include breakpoint($jb-bp) {
+                    height: unset;
+                }
+
+                @include breakpoint($sm-bp) {
+                    border-radius: 3rem;
+                }
             }
         }
+        
 
         .musicalSchool-services__content {
             display: flex;
@@ -193,7 +216,8 @@
             justify-content: end;
             padding-top: 4rem;
             padding-right: 4rem;
-            height: 61.1rem;
+            // height: 61.1rem;
+            height: 74.1rem;
 
             @include breakpoint($jb-bp) {
                 height: unset;
@@ -202,7 +226,6 @@
                 padding-right: 0rem;
                 justify-content: space-between;
                 align-items: center;
-
             }
 
             @include breakpoint($sm-bp) {
@@ -231,7 +254,6 @@
             .musicalSchool-services__contentItem {
                 width: 12.4rem;
                 height: 11.5rem;
-                position: relative;
 
                 @include breakpoint($jb-bp) {
                     width: 10.4rem;
@@ -266,10 +288,22 @@
                     }
 
                     @include breakpoint($sm-bp) {
-                        font-size: 1rem;
+                        font-size: 0.8rem;
                         line-height: 1.2rem;
-                        top: 45%;
+                        top: 43%;
                     }
+                }
+
+                button {
+                    background: none;
+                    border: none;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .musicalSchool-services__contentItem_helper {
+                    display: none;
                 }
             }
 
@@ -294,6 +328,43 @@
                     @include breakpoint($sm-bp) {
                         top: 41%;
                     }
+                }
+
+                svg {
+                    fill: #B89FFF;
+                }
+
+                .hoveredBtn {
+                    stroke: #7152C9;
+                    stroke-width: 0.1rem;
+                }
+            }
+
+            .musicalSchool-services__contentItem:first-child {
+
+                p {
+                    @include breakpoint($sm-bp) {
+                        left: 25.4%;
+                    }
+                }
+
+                .hoveredBtn {
+                    stroke: #D25493;
+                    stroke-width: 0.1rem;
+                }
+            }
+
+            .musicalSchool-services__contentItem:nth-child(2) {
+
+                p {
+                    @include breakpoint($sm-bp) {
+                        left: 28%;
+                    }
+                }
+
+                .hoveredBtn {
+                    stroke: #3C6D92;
+                    stroke-width: 0.1rem;
                 }
             }
         }

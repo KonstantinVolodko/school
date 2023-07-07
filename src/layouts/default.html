@@ -6,48 +6,6 @@
 </head>
 
 <body>
-    <div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="З" class="letters-loading">
-                        З
-                    </span>
-
-                    <span data-text-preloader="А" class="letters-loading">
-                        А
-                    </span>
-
-                    <span data-text-preloader="Г" class="letters-loading">
-                        Г
-                    </span>
-
-                    <span data-text-preloader="Р" class="letters-loading">
-                        Р
-                    </span>
-
-                    <span data-text-preloader="У" class="letters-loading">
-                        У
-                    </span>
-
-                    <span data-text-preloader="З" class="letters-loading">
-                        З
-                    </span>
-
-                    <span data-text-preloader="К" class="letters-loading">
-                        К
-                    </span>
-
-                    <span data-text-preloader="А" class="letters-loading">
-                        А
-                    </span>
-                </div>
-            </div>
-            <div class="loader-section section-left"></div>
-            <div class="loader-section section-right"></div>
-        </div>
-    </div>
     {{> sprite }}
 
     <div class="page">
@@ -73,29 +31,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
-
-<section>
-
-</section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var preloader = document.querySelector('#ctn-preloader');
-        var preloaderSection = document.querySelector('#preloader');
-        var loadedClass = 'loaded';
-        var noScrollClass = 'no-scroll-y';
-
-        setTimeout(function () {
-            preloader.classList.add(loadedClass);
-            document.body.classList.remove(noScrollClass);
-
-            if (preloader.classList.contains(loadedClass)) {
-                setTimeout(function () {
-                    preloaderSection.parentNode.removeChild(preloaderSection);
-                }, 1000);
-            }
-        }, 3000);
-    });
-</script>
 
 </html>
